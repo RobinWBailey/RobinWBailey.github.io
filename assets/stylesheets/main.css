@@ -1105,6 +1105,10 @@ body {
     background-image: url(https://www.apple.com/v/iphone-xs/d/images/overview/copy_texture_4_large.jpg);
 }
 
+.clip-text_inv {
+    background-image: url(../investigate/1.png);
+}
+
 .my-apps .single-app img {
 	/*box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);*/
 	margin-bottom: 16px;
