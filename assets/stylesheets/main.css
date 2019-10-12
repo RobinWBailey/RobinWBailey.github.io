@@ -1280,3 +1280,20 @@ body {
       transform: translateY(-10px);
     }
   }
+
+  .button.is-strong, .button.style-strong {
+    text-align: center;
+    color: #fff;
+    background: #2e2e2e;
+    border: 1px solid transparent;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: box-shadow .1s ease-out;
+    -moz-transition: box-shadow .1s ease-out;
+    -o-transition: box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out;
+    width: 120px;
+}
