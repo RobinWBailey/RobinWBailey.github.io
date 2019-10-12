@@ -674,6 +674,22 @@ body {
     margin-bottom: 1rem
 }
 
+.stories__icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    width: 6rem;
+    height: 6rem;
+    background-color: #b3d1e9;
+    background-image: url(../../stories/iTunesArtwork@2x.png);
+    background-size: 100%;
+    border-radius: 20%;
+    margin-bottom: 1rem
+}
+
 @media screen and (min-width:30rem) {
     .header__profile {
         width: 5rem;
