@@ -673,6 +673,22 @@ body {
     margin-bottom: 1rem
 }
 
+.soke__icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    width: 6rem;
+    height: 6rem;
+    background-color: #b3d1e9;
+    background-image: url(../../soke/SQ_black_original_logo.png);
+    background-size: 100%;
+    border-radius: 20%;
+    margin-bottom: 1rem
+}
+
 .horizon__icon {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1154,6 +1170,10 @@ body {
 
 .clip-text_inv {
     background-image: url(../../investigate/iTunesArtwork.png);
+}
+
+.clip-text_soke {
+    background-image: url(../../soke/blue-pattern.png);
 }
 
 .my-apps .single-app img {
