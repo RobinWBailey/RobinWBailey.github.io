@@ -624,7 +624,7 @@ p.avail {
 
 img.general {
   border-radius: 2%;
-  object-fit: cover;
+  object-fit: contain;
   /* width: 150%;
   height: 150%;
   margin-left: -25%;
