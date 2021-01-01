@@ -639,9 +639,15 @@ p.avail {
 img.general {
   border-radius: 2%;
   object-fit: cover;
-  width: 150%;
+  /* width: 150%;
   height: 150%;
   margin-left: -25%;
-  margin-right: -25%;
+  margin-right: -25%; */
   max-width: 200% !important;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
