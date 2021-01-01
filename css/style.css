@@ -350,10 +350,6 @@ footer p {
     width: 100%;
   }
 
-  /* .pic-julius {
-    width: 250px !important;
-  } */
-
   .about-text {
     font-size: 1.6em !important;
   }
@@ -396,16 +392,6 @@ footer p {
     font-size: .9em;
   }
 }
-/* @media (max-width: 450px) {
-  .pic-julius {
-    width: 100% !important;
-  }
-
-  .projects {
-    padding: 30px;
-    padding-top: 1px;
-  }
-} */
 
 @keyframes dance {
   0% { 
@@ -650,4 +636,17 @@ img.general {
   /* right: 50%; */
   margin-left: -30vw;
   /* margin-right: -50vw; */
+}
+
+@media (max-width: 700px) {
+  img.general {
+    object-fit: cover;
+    max-width: 200% !important;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
 }
