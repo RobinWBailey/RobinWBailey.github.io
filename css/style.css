@@ -643,6 +643,7 @@ img.general {
     object-fit: cover;
     max-width: 200% !important;
     width: 100vw;
+    height: auto;
     position: relative;
     left: 50%;
     right: 50%;
