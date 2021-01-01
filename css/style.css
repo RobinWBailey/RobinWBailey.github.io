@@ -641,7 +641,7 @@ img.general {
   object-fit: cover;
   width: 150%;
   height: 150%;
-  margin-left: -30%;
-  margin-right: -30%;
-  max-width: 150% !important;
+  margin-left: -25%;
+  margin-right: -25%;
+  max-width: 200% !important;
 }
