@@ -651,3 +651,10 @@ img.general {
     object-position: 0 0;
   }
 }
+
+span.footer-info {
+  margin-top: 15px;
+  font-size: 0.6em;
+  font-family: 'Montserrat', sans-serif;
+  color: #DDD;
+}
