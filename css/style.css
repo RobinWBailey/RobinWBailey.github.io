@@ -625,10 +625,10 @@ p.avail {
 img.general {
   border-radius: 2%;
   object-fit: contain;
-  /* width: 150%;
+  /* width: 150%; */
   height: 150%;
-  margin-left: -25%;
-  margin-right: -25%; */
+  /* margin-left: -25%; */
+  /* margin-right: -25%; */
   max-width: 200% !important;
   width: 60vw;
   position: relative;
@@ -643,7 +643,7 @@ img.general {
     object-fit: contain;
     max-width: 200% !important;
     width: 100vw;
-    height: auto;
+    height: 100%;
     position: relative;
     left: 50%;
     right: 50%;
