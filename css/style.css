@@ -635,3 +635,8 @@ p.avail {
   margin-bottom: 50px;
   margin-top: -20px;
 }
+
+img.general {
+  border-radius: 50%;
+  object-fit: cover;
+}
