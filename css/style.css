@@ -614,3 +614,24 @@ input[type='checkbox'] {
 .collapsible-content p {
 	/* margin-bottom: 0; */
 }
+
+.availability {
+  background-color: rgb(241, 241, 241); /* Changing background color */
+  font-weight: bold; /* Making font bold */
+  border-radius: 20px; /* Making border radius */
+  width: auto; /* Making auto-sizable width */
+  height: auto; /* Making auto-sizable height */
+  padding: 5px 15px 5px 15px; /* Making space around letters */
+  font-size: 18px; /* Changing font size */
+}
+
+span.availability {
+  font-size: 0.5em;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(105, 105, 105);
+}
+
+p.avail {
+  margin-bottom: 50px;
+  margin-top: -20px;
+}
