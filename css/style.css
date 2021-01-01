@@ -643,4 +643,5 @@ img.general {
   height: 150%;
   margin-left: -30%;
   margin-right: -30%;
+  max-width: 150% !important;
 }
