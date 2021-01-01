@@ -648,5 +648,6 @@ img.general {
     left: 50%;
     right: 50%;
     margin-left: -50vw;
+    object-position: 0 0;
   }
 }
