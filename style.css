@@ -492,6 +492,7 @@ ul {
 .work__grid {
   display: grid;
   gap: 2rem;
+  padding-top: 1rem; /* Add space for hover effect to prevent clipping */
 }
 
 @media (min-width: 37.5em) {
@@ -511,7 +512,7 @@ ul {
 .work__item a {
   display: block;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden; /* <-- ADDED BACK to contain the scaled image */
   box-shadow: 0 5px 15px var(--shadow-color);
   transition: all 0.4s ease;
   position: relative;
@@ -550,6 +551,7 @@ ul {
 
 .work__item a img {
   transition: transform 0.4s ease;
+  border-radius: 10px 10px 0 0; /* Add radius to top corners of image */
 }
 
 .work__item a:hover img {
