@@ -932,3 +932,78 @@ ul {
   background: var(--success);
   animation: pulse 2s infinite;
 }
+
+/* --- Tooltip Component (Improved Animation) --- */
+.tooltip-trigger {
+  position: relative;
+  cursor: help;
+  border-bottom: 2px dotted var(--color-text-subtle);
+  transition: border-color 0.3s ease;
+}
+
+.tooltip-trigger:hover {
+  border-bottom-color: var(--color-link);
+}
+
+/* The main tooltip popup box */
+.tooltip-trigger::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 10px;
+  
+  /* Styling */
+  background-color: var(--color-background-offset);
+  color: var(--color-text-primary);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px var(--shadow-color);
+  border: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  
+  /* Sizing */
+  width: max-content;
+  max-width: 280px;
+  white-space: normal;
+  z-index: 10;
+}
+
+/* The little triangle pointing down */
+.tooltip-trigger::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 4px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-background-offset) transparent transparent transparent;
+  z-index: 11;
+}
+
+/* Common animation properties for both pseudo-elements */
+.tooltip-trigger::before,
+.tooltip-trigger::after {
+  /* Initial state: hidden and slightly down */
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 10px);
+  pointer-events: none;
+
+  /* Transition for hiding: fade out, then set to hidden */
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
+}
+
+/* Show tooltip on hover */
+.tooltip-trigger:hover::before,
+.tooltip-trigger:hover::after {
+  /* Final state: visible and in position */
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+
+  /* Transition for showing: become visible, wait a moment, then fade in */
+  transition: opacity 0.2s ease 0.1s, transform 0.2s ease 0.1s;
+}
