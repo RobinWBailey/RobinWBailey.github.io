@@ -317,6 +317,7 @@ ul {
 
 .arrow-holder:hover {
   transform: scale(1.1);
+  text-decoration: none;
 }
 
 .arrow {
@@ -449,22 +450,22 @@ ul {
   }
 }
 
+/* The .work__item is now just a grid cell container */
 .work__item {
-  transition: transform 0.3s ease;
+  /* The fadeInUp animation is applied here, which is fine. */
 }
 
-.work__item:hover {
-  transform: scale(1.02);
-}
-
+/* The <a> tag is the card itself */
 .work__item a {
   display: block;
-  margin-bottom: 1rem;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px var(--shadow-color);
   transition: all 0.4s ease;
   position: relative;
+  text-decoration: none; /* remove default underline */
+  color: inherit; /* inherit text color from parent */
+  background-color: var(--color-background);
 }
 
 .work__item a::before {
@@ -483,13 +484,15 @@ ul {
   transition: opacity 0.3s ease;
 }
 
-.work__item a:hover::before {
-  opacity: 1;
-}
-
+/* All hover effects now on the <a> tag */
 .work__item a:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.work__item a:hover::before {
+  opacity: 1;
 }
 
 .work__item a img {
@@ -500,34 +503,33 @@ ul {
   transform: scale(1.05);
 }
 
+/* New wrapper for the text content */
+.work__item-content {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
 .work__item h6 {
   margin-bottom: 0.25rem;
   transition: color 0.3s ease;
 }
 
-.work__item:hover h6 {
+/* Title color change on card hover */
+.work__item a:hover h6 {
   color: var(--color-link);
-}
-
-.work__item h6 a {
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease;
-}
-.work__item h6 a:hover {
-  text-decoration: none;
-  border-bottom-color: var(--color-link);
 }
 
 .work__item p {
   font-size: 0.95rem;
   transition: color 0.3s ease;
+  color: var(--color-text-secondary);
 }
 
-.work__item:hover p {
+/* Paragraph color change on card hover */
+.work__item a:hover p {
   color: var(--color-text-primary);
 }
 
-/* --- Footer --- */
+/* --- Footer Section --- */
 .footer {
   text-align: center;
   padding-top: var(--space-m);
