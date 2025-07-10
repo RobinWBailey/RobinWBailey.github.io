@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Project: iotec Horizon - Robin Bailey</title>
+    <meta name="author" content="Robin Bailey" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Project page for the iotec Global Horizon Platform, a campaign management and reporting tool." />
+    <meta name="keywords" content="Robin Bailey, Portfolio, Design, Product, UI, Engineer, iotec, AdTech" />
+    <meta name="theme-color" content="#545a63" />
+    <meta name="supported-color-schemes" content="light, dark" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://robinbailey.me/horizon" />
+    <meta property="og:title" content="Project: iotec Horizon - Robin Bailey" />
+    <meta property="og:description" content="A campaign management and reporting tool for an AdTech platform." />
+    <meta property="og:image" content="https://robinbailey.me/assets/images/social-preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://robinbailey.me/horizon" />
+    <meta property="twitter:creator" content="@robinbailey" />
+    <meta property="twitter:title" content="Project: iotec Horizon - Robin Bailey" />
+    <meta property="twitter:description" content="A campaign management and reporting tool for an AdTech platform." />
+    <meta property="twitter:image" content="https://robinbailey.me/assets/images/social-preview.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="48x48" href="../assets/images/Favicon.png" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        xintegrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="theme-picker">
+        <button class="theme-picker__toggle" aria-label="Toggle theme picker">
+            🎨
+        </button>
+        <div class="theme-picker__panel">
+            <div class="theme-picker__title">Choose Theme</div>
+            <div class="theme-picker__grid">
+                <div class="theme-picker__option active" data-theme="default" title="Default Blue"></div>
+                <div class="theme-picker__option" data-theme="purple" title="Purple"></div>
+                <div class="theme-picker__option" data-theme="green" title="Green"></div>
+                <div class="theme-picker__option" data-theme="orange" title="Orange"></div>
+                <div class="theme-picker__option" data-theme="pink" title="Pink"></div>
+                <div class="theme-picker__option" data-theme="dark" title="Dark"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Navigation -->
+    <nav class="project-nav">
+        <div class="container">
+            <a href="../index.html" class="link">&larr; Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <header class="section header project-header">
+        <div class="container">
+            <img src="overview.png" alt="A screenshot of the iotec Horizon Platform dashboard" class="project-hero-image">
+            <div class="header__headings">
+                <h1>iotec Global Horizon Platform</h1>
+                <h2>Concept, UI/UX Design, Technical Architecture, & Engineering</h2>
+            </div>
+            <div class="dash"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="section section--grey">
+        <div class="container">
+            <div class="about__grid">
+                <!-- Overview Column -->
+                <div class="about__category">
+                    <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                    <div class="about__item">
+                        <p class="about__description">Led the design and contributed significant engineering to a new primary platform interface for both internal teams and an international self-serve audience. The project spanned from initial concept to final deployment.</p>
+                        <p class="about__description">My responsibilities included requirements gathering, market research, developing a corporate design language, creating mockups and prototypes, and leading design workshops. I also spearheaded the underlying technical shift to a RESTful web architecture and implemented an automated user acceptance test framework.</p>
+                    </div>
+                </div>
+                <!-- Role & Tech Column -->
+                <div class="about__category">
+                    <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                    <div class="about__item">
+                        <h6>My Role</h6>
+                        <p class="about__description">Product Architect; Senior UX Designer & Engineer</p>
+                        <h6>Core Technologies</h6>
+                        <p class="about__description">Django, Python, REST, HTML, CSS, JavaScript, PostgreSQL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <div class="work__header">
+                <h3>Visuals & Screenshots</h3>
+            </div>
+            <div class="project-gallery__grid">
+                <div class="project-gallery__item">
+                    <img src="3.png" alt="Horizon platform screenshot showing campaign details">
+                </div>
+                <div class="project-gallery__item">
+                    <img src="2.png" alt="Horizon platform screenshot showing analytics">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="section footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Robin Bailey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        class ThemePicker {
+            constructor() {
+                this.currentTheme = localStorage.getItem('theme') || 'default';
+                this.toggle = document.querySelector('.theme-picker__toggle');
+                this.panel = document.querySelector('.theme-picker__panel');
+                this.options = document.querySelectorAll('.theme-picker__option');
+
+                this.init();
+            }
+
+            init() {
+                this.applyTheme(this.currentTheme);
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                this.toggle.addEventListener('click', () => this.togglePanel());
+
+                this.options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        const theme = option.dataset.theme;
+                        this.selectTheme(theme);
+                    });
+                });
+
+                // Close panel when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.theme-picker')) {
+                        this.closePanel();
+                    }
+                });
+            }
+
+            togglePanel() {
+                this.panel.classList.toggle('active');
+            }
+
+            closePanel() {
+                this.panel.classList.remove('active');
+            }
+
+            selectTheme(theme) {
+                this.currentTheme = theme;
+                this.applyTheme(theme);
+                this.updateActiveOption(theme);
+                this.closePanel();
+                localStorage.setItem('theme', theme);
+            }
+
+            applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+
+            updateActiveOption(theme) {
+                this.options.forEach(option => {
+                    option.classList.toggle('active', option.dataset.theme === theme);
+                });
+            }
+        }
+
+        // Set the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize the theme picker when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemePicker();
+        });
+    </script>
+
+</body>
+
+</html>
