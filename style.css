@@ -260,7 +260,7 @@ ul {
 }
 
 .header__description {
-  max-width: 50ch;
+  max-width: 65ch; /* UPDATED: Was 50ch */
   margin: 0 auto 1.5rem;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
