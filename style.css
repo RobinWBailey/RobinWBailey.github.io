@@ -579,6 +579,68 @@ ul {
   color: var(--color-text-primary);
 }
 
+/* --- NEW: Work Expand Feature --- */
+.work__grid-wrapper {
+  position: relative;
+  /* This height will show roughly 2 rows on desktop */
+  max-height: 620px;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out;
+}
+
+/* The fade-out effect at the bottom */
+.work__grid-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px; /* Height of the fade */
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-background) 80%
+  );
+  pointer-events: none; /* Allows clicking through the gradient */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Expanded state for the wrapper */
+.work__grid-wrapper.is-expanded {
+  /* A large value to accommodate all items */
+  max-height: 5000px;
+}
+
+/* Hide the fade-out effect when expanded */
+.work__grid-wrapper.is-expanded::after {
+  opacity: 0;
+}
+
+/* Handle fade for dark theme */
+[data-theme="dark"] .work__grid-wrapper::after {
+  background: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 7%, 0),
+    var(--color-background) 80%
+  );
+}
+[data-theme="purple"] .work__grid-wrapper::after,
+[data-theme="green"] .work__grid-wrapper::after,
+[data-theme="orange"] .work__grid-wrapper::after,
+[data-theme="pink"] .work__grid-wrapper::after {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-background) 80%
+  );
+}
+
+/* Show More Button Container */
+.work__show-more {
+  text-align: center;
+  margin-top: var(--space-m);
+}
+
 /* --- Project Page Specific Styles --- */
 .project-nav {
   padding: 1.5rem 0;
@@ -665,6 +727,35 @@ ul {
   border-bottom-color: currentColor;
   text-decoration: none;
   transform: translateY(-1px);
+}
+
+/* --- NEW: Reusable Button Style --- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-offset);
+  border: 2px solid var(--color-border);
+  border-radius: 50px; /* Pill shape */
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--color-background);
+  border-color: var(--color-link);
+  color: var(--color-link);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px var(--shadow-color);
 }
 
 /* 6. THEME PICKER
@@ -888,41 +979,6 @@ ul {
   100% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
   }
-}
-
-/* Staggered animation for work items */
-.work__item {
-  animation: fadeInUp 0.6s ease-out both;
-}
-.work__item:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.work__item:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.work__item:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.work__item:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.work__item:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.work__item:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.work__item:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.work__item:nth-child(8) {
-  animation-delay: 0.8s;
-}
-.work__item:nth-child(9) {
-  animation-delay: 0.9s;
-}
-.work__item:nth-child(10) {
-  animation-delay: 1s;
 }
 
 /* --- Current Status --- */
