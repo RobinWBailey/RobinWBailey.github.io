@@ -260,7 +260,7 @@ ul {
 }
 
 .header__description {
-  max-width: 65ch; /* UPDATED: Was 50ch */
+  max-width: 65ch;
   margin: 0 auto 1.5rem;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
@@ -274,6 +274,61 @@ ul {
   font-size: 1.25rem;
   margin-top: 1.5rem;
 }
+
+/* --- START: NEW EXPERTISE STYLES --- */
+.expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-m);
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 65ch;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.expertise__group {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.expertise__title {
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.expertise__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.8rem;
+  justify-content: center;
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--color-background-offset);
+  color: var(--color-text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-normal);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease-in-out;
+}
+
+.tag:hover {
+  background-color: var(--color-background);
+  color: var(--color-link);
+  border-color: currentColor;
+  transform: translateY(-2px);
+  cursor: default;
+}
+/* --- END: NEW EXPERTISE STYLES --- */
 
 .dash {
   border-bottom: 3px solid var(--color-dash);
@@ -512,7 +567,7 @@ ul {
 .work__item a {
   display: block;
   border-radius: 12px;
-  overflow: hidden; /* <-- ADDED BACK to contain the scaled image */
+  overflow: hidden;
   box-shadow: 0 5px 15px var(--shadow-color);
   transition: all 0.4s ease;
   position: relative;
@@ -551,7 +606,7 @@ ul {
 
 .work__item a img {
   transition: transform 0.4s ease;
-  border-radius: 10px 10px 0 0; /* Add radius to top corners of image */
+  border-radius: 10px 10px 0 0;
 }
 
 .work__item a:hover img {
@@ -581,44 +636,38 @@ ul {
   color: var(--color-text-primary);
 }
 
-/* --- NEW: Work Expand Feature --- */
+/* --- Work Expand Feature --- */
 .work__grid-wrapper {
   position: relative;
-  /* This height will show roughly 2 rows on desktop */
   max-height: 620px;
   overflow: hidden;
   transition: max-height 0.7s ease-in-out;
 }
 
-/* The fade-out effect at the bottom */
 .work__grid-wrapper::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200px; /* Height of the fade */
+  height: 200px;
   background: linear-gradient(
     to bottom,
     transparent,
     var(--color-background) 80%
   );
-  pointer-events: none; /* Allows clicking through the gradient */
+  pointer-events: none;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Expanded state for the wrapper */
 .work__grid-wrapper.is-expanded {
-  /* A large value to accommodate all items */
   max-height: 5000px;
 }
 
-/* Hide the fade-out effect when expanded */
 .work__grid-wrapper.is-expanded::after {
   opacity: 0;
 }
 
-/* Handle fade for dark theme */
 [data-theme="dark"] .work__grid-wrapper::after {
   background: linear-gradient(
     to bottom,
@@ -637,7 +686,6 @@ ul {
   );
 }
 
-/* Show More Button Container */
 .work__show-more {
   text-align: center;
   margin-top: var(--space-m);
@@ -731,7 +779,7 @@ ul {
   transform: translateY(-1px);
 }
 
-/* --- NEW: Reusable Button Style --- */
+/* --- Reusable Button Style --- */
 .btn {
   display: inline-block;
   font-family: var(--font-family-base);
@@ -740,7 +788,7 @@ ul {
   color: var(--color-text-primary);
   background-color: var(--color-background-offset);
   border: 2px solid var(--color-border);
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px;
   padding: 0.75rem 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1013,15 +1061,12 @@ ul {
   border-bottom-color: var(--color-link);
 }
 
-/* The main tooltip popup box */
 .tooltip-trigger::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: 100%;
   left: 50%;
   margin-bottom: 10px;
-
-  /* Styling */
   background-color: var(--color-background-offset);
   color: var(--color-text-primary);
   padding: 0.75rem 1rem;
@@ -1030,15 +1075,12 @@ ul {
   border: 1px solid var(--color-border);
   font-size: 0.9rem;
   line-height: 1.4;
-
-  /* Sizing */
   width: max-content;
   max-width: 280px;
   white-space: normal;
   z-index: 10;
 }
 
-/* The little triangle pointing down */
 .tooltip-trigger::before {
   content: "";
   position: absolute;
@@ -1052,27 +1094,19 @@ ul {
   z-index: 11;
 }
 
-/* Common animation properties for both pseudo-elements */
 .tooltip-trigger::before,
 .tooltip-trigger::after {
-  /* Initial state: hidden and slightly down */
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, 10px);
   pointer-events: none;
-
-  /* Transition for hiding: fade out, then set to hidden */
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
 }
 
-/* Show tooltip on hover */
 .tooltip-trigger:hover::before,
 .tooltip-trigger:hover::after {
-  /* Final state: visible and in position */
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
-
-  /* Transition for showing: become visible, wait a moment, then fade in */
   transition: opacity 0.2s ease 0.1s, transform 0.2s ease 0.1s;
 }
