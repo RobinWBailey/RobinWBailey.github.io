@@ -640,3 +640,280 @@ ul {
     animation-delay: 0.3s;
   }
 }
+
+/* Color Picker Styles - Add after your existing styles */
+.theme-picker {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.theme-picker:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.theme-picker__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: var(--color-text-primary);
+}
+
+.theme-picker__toggle:hover {
+  background: var(--color-background-offset);
+  transform: scale(1.1);
+}
+
+.theme-picker__panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.theme-picker__panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.theme-picker__title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.theme-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.theme-picker__option {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.theme-picker__option:hover {
+  transform: scale(1.1);
+  border-color: var(--color-text-subtle);
+}
+
+.theme-picker__option.active {
+  border-color: var(--color-link);
+  transform: scale(1.1);
+}
+
+.theme-picker__option.active::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced hover effects for stronger theme integration */
+.header__profile:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px -10px var(--shadow-color);
+  border-radius: 25%;
+  border: 3px solid var(--color-link);
+}
+
+.about__item {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--color-background);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--color-border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.about__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  background: var(--color-background-offset);
+  border-color: var(--color-link);
+}
+
+/* Enhanced work item cards with theme colors */
+.work__item a {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: all 0.4s ease;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-border);
+}
+
+.work__item a:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px var(--shadow-color);
+  text-decoration: none;
+  border-color: var(--color-link);
+}
+
+.work__item a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-link),
+    var(--color-text-secondary)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work__item a:hover::before {
+  opacity: 0.1;
+}
+
+/* Enhanced section backgrounds with theme colors */
+.section--grey::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--color-link) 0%, transparent 70%);
+  opacity: 0.05;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Theme Color Swatches */
+.theme-picker__option[data-theme="default"] {
+  background: linear-gradient(135deg, #56a2ff 0%, #667eea 100%);
+}
+
+.theme-picker__option[data-theme="purple"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.theme-picker__option[data-theme="green"] {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.theme-picker__option[data-theme="orange"] {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.theme-picker__option[data-theme="pink"] {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.theme-picker__option[data-theme="dark"] {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* New Theme Color Schemes */
+/* Purple theme - Much stronger purple */
+[data-theme="purple"] {
+  --color-background: #faf5ff;
+  --color-background-offset: #f3e8ff;
+  --color-text-primary: #6b21a8;
+  --color-text-secondary: #7c3aed;
+  --color-text-subtle: #a855f7;
+  --color-link: #8b5cf6;
+  --color-border: rgba(139, 92, 246, 0.3);
+  --color-dash: #7c3aed;
+  --shadow-color: rgba(139, 92, 246, 0.15);
+}
+
+/* Green theme - Much stronger green */
+[data-theme="green"] {
+  --color-background: #f0fdf4;
+  --color-background-offset: #dcfce7;
+  --color-text-primary: #166534;
+  --color-text-secondary: #16a34a;
+  --color-text-subtle: #22c55e;
+  --color-link: #10b981;
+  --color-border: rgba(16, 185, 129, 0.3);
+  --color-dash: #16a34a;
+  --shadow-color: rgba(16, 185, 129, 0.15);
+}
+
+/* Orange theme - Much stronger orange/red */
+[data-theme="orange"] {
+  --color-background: #fff7ed;
+  --color-background-offset: #ffedd5;
+  --color-text-primary: #c2410c;
+  --color-text-secondary: #ea580c;
+  --color-text-subtle: #f97316;
+  --color-link: #ff6b35;
+  --color-border: rgba(255, 107, 53, 0.3);
+  --color-dash: #ea580c;
+  --shadow-color: rgba(255, 107, 53, 0.15);
+}
+
+/* Pink theme - Much stronger pink */
+[data-theme="pink"] {
+  --color-background: #fdf2f8;
+  --color-background-offset: #fce7f3;
+  --color-text-primary: #be185d;
+  --color-text-secondary: #db2777;
+  --color-text-subtle: #ec4899;
+  --color-link: #f472b6;
+  --color-border: rgba(244, 114, 182, 0.3);
+  --color-dash: #db2777;
+  --shadow-color: rgba(244, 114, 182, 0.15);
+}
+
+/* Dark theme - Enhanced with theme color accents */
+[data-theme="dark"] {
+  --color-background: #0f0f0f;
+  --color-background-offset: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e0e0e0;
+  --color-text-subtle: #a0a0a0;
+  --color-link: #74b9ff;
+  --color-border: rgba(116, 185, 255, 0.2);
+  --color-dash: #6c5ce7;
+  --shadow-color: rgba(116, 185, 255, 0.2);
+}

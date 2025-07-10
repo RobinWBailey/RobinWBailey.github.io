@@ -37,6 +37,23 @@
 
 <body>
 
+    <div class="theme-picker">
+        <button class="theme-picker__toggle" aria-label="Toggle theme picker">
+            🎨
+        </button>
+        <div class="theme-picker__panel">
+            <div class="theme-picker__title">Choose Theme</div>
+            <div class="theme-picker__grid">
+                <div class="theme-picker__option active" data-theme="default" title="Default Blue"></div>
+                <div class="theme-picker__option" data-theme="purple" title="Purple"></div>
+                <div class="theme-picker__option" data-theme="green" title="Green"></div>
+                <div class="theme-picker__option" data-theme="orange" title="Orange"></div>
+                <div class="theme-picker__option" data-theme="pink" title="Pink"></div>
+                <div class="theme-picker__option" data-theme="dark" title="Dark"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header class="section header">
         <div class="container">
@@ -206,8 +223,73 @@
     </footer>
 
     <script>
+        class ThemePicker {
+            constructor() {
+                this.currentTheme = localStorage.getItem('theme') || 'default';
+                this.toggle = document.querySelector('.theme-picker__toggle');
+                this.panel = document.querySelector('.theme-picker__panel');
+                this.options = document.querySelectorAll('.theme-picker__option');
+
+                this.init();
+            }
+
+            init() {
+                this.applyTheme(this.currentTheme);
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                this.toggle.addEventListener('click', () => this.togglePanel());
+
+                this.options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        const theme = option.dataset.theme;
+                        this.selectTheme(theme);
+                    });
+                });
+
+                // Close panel when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.theme-picker')) {
+                        this.closePanel();
+                    }
+                });
+            }
+
+            togglePanel() {
+                this.panel.classList.toggle('active');
+            }
+
+            closePanel() {
+                this.panel.classList.remove('active');
+            }
+
+            selectTheme(theme) {
+                this.currentTheme = theme;
+                this.applyTheme(theme);
+                this.updateActiveOption(theme);
+                this.closePanel();
+                localStorage.setItem('theme', theme);
+            }
+
+            applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+
+            updateActiveOption(theme) {
+                this.options.forEach(option => {
+                    option.classList.toggle('active', option.dataset.theme === theme);
+                });
+            }
+        }
+
         // Set the current year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize the theme picker when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemePicker();
+        });
     </script>
 
 </body>
