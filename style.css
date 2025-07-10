@@ -242,7 +242,7 @@ ul {
   background-size: cover;
   border-radius: 20%;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 10px 20px -5px var(--shadow-color);
+  box-shadow: 0 15px 30px -5px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
   cursor: pointer;
   border: 3px solid transparent;
@@ -250,7 +250,7 @@ ul {
 
 .header__profile:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 20px 40px -10px var(--shadow-color);
+  box-shadow: 0 25px 45px -10px var(--shadow-color);
   border-radius: 25%;
   border-color: var(--color-link);
 }
@@ -273,6 +273,7 @@ ul {
   font-weight: 500;
   font-size: 1.25rem;
   margin-top: 1.5rem;
+  color: var(--color-link);
 }
 
 /* --- START: NEW EXPERTISE STYLES --- */
