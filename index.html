@@ -743,7 +743,17 @@
             </div>
         </div>
     </section>
-    <footer id="contact" class="section footer">
+
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h3>Get in Touch</h3>
+            <p>I'm always open to discussing product design work or partnership opportunities. If you have a project in
+                mind, please get in touch.</p>
+            <a href="mailto:robin.w.bailey@gmail.com" class="btn">Email Me</a>
+        </div>
+    </section>
+
+    <footer class="section footer">
         <div class="container footer__container">
             <div class="footer__copyright">
                 <p>&copy; <span id="year"></span> Robin Bailey. All rights reserved.</p>
@@ -856,7 +866,7 @@
             setInterval(updateLocalTime, 60000); // Update every minute
 
             // Top Nav Scrollspy & Behavior
-            const sections = document.querySelectorAll('header[id], section[id], footer[id]');
+            const sections = document.querySelectorAll('header[id], section[id]');
             const navLinks = document.querySelectorAll('.top-nav .nav-link');
             const nav = document.querySelector('.top-nav');
             let lastScrollY = window.scrollY;
@@ -886,7 +896,12 @@
 
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === currentSectionId) {
+                    const linkHref = link.getAttribute('href').substring(1);
+
+                    // Highlight 'work' nav link for both 'work' and 'other-work' sections
+                    if (linkHref === 'work' && (currentSectionId === 'work' || currentSectionId === 'other-work')) {
+                        link.classList.add('active');
+                    } else if (linkHref === currentSectionId) {
                         link.classList.add('active');
                     }
                 });
