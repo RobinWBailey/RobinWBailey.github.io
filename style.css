@@ -11,7 +11,9 @@
   /* Colors - Light Mode */
   --color-background: #ffffff;
   --color-background-offset: #f4f4f5;
+  --color-background-rgb: 255, 255, 255;
   --color-text-primary: #2d3748;
+  --color-text-primary-rgb: 45, 55, 72;
   --color-text-secondary: #545a63;
   --color-text-subtle: #858d98;
   --color-link: #ff6b35;
@@ -40,7 +42,9 @@
   :root {
     --color-background: #26282b;
     --color-background-offset: #303235;
+    --color-background-rgb: 38, 40, 43;
     --color-text-primary: #f3f4f6;
+    --color-text-primary-rgb: 243, 244, 246;
     --color-text-secondary: #a3abb7;
     --color-text-subtle: #858d98;
     --color-link: #56a2ff;
@@ -103,7 +107,8 @@ body {
   font-family: var(--font-family-base);
   background-color: var(--color-background);
   color: var(--color-text-secondary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    padding-left 0.3s ease;
   line-height: 1.6;
   letter-spacing: -0.005em;
   overflow-x: hidden;
@@ -1243,7 +1248,9 @@ ul {
 [data-theme="dark"] {
   --color-background: #121212;
   --color-background-offset: #1e1e1e;
+  --color-background-rgb: 18, 18, 18;
   --color-text-primary: #f5f5f5;
+  --color-text-primary-rgb: 245, 245, 245;
   --color-text-secondary: #b3b3b3;
   --color-text-subtle: #737373;
   --color-link: #74b9ff;
@@ -1402,4 +1409,85 @@ ul {
   transform: translate(-50%, 0) scale(1) rotate(-3deg);
   transition: opacity 0.3s ease 0.1s,
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+}
+
+/* 9. TOP NAVIGATION
+-------------------------------------------------- */
+.top-nav {
+  position: fixed;
+  top: 2rem;
+  /* This calculation positions the nav relative to the main content area on larger screens, 
+     while ensuring it doesn't overlap on smaller screens by providing a minimum value.
+     - 64rem is the max-width of the .container.
+     - 10rem is an estimation of the nav width plus the desired gap.
+     - 2rem is the minimum safe distance from the left edge of the viewport. */
+  left: max(2rem, calc((100vw - 64rem) / 2 - 10rem));
+  z-index: 1001;
+  background-color: rgba(28, 28, 30, 0.75);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 16px;
+  padding: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: top 0.3s ease, bottom 0.3s ease, left 0.3s ease,
+    transform 0.3s ease;
+}
+
+.top-nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+
+.top-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9rem;
+  color: #e8e8e8;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.top-nav .nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-nav .nav-link.active {
+  background-color: var(--color-link);
+  color: white;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+@media (max-width: 48em) {
+  /* 768px */
+  .top-nav {
+    top: auto;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    left: 1rem;
+    transform: translateX(0);
+    border-radius: 50px;
+  }
+  .top-nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .top-nav .nav-link span {
+    display: none;
+  }
+  .top-nav .nav-link {
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+  }
 }
