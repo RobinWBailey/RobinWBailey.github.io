@@ -1319,7 +1319,7 @@ ul {
   animation: pulse 2s infinite;
 }
 
-/* --- Tooltip Component (Improved Animation) --- */
+/* --- Tooltip Component (Updated with Angle and Bounce) --- */
 .tooltip-trigger {
   position: relative;
   cursor: help;
@@ -1337,13 +1337,13 @@ ul {
   bottom: 100%;
   left: 50%;
   margin-bottom: 10px;
-  background-color: var(--color-background-offset);
-  color: var(--color-text-primary);
+  background-color: var(--color-link);
+  color: white;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 20px var(--shadow-color);
-  border: 1px solid var(--color-border);
+  border-radius: 12px; /* Slightly more rounded to match the image */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   font-size: 0.9rem;
+  font-weight: 500; /* A bit bolder */
   line-height: 1.4;
   width: max-content;
   max-width: 280px;
@@ -1356,11 +1356,12 @@ ul {
   position: absolute;
   bottom: 100%;
   left: 50%;
+  /* Keep the pointer centered */
+  transform: translateX(-50%);
   margin-bottom: 4px;
   border-width: 6px;
   border-style: solid;
-  border-color: var(--color-background-offset) transparent transparent
-    transparent;
+  border-color: var(--color-link) transparent transparent transparent;
   z-index: 11;
 }
 
@@ -1368,15 +1369,21 @@ ul {
 .tooltip-trigger::after {
   opacity: 0;
   visibility: hidden;
-  transform: translate(-50%, 10px);
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
+  transform-origin: bottom center;
+  /* Initial state: smaller, slightly down, and rotated */
+  transform: translate(-50%, 10px) scale(0.7) rotate(-5deg);
+  /* Add a bounce effect with a custom cubic-bezier */
+  transition: opacity 0.3s ease,
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), visibility 0s 0.4s;
 }
 
 .tooltip-trigger:hover::before,
 .tooltip-trigger:hover::after {
   opacity: 1;
   visibility: visible;
-  transform: translate(-50%, 0);
-  transition: opacity 0.2s ease 0.1s, transform 0.2s ease 0.1s;
+  /* Final state: full size, in position, and slightly angled */
+  transform: translate(-50%, 0) scale(1) rotate(-3deg);
+  transition: opacity 0.3s ease 0.1s,
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s;
 }
