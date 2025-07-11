@@ -377,9 +377,10 @@ ul {
 .arrow {
   animation: bounce 2s infinite;
   transition: color 0.3s ease;
-}
-.arrow-holder:hover .arrow {
   color: var(--color-link);
+}
+
+.arrow-holder:hover .arrow {
   animation-play-state: paused;
 }
 
