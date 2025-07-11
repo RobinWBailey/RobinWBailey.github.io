@@ -52,10 +52,10 @@
         <div class="theme-picker__panel">
             <div class="theme-picker__title">Choose Theme</div>
             <div class="theme-picker__grid">
-                <div class="theme-picker__option active" data-theme="default" title="Default Blue"></div>
+                <div class="theme-picker__option" data-theme="blue" title="Blue"></div>
                 <div class="theme-picker__option" data-theme="purple" title="Purple"></div>
                 <div class="theme-picker__option" data-theme="green" title="Green"></div>
-                <div class="theme-picker__option" data-theme="orange" title="Orange"></div>
+                <div class="theme-picker__option active" data-theme="orange" title="Orange"></div>
                 <div class="theme-picker__option" data-theme="pink" title="Pink"></div>
                 <div class="theme-picker__option" data-theme="dark" title="Dark"></div>
             </div>
@@ -665,7 +665,7 @@
     <script>
         class ThemePicker {
             constructor() {
-                this.currentTheme = localStorage.getItem('theme') || 'default';
+                this.currentTheme = localStorage.getItem('theme') || 'orange';
                 this.toggle = document.querySelector('.theme-picker__toggle');
                 this.panel = document.querySelector('.theme-picker__panel');
                 this.options = document.querySelectorAll('.theme-picker__option');

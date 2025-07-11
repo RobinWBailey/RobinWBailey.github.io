@@ -14,11 +14,11 @@
   --color-text-primary: #2d3748;
   --color-text-secondary: #545a63;
   --color-text-subtle: #858d98;
-  --color-link: #56a2ff;
-  --color-link-rgb: 86, 162, 255;
-  --color-border: rgba(84, 90, 99, 0.2);
-  --color-dash: #868d97;
-  --shadow-color: rgba(0, 0, 0, 0.06);
+  --color-link: #ff6b35;
+  --color-link-rgb: 255, 107, 53;
+  --color-border: rgba(255, 107, 53, 0.3);
+  --color-dash: #ea580c;
+  --shadow-color: rgba(255, 107, 53, 0.15);
   --success: #10b981;
 
   /* Typography */
@@ -1174,7 +1174,7 @@ ul {
     -------------------------------------------------- */
 
 /* Theme Color Swatches */
-.theme-picker__option[data-theme="default"] {
+.theme-picker__option[data-theme="blue"] {
   background: linear-gradient(135deg, #56a2ff 0%, #667eea 100%);
 }
 .theme-picker__option[data-theme="purple"] {
@@ -1191,6 +1191,15 @@ ul {
 }
 .theme-picker__option[data-theme="dark"] {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* Blue theme */
+[data-theme="blue"] {
+  --color-link: #56a2ff;
+  --color-link-rgb: 86, 162, 255;
+  --color-border: rgba(84, 90, 99, 0.2);
+  --color-dash: #868d97;
+  --shadow-color: rgba(0, 0, 0, 0.06);
 }
 
 /* Purple theme */
