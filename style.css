@@ -216,19 +216,6 @@ ul {
   overflow: hidden;
 }
 
-.section--grey::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, var(--color-link) 0%, transparent 70%);
-  opacity: 0.05;
-  animation: float 20s ease-in-out infinite;
-  pointer-events: none;
-}
-
 /* 5. COMPONENTS
     -------------------------------------------------- */
 
@@ -791,7 +778,6 @@ ul {
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-background);
   text-align: center;
-  animation: fadeInUp 0.5s ease-out;
 }
 
 .project-nav .link {
@@ -1196,16 +1182,6 @@ ul {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
   }
 }
 
