@@ -15,6 +15,7 @@
   --color-text-secondary: #545a63;
   --color-text-subtle: #858d98;
   --color-link: #56a2ff;
+  --color-link-rgb: 86, 162, 255;
   --color-border: rgba(84, 90, 99, 0.2);
   --color-dash: #868d97;
   --shadow-color: rgba(0, 0, 0, 0.06);
@@ -43,6 +44,7 @@
     --color-text-secondary: #a3abb7;
     --color-text-subtle: #858d98;
     --color-link: #56a2ff;
+    --color-link-rgb: 86, 162, 255;
     --color-border: rgba(243, 244, 246, 0.2);
     --color-dash: #868d97;
     --shadow-color: rgba(0, 0, 0, 0.2);
@@ -242,17 +244,35 @@ ul {
   background-size: cover;
   border-radius: 20%;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 15px 30px -5px var(--shadow-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+  transition: transform 0.3s ease, border-radius 0.3s ease;
   cursor: pointer;
   border: 3px solid transparent;
+  position: relative;
+}
+
+.header__profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20%;
+  animation: profile-glow 10s ease-in-out infinite;
+  transition: border-radius 0.3s ease, box-shadow 0.3s ease;
+  z-index: -1;
 }
 
 .header__profile:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 25px 45px -10px var(--shadow-color);
   border-radius: 25%;
   border-color: var(--color-link);
+}
+
+.header__profile:hover::before {
+  animation-play-state: paused;
+  box-shadow: 0 0 25px 3px var(--color-link);
+  border-radius: 25%;
 }
 
 .header__headings {
@@ -1012,6 +1032,7 @@ ul {
 /* Purple theme */
 [data-theme="purple"] {
   --color-link: #8b5cf6;
+  --color-link-rgb: 139, 92, 246;
   --color-border: rgba(139, 92, 246, 0.3);
   --color-dash: #7c3aed;
   --shadow-color: rgba(139, 92, 246, 0.15);
@@ -1020,6 +1041,7 @@ ul {
 /* Green theme */
 [data-theme="green"] {
   --color-link: #10b981;
+  --color-link-rgb: 16, 185, 129;
   --color-border: rgba(16, 185, 129, 0.3);
   --color-dash: #16a34a;
   --shadow-color: rgba(16, 185, 129, 0.15);
@@ -1028,6 +1050,7 @@ ul {
 /* Orange theme */
 [data-theme="orange"] {
   --color-link: #ff6b35;
+  --color-link-rgb: 255, 107, 53;
   --color-border: rgba(255, 107, 53, 0.3);
   --color-dash: #ea580c;
   --shadow-color: rgba(255, 107, 53, 0.15);
@@ -1036,6 +1059,7 @@ ul {
 /* Pink theme */
 [data-theme="pink"] {
   --color-link: #f472b6;
+  --color-link-rgb: 244, 114, 182;
   --color-border: rgba(244, 114, 182, 0.3);
   --color-dash: #db2777;
   --shadow-color: rgba(244, 114, 182, 0.15);
@@ -1049,6 +1073,7 @@ ul {
   --color-text-secondary: #b3b3b3;
   --color-text-subtle: #737373;
   --color-link: #74b9ff;
+  --color-link-rgb: 116, 185, 255;
   --color-border: rgba(116, 185, 255, 0.2);
   --color-dash: #74b9ff;
   --shadow-color: rgba(0, 0, 0, 0.3);
@@ -1102,6 +1127,29 @@ ul {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+@keyframes profile-glow {
+  0% {
+    box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), 0.3);
+    border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
+  }
+  25% {
+    box-shadow: -10px -8px 20px 2px rgba(var(--color-link-rgb), 0.5);
+    border-radius: 65% 35% 40% 60% / 55% 60% 40% 45%;
+  }
+  50% {
+    box-shadow: 0px 10px 28px 5px rgba(var(--color-link-rgb), 0.4);
+    border-radius: 45% 55% 60% 40% / 35% 50% 50% 65%;
+  }
+  75% {
+    box-shadow: 10px 8px 22px 3px rgba(var(--color-link-rgb), 0.6);
+    border-radius: 35% 65% 60% 40% / 55% 40% 60% 45%;
+  }
+  100% {
+    box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), 0.3);
+    border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
   }
 }
 
