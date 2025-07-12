@@ -47,8 +47,6 @@ const portfolioData = {
         overview:
           "More details about the PULSE student success platform are coming soon. Please check back later!",
         gallery: [], // Add image paths here for the detail page gallery
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -88,8 +86,6 @@ const portfolioData = {
         overview:
           "More details about BearForms are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -122,8 +118,6 @@ const portfolioData = {
         overview:
           "More details about the Bento concept are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -173,8 +167,6 @@ const portfolioData = {
             alt: "Horizon ad sets view",
           },
         ],
-        impactStatement:
-          "This platform was critical in enabling the company to scale its client base efficiently.",
       },
     },
     {
@@ -210,8 +202,6 @@ const portfolioData = {
         overview:
           "More details about the Investigate Invertebrates app are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -245,8 +235,6 @@ const portfolioData = {
         overview:
           "More details about the Learning Analytics project are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -278,8 +266,6 @@ const portfolioData = {
         overview:
           "More details about this consultancy project are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
   ],
@@ -312,8 +298,6 @@ const portfolioData = {
         overview:
           "More details about the Wave Digital Assistant are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -336,8 +320,6 @@ const portfolioData = {
         overview:
           "More details about the Soke branding concept are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -361,8 +343,6 @@ const portfolioData = {
         overview:
           "More details about the Trifecta Workout app are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -388,8 +368,6 @@ const portfolioData = {
         overview:
           "More details about the Stories app are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
     {
@@ -413,8 +391,6 @@ const portfolioData = {
         overview:
           "More details about the Get Gear concept are coming soon. Please check back later!",
         gallery: [],
-        impactStatement:
-          "Details about the outcomes and impact of this project will be available soon.",
       },
     },
   ],
