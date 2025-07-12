@@ -14,7 +14,7 @@ const portfolioData = {
       overview:
         "A comprehensive student success platform for the Faculty of Medicine and Dentistry at Plymouth University, encompassing a wide range of modules to support the entire student journey.",
       roleAndSkills: {
-        role: "Product Manager & Architect",
+        role: "Product Owner & Architect",
         description:
           "I led the design and development from concept to launch. My role involved stakeholder engagement, requirements gathering, UX/UI design, and managing the agile development process.",
         tags: ["Product Management", "UX/UI Design", "Salesforce", "Agile"],
@@ -27,14 +27,13 @@ const portfolioData = {
         },
         {
           icon: "fas fa-chart-pie",
-          stat: "95% Adoption Rate",
-          description:
-            "Across the entire student cohort within the first year.",
+          stat: "TBA",
+          description: "TBA",
         },
         {
           icon: "fas fa-award",
-          stat: "Internal Award for Innovation",
-          description: "Recognized for transforming the student experience.",
+          stat: "TBA",
+          description: "TBA.",
         },
         {
           icon: "fas fa-cogs",
@@ -69,8 +68,8 @@ const portfolioData = {
       impact: [
         {
           icon: "fas fa-download",
-          stat: "5,000+ Downloads",
-          description: "On the App Store and Google Play.",
+          stat: "TBA",
+          description: "TBA",
         },
         {
           icon: "fas fa-star",
@@ -79,12 +78,12 @@ const portfolioData = {
         },
         {
           icon: "fas fa-file-csv",
-          stat: "100,000+ Exports",
-          description: "CSV exports by users for their data analysis.",
+          stat: "TBA",
+          description: "TBA",
         },
       ],
       detailPage: {
-        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=BearForms",
+        heroImage: "assets/img/BearForms.png",
         overview:
           "More details about BearForms are coming soon. Please check back later!",
         gallery: [],
@@ -101,25 +100,24 @@ const portfolioData = {
       overview:
         "A conceptual to-do list application based on the Bento methodology, designed for focus and mindful productivity.",
       roleAndSkills: {
-        role: "Concept and UI/UX Designer",
-        description:
-          "This was a personal concept project to explore minimalist UI design and productivity philosophies. I was responsible for the concept, branding, and UI/UX design mockups.",
-        tags: ["Concept", "UI/UX Design", "Branding"],
+        role: "TBA",
+        description: "TBA",
+        tags: ["iOS", "Android", "React Native", "UI/UX Design", "Branding"],
       },
       impact: [
         {
           icon: "fab fa-dribbble",
-          stat: "Featured on Dribbble",
-          description: "Received positive feedback from the design community.",
+          stat: "TBA",
+          description: "TBA",
         },
         {
           icon: "fas fa-lightbulb",
-          stat: "Exploration of Minimalism",
-          description: "Informed my approach to future design projects.",
+          stat: "TBA",
+          description: "TBA",
         },
       ],
       detailPage: {
-        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Bento",
+        heroImage: "assets/img/bento-header.png",
         overview:
           "More details about the Bento concept are coming soon. Please check back later!",
         gallery: [],
@@ -138,8 +136,8 @@ const portfolioData = {
       roleAndSkills: {
         role: "Lead UX Designer & Product Architect",
         description:
-          "I was responsible for the entire product design lifecycle, from user research and wireframing to high-fidelity prototypes and front-end development support. Core Technologies: Django, Python, REST, HTML, CSS, JavaScript, PostgreSQL.",
-        tags: ["AdTech", "UX/UI", "Product Design", "React"],
+          "I led the entire product design lifecycle, from user research and wireframing to high-fidelity prototypes and front-end development support. Core Technologies: Django, Python, REST, HTML, CSS, JavaScript, PostgreSQL.",
+        tags: ["AdTech", "UX/UI", "Product Design"],
       },
       impact: [
         {
@@ -153,12 +151,12 @@ const portfolioData = {
           description:
             "Enabled business to scale without increasing support staff.",
         },
-        {
+        /*   {
           icon: "fas fa-dollar-sign",
           stat: "Increased Client Spend",
           description:
             "Average client spend increased by 25% due to ease of use.",
-        },
+        }, */
       ],
       detailPage: {
         heroImage: "horizon/overview.png",
@@ -193,22 +191,20 @@ const portfolioData = {
       overview:
         "A companion iOS app for the Paignton Zoo exhibit, designed to educate and engage visitors, particularly younger audiences, with interactive content.",
       roleAndSkills: {
-        role: "Sole iOS Developer",
-        description:
-          "I built the app natively using Swift and worked closely with the zoo's education team to create engaging content and features.",
-        tags: ["iOS", "Swift", "Education", "Client Work"],
+        role: "Product Designer & iOS Developer",
+        description: "This is a new project. More info coming soon.",
+        tags: ["iOS", "Objective C", "Education", "Client Work"],
       },
       impact: [
         {
           icon: "fas fa-child",
           stat: "Increased Visitor Engagement",
-          description:
-            "Zoo reported a 40% increase in exhibit interaction time.",
+          description: "TBA",
         },
         {
           icon: "fas fa-download",
-          stat: "10,000+ Downloads",
-          description: "During the exhibit's run time.",
+          stat: "TBA",
+          description: "TBA",
         },
       ],
       detailPage: {
@@ -227,26 +223,22 @@ const portfolioData = {
       subtitle: "Data Visualization for Education",
       image:
         "https://placehold.co/600x400/2d3748/ffffff?text=Learning+Analytics",
-      overview:
-        "A project focused on visualizing learning data to provide actionable insights for students and educators, helping to identify at-risk students and improve learning outcomes.",
+      overview: "This is a new project. More info coming soon.",
       roleAndSkills: {
-        role: "Lead Data Visualization Developer",
-        description:
-          "I led the data visualization aspect of this project, using D3.js to create interactive dashboards and reports. This involved data analysis, UX design for data-heavy interfaces, and front-end development.",
-        tags: ["Data Visualization", "D3.js", "Education"],
+        role: "Product Lead",
+        description: "This is a new project. More info coming soon.",
+        tags: ["Data Visualisation", "Education", "Salesforce"],
       },
       impact: [
         {
           icon: "fas fa-chart-line",
-          stat: "Improved Student Success",
-          description:
-            "Contributed to a 15% improvement in pass rates for pilot courses.",
+          stat: "TBA",
+          description: "TBA",
         },
         {
           icon: "fas fa-chalkboard-teacher",
-          stat: "Empowered Educators",
-          description:
-            "Provided staff with tools to proactively support students.",
+          stat: "TBA",
+          description: "TBA",
         },
       ],
       detailPage: {
@@ -264,26 +256,22 @@ const portfolioData = {
       title: "A Local Government Health & Social Care Project",
       subtitle: "Consultancy & Process Improvement",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=Local+Gov",
-      overview:
-        "A consultancy project to improve data processes and systems for a local government's health and social care services, ensuring data accuracy and improving service delivery.",
+      overview: "This is a new project. More info coming soon.",
       roleAndSkills: {
         role: "Consultant",
-        description:
-          "As a consultant, I analyzed existing workflows, identified bottlenecks, and designed a new data architecture. This involved process mapping, system analysis, and stakeholder workshops.",
-        tags: ["Consultancy", "Government", "Process Improvement"],
+        description: "This is a new project. More info coming soon.",
+        tags: ["Consultancy", "Government"],
       },
       impact: [
         {
           icon: "fas fa-cogs",
-          stat: "Process Efficiency Gains",
-          description:
-            "Reduced data processing time by 50% and improved data accuracy.",
+          stat: "TBA",
+          description: "TBA",
         },
         {
           icon: "fas fa-file-invoice-dollar",
-          stat: "Cost Savings",
-          description:
-            "Identified savings of over £100k annually through improved processes.",
+          stat: "TBA",
+          description: "TBA",
         },
       ],
       detailPage: {
@@ -360,7 +348,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Trifecta",
       overview:
         "A beautiful and simply designed personal trainer app for iPhone, focusing on core workout principles.",
-      tags: ["iOS", "Health"],
+      tags: ["iOS", "Objective C"],
       roleAndSkills: {
         role: "iOS Developer",
         description:
@@ -390,7 +378,7 @@ const portfolioData = {
         role: "iOS Developer",
         description:
           "Personal project to explore content aggregation technologies.",
-        tags: ["iOS", "Swift", "API"],
+        tags: ["iOS", "Objective C", "API"],
       },
       impact: [
         { icon: "fas fa-book-open", stat: "Content", description: "TBA." },
@@ -412,7 +400,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Get+Gear",
       overview:
         "A mobile and location-based marketplace concept for easily buying and selling gear.",
-      tags: ["Concept"],
+      tags: ["iOS", "Objective C"],
       roleAndSkills: {
         role: "UI/UX Designer",
         description:
