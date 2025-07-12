@@ -670,18 +670,25 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.85) 10%,
-    rgba(0, 0, 0, 0.5) 50%,
-    transparent 100%
-  );
+  background: rgba(
+    28,
+    30,
+    34,
+    0.25
+  ); /* Dark, semi-transparent background for the glass effect */
+  backdrop-filter: blur(8px); /* The blur effect */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
   z-index: 2;
-  transition: opacity 0.3s ease;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  /* Use a mask to apply the effect only at the bottom and fade it out */
+  mask-image: linear-gradient(to top, black 30%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to top, black 30%, transparent 90%);
 }
 
 .work__item:hover .work__item-image-wrapper::after {
-  opacity: 0.8;
+  background: rgba(28, 30, 34, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .work__item-title-on-image {
