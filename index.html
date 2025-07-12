@@ -32,7 +32,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&family=Inter:wght@400;600&family=Lato:wght@700&display=swap"
+        rel="stylesheet">
 
     <style>
         /* Assuming style.css is in the same directory */
@@ -42,6 +44,58 @@
 
         #project-detail-container {
             animation: fadeInUp 0.5s ease-out;
+        }
+
+        /* Added Lato font for uppercase headings */
+        :root {
+            --font-family-heading: 'Lato', sans-serif;
+        }
+
+        .expertise__title,
+        .about__category h4,
+        .projects__title,
+        .work__item-section-title,
+        .work__header h3 {
+            font-family: var(--font-family-heading);
+        }
+
+        /* Tag consistency update */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--color-background);
+            color: var(--color-text-secondary);
+            padding: 0.4rem 1rem;
+            /* Adjusted padding */
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: var(--font-weight-semibold);
+            border: 1px solid var(--color-border);
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+
+        .tag:hover {
+            background-color: var(--color-link);
+            color: var(--color-background);
+            border-color: var(--color-link);
+            transform: translateY(-2px);
+            text-decoration: none;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        /* Remove top border from footer */
+        .footer__top {
+            border-bottom: none;
+        }
+
+        /* Add gap between tags */
+        .expertise__tags,
+        .projects__tags,
+        .work__item-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
     </style>
 </head>
