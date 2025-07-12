@@ -273,6 +273,34 @@ const portfolioData = {
   // Other, smaller projects
   otherProjects: [
     {
+      id: "clinical-experience",
+      title: "Dental On-Clinic Assessment",
+      subtitle: "TBA",
+      client: "Peninsula Dental School",
+      image:
+        "https://placehold.co/600x400/2d3748/ffffff?text=Clinical+Assessment",
+      overview: "TBA",
+      tags: ["TBA"],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA",
+        tags: ["TBA"],
+      },
+      impact: [
+        {
+          icon: "fas fa-comments",
+          stat: "TBA",
+          description: "TBA",
+        },
+      ],
+      detailPage: {
+        heroImage:
+          "https://placehold.co/600x400/2d3748/ffffff?text=Clinical+Assessment",
+        overview: "TBA",
+        gallery: [],
+      },
+    },
+    {
       id: "wave",
       title: "Wave Digital Assistant",
       subtitle: "AI Chatbot",
