@@ -619,7 +619,10 @@
                     <a href="#${project.id}" class="work__item-link project-link" data-project-id="${project.id}">
                         <div class="work__item-image-wrapper">
                             <img src="${project.image}" alt="${project.title} Project Thumbnail" onerror="this.onerror=null;this.src='${project.fallbackImage || ''}';">
-                            <h6 class="work__item-title-on-image">${project.title}</h6>
+                            <div class="work__item-title-group">
+                                <h6 class="work__item-title-on-image">${project.title}</h6>
+                                ${project.client ? `<p class="work__item-client-on-image"><i class="fas fa-building"></i> ${project.client}</p>` : ''}
+                            </div>
                         </div>
                         <div class="work__item-content">
                             <div class="work__item-details">
@@ -656,6 +659,7 @@
                         <div class="work__item-body">
                             <div class="work__item-header">
                                 <h6>${project.title}</h6>
+                                ${project.client ? `<p class="work__item-client"><i class="fas fa-building"></i> ${project.client}</p>` : ''}
                                 <div class="work__item-tags">${createTagsHTML(project.tags)}</div>
                             </div>
                             <p class="work__item-overview">${project.overview}</p>
@@ -765,6 +769,7 @@
                             <div class="header__headings">
                                 <h1>${project.title}</h1>
                                 <h2>${project.subtitle || ''}</h2>
+                                ${project.client ? `<h3 class="project-header__client"><i class="fas fa-building"></i> Client: ${project.client}</h3>` : ''}
                             </div>
                             <div class="dash"></div>
                         </div>

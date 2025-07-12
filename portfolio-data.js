@@ -10,6 +10,7 @@ const portfolioData = {
       id: "pulse",
       title: "PULSE",
       subtitle: "Student Success Platform",
+      client: "Plymouth University, Faculty of Medicine and Dentistry",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=PULSE",
       overview:
         "A comprehensive student success platform for the Faculty of Medicine and Dentistry at Plymouth University, encompassing a wide range of modules to support the entire student journey.",
@@ -129,6 +130,7 @@ const portfolioData = {
       id: "horizon",
       title: "iotec Horizon",
       subtitle: "AdTech Campaign Management Platform",
+      client: "iotec Global",
       image: "assets/img/horizon.png",
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Horizon",
       overview:
@@ -151,12 +153,6 @@ const portfolioData = {
           description:
             "Enabled business to scale without increasing support staff.",
         },
-        /*   {
-          icon: "fas fa-dollar-sign",
-          stat: "Increased Client Spend",
-          description:
-            "Average client spend increased by 25% due to ease of use.",
-        }, */
       ],
       detailPage: {
         heroImage: "horizon/overview.png",
@@ -185,6 +181,7 @@ const portfolioData = {
       id: "investigate",
       title: "Investigate Invertebrates",
       subtitle: "Paignton Zoo Companion App",
+      client: "Paignton Zoo / Wild Planet Trust",
       image: "assets/img/investigate.png",
       fallbackImage:
         "https://placehold.co/600x400/2d3748/ffffff?text=Investigate",
@@ -221,6 +218,7 @@ const portfolioData = {
       id: "learning-analytics",
       title: "Learning Analytics",
       subtitle: "Data Visualization for Education",
+      client: "Plymouth University",
       image:
         "https://placehold.co/600x400/2d3748/ffffff?text=Learning+Analytics",
       overview: "This is a new project. More info coming soon.",
@@ -255,6 +253,7 @@ const portfolioData = {
       id: "local-gov",
       title: "A Local Government Health & Social Care Project",
       subtitle: "Consultancy & Process Improvement",
+      client: "A Local Government",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=Local+Gov",
       overview: "This is a new project. More info coming soon.",
       roleAndSkills: {
@@ -290,6 +289,7 @@ const portfolioData = {
       id: "wave",
       title: "Wave Digital Assistant",
       subtitle: "AI Chatbot",
+      client: "Plymouth University",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=Wave",
       overview:
         "AI chatbot for staff digital education queries in Moodle & student careers advice in the university app.",
