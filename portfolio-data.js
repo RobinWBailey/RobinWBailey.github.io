@@ -10,7 +10,7 @@ const portfolioData = {
       id: "pulse",
       title: "PULSE",
       subtitle: "Student Success Platform",
-      client: "Plymouth University, Faculty of Medicine and Dentistry",
+      client: "Plymouth University, School of Medicine and Dentistry",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=PULSE",
       overview:
         "A comprehensive student success platform for the Faculty of Medicine and Dentistry at Plymouth University, encompassing a wide range of modules to support the entire student journey.",
@@ -56,6 +56,7 @@ const portfolioData = {
       image: "assets/img/BearForms.png",
       fallbackImage:
         "https://placehold.co/600x400/2d3748/ffffff?text=BearForms",
+      client: "Side Project",
       overview:
         "A simple, offline, no-fuss data capture form app for iPhone, iPad, and Android. Design your form. Capture your responses. Export your data. Done.",
       roleAndSkills: {
@@ -173,7 +174,7 @@ const portfolioData = {
       id: "investigate",
       title: "Investigate Invertebrates",
       subtitle: "Paignton Zoo Companion App",
-      client: "Paignton Zoo / Wild Planet Trust",
+      client: "Wild Planet Trust",
       image: "assets/img/investigate.png",
       fallbackImage:
         "https://placehold.co/600x400/2d3748/ffffff?text=Investigate",
@@ -239,9 +240,9 @@ const portfolioData = {
     },
     {
       id: "local-gov",
-      title: "A Local Government Health & Social Care Project",
+      title: "A Health & Social Care Project",
       subtitle: "Consultancy & Process Improvement",
-      client: "A Local Government",
+      client: "Local Government",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=Local+Gov",
       overview: "This is a new project. More info coming soon.",
       roleAndSkills: {
@@ -328,6 +329,7 @@ const portfolioData = {
       subtitle: "iOS Fitness App",
       image: "assets/img/trifecta.png",
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Trifecta",
+      client: "Side Project",
       overview:
         "A beautiful and simply designed personal trainer app for iPhone, focusing on core workout principles.",
       tags: ["iOS", "Objective C"],
@@ -351,6 +353,7 @@ const portfolioData = {
       subtitle: "Content Aggregator App",
       image: "assets/img/stories.png",
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Stories",
+      client: "Side Project",
       overview:
         "Sit back, relax, and catch up. A curated content aggregator for your favorite topics.",
       tags: ["iOS", "Side Project"],
