@@ -301,6 +301,32 @@ const portfolioData = {
       },
     },
     {
+      id: "capt-and-topic",
+      title: "CAPT & Personased Topic Mapping",
+      subtitle: "TBA",
+      client: "Peninsula Medical School",
+      image: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      overview: "TBA",
+      tags: ["TBA"],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA",
+        tags: ["TBA"],
+      },
+      impact: [
+        {
+          icon: "fas fa-comments",
+          stat: "TBA",
+          description: "TBA",
+        },
+      ],
+      detailPage: {
+        heroImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+        overview: "TBA",
+        gallery: [],
+      },
+    },
+    {
       id: "wave",
       title: "Wave Digital Assistant",
       subtitle: "AI Chatbot",
