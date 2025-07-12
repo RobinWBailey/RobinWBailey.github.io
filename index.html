@@ -484,7 +484,6 @@
             const selectedWorkGrid = document.getElementById('selected-work-grid');
             const otherWorkGrid = document.getElementById('other-work-grid');
 
-            // Function to create HTML for impact metrics
             function createImpactMetricsHTML(impactArray) {
                 if (!impactArray || impactArray.length === 0) return '';
                 return impactArray.map(metric => `
@@ -498,13 +497,11 @@
                 `).join('');
             }
 
-            // Function to create HTML for tags
             function createTagsHTML(tagsArray) {
                 if (!tagsArray || tagsArray.length === 0) return '';
                 return tagsArray.map(tag => `<span class="tag">${tag}</span>`).join('');
             }
 
-            // Populate Selected Work
             portfolioData.selectedWork.forEach(project => {
                 const projectEl = document.createElement('div');
                 projectEl.id = `work-item-${project.id}`;
@@ -538,7 +535,6 @@
                 selectedWorkGrid.appendChild(projectEl);
             });
 
-            // Populate Other Work
             portfolioData.otherProjects.forEach(project => {
                 const projectEl = document.createElement('div');
                 projectEl.id = `other-work-item-${project.id}`;
@@ -562,10 +558,58 @@
             });
 
 
-            // --- Navigation and Page Loading Logic ---
+            // --- Navigation, Scroll, and Page Loading Logic ---
             const mainContent = document.getElementById('main-content');
             const projectDetailContainer = document.getElementById('project-detail-container');
+            const nav = document.querySelector('.top-nav');
+            const navLinks = nav.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('#main-content > header[id], #main-content > section[id]');
+            let lastScrollY = window.scrollY;
             let lastClickedWorkItem = null;
+
+            const onScroll = () => {
+                if (mainContent.style.display === 'none') {
+                    return;
+                }
+                const scrollY = window.scrollY;
+                const direction = scrollY > lastScrollY ? "down" : "up";
+
+                if (window.innerWidth <= 768) {
+                    if (scrollY > 100 && direction === "down") {
+                        nav.style.bottom = '-100px';
+                    } else {
+                        nav.style.bottom = '1rem';
+                    }
+                }
+                lastScrollY = scrollY < 0 ? 0 : scrollY;
+
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - (window.innerHeight / 3)) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkHref = link.getAttribute('href').substring(1);
+                    if (linkHref === 'work' && (currentSectionId === 'work' || currentSectionId === 'other-work')) {
+                        link.classList.add('active');
+                    } else if (linkHref === currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', onScroll);
+
+            // Add click listener to main nav links to reset state
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    lastClickedWorkItem = null;
+                });
+            });
 
             function findProjectData(projectId) {
                 const allProjects = [...portfolioData.selectedWork, ...portfolioData.otherProjects];
@@ -666,7 +710,6 @@
                 }
             }
 
-            // Use event delegation for project links since they are now dynamically added
             document.body.addEventListener('click', (e) => {
                 const link = e.target.closest('.project-link');
                 if (link) {
@@ -689,7 +732,6 @@
             function checkUrlOnLoad() {
                 const projectId = window.location.hash.substring(1);
                 if (projectId) {
-                    // We need to wait for the content to be generated before we can find the link
                     setTimeout(() => {
                         const link = document.querySelector(`.project-link[data-project-id="${projectId}"]`);
                         if (link) {
