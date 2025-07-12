@@ -97,6 +97,61 @@
             flex-wrap: wrap;
             gap: 0.5rem;
         }
+
+        /* Profile glow opacity variables */
+        :root {
+            --glow-opacity-1: 0.45;
+            --glow-opacity-2: 0.65;
+            --glow-opacity-3: 0.55;
+            --glow-opacity-4: 0.75;
+        }
+
+        [data-theme="dark"] {
+            /* Reset glow opacity for dark theme to be less intense */
+            --glow-opacity-1: 0.3;
+            --glow-opacity-2: 0.5;
+            --glow-opacity-3: 0.4;
+            --glow-opacity-4: 0.6;
+        }
+
+        @keyframes profile-glow {
+            0% {
+                box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), var(--glow-opacity-1));
+                border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
+            }
+
+            25% {
+                box-shadow: -10px -8px 20px 2px rgba(var(--color-link-rgb), var(--glow-opacity-2));
+                border-radius: 65% 35% 40% 60% / 55% 60% 40% 45%;
+            }
+
+            50% {
+                box-shadow: 0px 10px 28px 5px rgba(var(--color-link-rgb), var(--glow-opacity-3));
+                border-radius: 45% 55% 60% 40% / 35% 50% 50% 65%;
+            }
+
+            75% {
+                box-shadow: 10px 8px 22px 3px rgba(var(--color-link-rgb), var(--glow-opacity-4));
+                border-radius: 35% 65% 60% 40% / 55% 40% 60% 45%;
+            }
+
+            100% {
+                box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), var(--glow-opacity-1));
+                border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
+            }
+        }
+
+        .header__profile::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20%;
+            animation: profile-glow 10s ease-in-out infinite;
+            z-index: -1;
+        }
     </style>
 </head>
 
