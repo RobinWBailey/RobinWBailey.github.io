@@ -1077,7 +1077,6 @@ ul {
   gap: 1.5rem;
   padding-bottom: var(--space-m);
   margin-bottom: var(--space-m);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer__logo {
