@@ -35,863 +35,1503 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
 
     <style>
+        /* Paste the full content of your style.css here */
+        /* For brevity in this example, I am assuming style.css is in the same directory.
+           In a real implementation, you would paste the entire CSS content here or ensure the link is correct. */
         .work__item {
             scroll-margin-top: 12rem;
+        }
+
+        /* Styles for the single-page app functionality */
+        #project-detail-container {
+            animation: fadeInUp 0.5s ease-out;
         }
     </style>
 </head>
 
 <body id="top">
 
-    <nav class="top-nav">
-        <ul>
-            <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-            <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> <span>About</span></a></li>
-            <li><a href="#work" class="nav-link"><i class="fas fa-briefcase"></i> <span>Work</span></a></li>
-            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-    </nav>
+    <!-- Main Content Wrapper -->
+    <main id="main-content">
+        <nav class="top-nav">
+            <ul>
+                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="#work" class="nav-link"><i class="fas fa-briefcase"></i> <span>Work</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+        </nav>
 
-    <div class="theme-picker">
-        <button class="theme-picker__toggle" aria-label="Toggle theme picker">
-            🎨
-        </button>
-        <div class="theme-picker__panel">
-            <div class="theme-picker__title">Choose Theme</div>
-            <div class="theme-picker__grid">
-                <div class="theme-picker__option" data-theme="blue" title="Blue"></div>
-                <div class="theme-picker__option" data-theme="purple" title="Purple"></div>
-                <div class="theme-picker__option" data-theme="green" title="Green"></div>
-                <div class="theme-picker__option active" data-theme="orange" title="Orange"></div>
-                <div class="theme-picker__option" data-theme="pink" title="Pink"></div>
-                <div class="theme-picker__option" data-theme="dark" title="Dark"></div>
+        <div class="theme-picker">
+            <button class="theme-picker__toggle" aria-label="Toggle theme picker">
+                🎨
+            </button>
+            <div class="theme-picker__panel">
+                <div class="theme-picker__title">Choose Theme</div>
+                <div class="theme-picker__grid">
+                    <div class="theme-picker__option" data-theme="blue" title="Blue"></div>
+                    <div class="theme-picker__option" data-theme="purple" title="Purple"></div>
+                    <div class="theme-picker__option" data-theme="green" title="Green"></div>
+                    <div class="theme-picker__option active" data-theme="orange" title="Orange"></div>
+                    <div class="theme-picker__option" data-theme="pink" title="Pink"></div>
+                    <div class="theme-picker__option" data-theme="dark" title="Dark"></div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <header id="home" class="section header">
-        <div class="container">
-            <div class="header__profile"></div>
-            <div class="header__headings">
-                <h1>Robin Bailey</h1>
-                <h2>Product Manager, Designer, & Engineer</h2>
-            </div>
-            <div class="header__description">
-                <p>I help take complex business challenges & work with you to design, architect, & implement user
-                    focused technical product solutions with clarity.</p>
-                <p>Currently at <a href="https://plymouth.ac.uk" class="link">Plymouth University ↗</a> building the
-                    next generation education experience for students in
-                    the <span class="tooltip-trigger" data-tooltip="Some stats about what I do in FoH">Faculty of
-                        Health</span> and all students across the wider Digital Campus. Previously working in the
-                    AdTech space
-                    on Engineering, UX, and Product Design at <a href="https://wearesilverbullet.com/"
-                        class="link">iotec Global ↗</a>.</p>
-                <p class="tagline">Creativity & Clarity</p>
-            </div>
-            <div class="dash"></div>
-            <div class="current-status">
-                <span class="status-dot"></span>
-                <span>Available for consultancy or opportunities</span>
-            </div>
+        <header id="home" class="section header">
+            <div class="container">
+                <div class="header__profile"></div>
+                <div class="header__headings">
+                    <h1>Robin Bailey</h1>
+                    <h2>Product Manager, Designer, & Engineer</h2>
+                </div>
+                <div class="header__description">
+                    <p>I help take complex business challenges & work with you to design, architect, & implement user
+                        focused technical product solutions with clarity.</p>
+                    <p>Currently at <a href="https://plymouth.ac.uk" class="link">Plymouth University ↗</a> building the
+                        next generation education experience for students in
+                        the <span class="tooltip-trigger" data-tooltip="Some stats about what I do in FoH">Faculty of
+                            Health</span> and all students across the wider Digital Campus. Previously working in the
+                        AdTech space
+                        on Engineering, UX, and Product Design at <a href="https://wearesilverbullet.com/"
+                            class="link">iotec Global ↗</a>.</p>
+                    <p class="tagline">Creativity & Clarity</p>
+                </div>
+                <div class="dash"></div>
+                <div class="current-status">
+                    <span class="status-dot"></span>
+                    <span>Available for consultancy or opportunities</span>
+                </div>
 
-            <div class="expertise">
-                <div class="expertise__group">
-                    <h5 class="expertise__title">Sector Expertise</h5>
-                    <div class="expertise__tags">
-                        <span class="tag">Education</span>
-                        <span class="tag">Health</span>
-                        <span class="tag">Government</span>
-                        <span class="tag">AdTech</span>
-                        <span class="tag">Environmental</span>
+                <div class="expertise">
+                    <div class="expertise__group">
+                        <h5 class="expertise__title">Sector Expertise</h5>
+                        <div class="expertise__tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">Health</span>
+                            <span class="tag">Government</span>
+                            <span class="tag">AdTech</span>
+                            <span class="tag">Environmental</span>
+                        </div>
+                    </div>
+                    <div class="expertise__group">
+                        <h5 class="expertise__title">Practical Expertise</h5>
+                        <div class="expertise__tags">
+                            <span class="tag">Product & UX Design</span>
+                            <span class="tag">Salesforce</span>
+                            <span class="tag">Mobile Apps</span>
+                            <span class="tag">React Native</span>
+                            <span class="tag">Agile</span>
+                        </div>
                     </div>
                 </div>
-                <div class="expertise__group">
-                    <h5 class="expertise__title">Practical Expertise</h5>
-                    <div class="expertise__tags">
-                        <span class="tag">Product & UX Design</span>
-                        <span class="tag">Salesforce</span>
-                        <span class="tag">Mobile Apps</span>
-                        <span class="tag">React Native</span>
-                        <span class="tag">Agile</span>
+                <div class="header__links">
+                    <a href="https://twitter.com/RobinBailey" class="link" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-twitter"></i> Twitter</a>
+                    <a href="https://www.linkedin.com/in/robinwbailey/" class="link" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://dribbble.com/robinbailey" class="link" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-dribbble"></i> Dribbble</a>
+                </div>
+                <a href="#work" class="arrow-holder">
+                    <div class="arrow bounce">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 18L12 6M12 18L17 13M12 18L7 13" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <section id="about" class="section section--grey">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__category">
+                        <h4><i class="fas fa-briefcase"></i> Experience</h4>
+                        <ol class="about__list">
+                            <li class="about__item">
+                                <h6>Digital Education Product Manager <small>@</small> <a href="https://plymouth.ac.uk"
+                                        class="link">Academic Development, Plymouth University</a></h6>
+                                <p class="about__description">Building a first class student success platform for the
+                                    Faculty of Medicine and Dentistry.</p>
+                                <p class="about__date"><time datetime="2019">2019</time> → Present</p>
+                                <div class="about__item-projects">
+                                    <h6 class="projects__title">Related Projects</h6>
+                                    <div class="projects__tags">
+                                        <a href="#work-item-pulse" class="project-tag">PULSE</a>
+                                        <a href="" class="project-tag">On-Clinic Assessment</a>
+                                        <a href="#" class="project-tag">Digital Assistant</a>
+                                        <a href="#work-item-learning-analytics" class="project-tag">Learning
+                                            Analytics</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="about__item">
+                                <h6>Product Architect; Senior UX Designer & Engineer <small>@</small> <a
+                                        href="https://iotecglobal.com" class="link">iotec
+                                        Global</a></h6>
+                                <p class="about__description">Leading UX and product design, building campaign
+                                    management
+                                    and reporting tools for a cutting edge AdTech platform.</p>
+                                <p class="about__date"><time datetime="2016">2016</time> → <time
+                                        datetime="2018">2018</time>
+                                </p>
+                                <div class="about__item-projects">
+                                    <h6 class="projects__title">Related Projects</h6>
+                                    <div class="projects__tags">
+                                        <a href="#work-item-horizon" class="project-tag">iotec Horizon</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="about__item">
+                                <h6>iOS Developer <small>@</small> <a href="#" class="link">Multiple Clients</a></h6>
+                                <p class="about__description">Worked with clients like Paignton Zoo building educational
+                                    iOS
+                                    applications.</p>
+                                <p class="about__date"><time datetime="2010">2010</time> → <time
+                                        datetime="2025">Present</time>
+                                </p>
+                                <div class="about__item-projects">
+                                    <h6 class="projects__title">Related Projects</h6>
+                                    <div class="projects__tags">
+                                        <a href="#work-item-investigate" class="project-tag">Investigate
+                                            Invertebrates</a>
+                                        <a href="#other-work-item-stories" class="project-tag">Stories</a>
+                                        <a href="#other-work-item-trifecta" class="project-tag">Trifecta Workout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h4 style="margin-top: var(--space-l);"><i class="fas fa-hands-helping"></i> Advisory &
+                            Volunteering
+                        </h4>
+                        <ol class="about__list">
+                            <li class="about__item">
+                                <h6>Assessment Alliance Security Group <small>@</small> <a href="https://plymouth.ac.uk"
+                                        class="link">Medical Schools Council</a></h6>
+                                <p class="about__description">The Assessment Alliance is a partnership to improve
+                                    undergraduate assessment practice. This partnership consists of all undergraduate
+                                    members of the Medical Schools Council. Its aim is to help ensure the confidence of
+                                    the
+                                    public, employers, and the regulator in the quality of medical school graduates.
+
+                                <p class="about__description">The Security Group is established to ensure the integrity,
+                                    confidentiality, and
+                                    fairness
+                                    of assessments across member medical schools.</p>
+                                </p>
+                                <p class="about__date"><time datetime="2025">2025</time> → Present</p>
+                            </li>
+                            <li class="about__item">
+                                <h6>Education <small>@</small> <a href="#" class="link">Wild Planet Trust ↗</a></h6>
+                                <p class="about__date"><time datetime="2004">2004</time> → 2023</p>
+                            </li>
+                            <li class="about__item">
+                                <h6>Mayor's Youth Council Representative <small>@</small> <a href="#" class="link">Town
+                                        Council</a></h6>
+                                <p class="about__date"><time datetime="2006">2006</time> → 2009</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="about__category">
+                        <h4><i class="fas fa-university"></i> Education</h4>
+                        <ol class="about__list">
+                            <li class="about__item">
+                                <h6>MSc Business & Management <small>@</small> <a href="https://plymouth.ac.uk"
+                                        class="link">Plymouth University, Graduate School of Management</a></h6>
+                                <p class="about__description"><em>Masters with Distinction</em> — Dean's List of
+                                    Academic
+                                    Excellence</p>
+                                <p class="about__date"><time datetime="2014">2014</time> → <time
+                                        datetime="2016">2016</time>
+                                </p>
+                            </li>
+                            <li class="about__item">
+                                <h6>BSc (Hons) Computer Science <small>@</small> <a href="https://plymouth.ac.uk"
+                                        class="link">Plymouth University, School of Computing & Mathematics</a></h6>
+                                <p class="about__description"><em>First-Class Honours</em> — 3x Dean's List of Academic
+                                    Excellence</p>
+                                <p class="about__date"><time datetime="2011">2011</time> → <time
+                                        datetime="2014">2014</time>
+                                </p>
+                            </li>
+                        </ol>
+
+                        <h4 style="margin-top: var(--space-l);"><i class="fas fa-microphone"></i> Speaking</h4>
+                        <ol class="about__list">
+                            <li class="about__item speaking__item">
+                                <div class="speaking__title">
+                                    <h6>Annual European Conference on Assessment in Medical Education | EBMA (European
+                                        Board of Medical Assessors)
+                                        - The Future of Assessment in Medical Education: Opportunities and Threats</h6>
+                                    <p class="about__date"><time datetime="2024">2024</time></p>
+                                </div>
+                                <div class="speaking__topic">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p class="about__description">Symposium — Adaptive Testing: Current and Future
+                                        Perspectives.</p>
+                                </div>
+                                <div class="speaking__topic">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p class="about__description">Implementation of Content Adaptive
+                                        Progress Tests at Peninsula Medical School in Plymouth.</p>
+                                </div>
+                            </li>
+                            <li class="about__item speaking__item">
+                                <div class="speaking__title">
+                                    <h6>Salesforce UK/EMEA Education User Group</h6>
+                                    <p class="about__date"><time datetime="2024">2024</time></p>
+                                </div>
+                                <div class="speaking__topic">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p class="about__description">Building a Student Success Platform for Medicine &
+                                        Dentistry.</p>
+                                </div>
+                            </li>
+                            <li class="about__item speaking__item">
+                                <div class="speaking__title">
+                                    <h6>Peninsula Medical School Personalised Assessment Conference</h6>
+                                    <p class="about__date"><time datetime="2022">2022</time></p>
+                                </div>
+                                <div class="speaking__topic">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p class="about__description">Visualising Adaptive Progress Testing in Personalised
+                                        Assessment and Considering Opportunities for Predictive Analysis.</p>
+                                </div>
+                            </li>
+                            <li class="about__item speaking__item">
+                                <div class="speaking__title">
+                                    <h6>Learning Without Frontiers Conference, London</h6>
+                                    <p class="about__date"><time datetime="2012">2012</time></p>
+                                </div>
+                                <div class="speaking__topic">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p class="about__description">Xbox Marks the Spot.</p>
+                                </div>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>
-            <div class="header__links">
-                <a href="https://twitter.com/RobinBailey" class="link" target="_blank" rel="noopener noreferrer"><i
-                        class="fab fa-twitter"></i> Twitter</a>
-                <a href="https://www.linkedin.com/in/robinwbailey/" class="link" target="_blank"
-                    rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://dribbble.com/robinbailey" class="link" target="_blank" rel="noopener noreferrer"><i
-                        class="fab fa-dribbble"></i> Dribbble</a>
+        </section>
+
+        <section id="work" class="section">
+            <div class="container">
+                <div class="work__header">
+                    <h3>Selected Work</h3>
+                    <h5>A selection of recent work and side projects.</h5>
+                </div>
+                <div class="work__grid work__grid--prominent">
+
+
+                    <div id="work-item-pulse" class="work__item work__item--prominent">
+                        <a href="#" class="work__item-link" data-project-id="project-template-pulse">
+                            <div class="work__item-image-wrapper">
+                                <img src="https://placehold.co/600x400/2d3748/ffffff?text=PULSE"
+                                    alt="PULSE Project Thumbnail">
+                                <h6 class="work__item-title-on-image">PULSE</h6>
+                            </div>
+                            <div class="work__item-content">
+                                <div class="work__item-details">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Overview</h4>
+                                        <p class="work__item-overview">A comprehensive student success platform for the
+                                            Faculty of Medicine and Dentistry at Plymouth University, encompassing a
+                                            wide
+                                            range of modules to support the entire student journey.</p>
+                                    </div>
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Role & Skills</h4>
+                                        <p class="work__item-overview">As the Product Manager and Architect, I led the
+                                            design and development from concept to launch. My role involved stakeholder
+                                            engagement, requirements gathering, UX/UI design, and managing the agile
+                                            development process.
+                                        </p>
+                                        <div class="work__item-tags">
+                                            <span class="tag">Product Management</span>
+                                            <span class="tag">UX/UI Design</span>
+                                            <span class="tag">Salesforce</span>
+                                            <span class="tag">Agile</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work__item-highlights">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Outcomes & Impact</h4>
+                                        <div class="work__item-impact">
+                                            <div class="impact-metric">
+                                                <i class="fas fa-users"></i>
+                                                <div>
+                                                    <strong>1,200+ Students</strong>
+                                                    <span>Actively using the platform daily.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-chart-pie"></i>
+                                                <div>
+                                                    <strong>95% Adoption Rate</strong>
+                                                    <span>Across the entire student cohort within the first year.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-award"></i>
+                                                <div>
+                                                    <strong>Internal Award for Innovation</strong>
+                                                    <span>Recognized for transforming the student experience.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-cogs"></i>
+                                                <div>
+                                                    <strong>Streamlined Operations</strong>
+                                                    <span>Reduced administrative overhead by 30%.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="work-item-bearforms" class="work__item work__item--prominent">
+                        <a href="#" class="work__item-link" data-project-id="project-template-bearforms">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/BearForms.png" alt="BearForms Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=BearForms';">
+                                <h6 class="work__item-title-on-image">BearForms</h6>
+                            </div>
+                            <div class="work__item-content">
+                                <div class="work__item-details">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Overview</h4>
+                                        <p class="work__item-overview">A simple, offline, no-fuss data capture form app
+                                            for
+                                            iPhone, iPad, and Android. Design your form. Capture your responses. Export
+                                            your
+                                            data. Done.</p>
+                                    </div>
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Role & Skills</h4>
+                                        <p class="work__item-overview">I designed, developed, and launched this
+                                            multi-platform app from scratch. This involved UI/UX design, native
+                                            development
+                                            for iOS and Android using React Native, and App Store deployment.</p>
+                                        <div class="work__item-tags">
+                                            <span class="tag">React Native</span>
+                                            <span class="tag">iOS & Android</span>
+                                            <span class="tag">UI/UX Design</span>
+                                            <span class="tag">Side Project</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work__item-highlights">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Outcomes & Impact</h4>
+                                        <div class="work__item-impact">
+                                            <div class="impact-metric">
+                                                <i class="fas fa-download"></i>
+                                                <div>
+                                                    <strong>5,000+ Downloads</strong>
+                                                    <span>On the App Store and Google Play.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-star"></i>
+                                                <div>
+                                                    <strong>4.8 Star Rating</strong>
+                                                    <span>Average user rating.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-file-csv"></i>
+                                                <div>
+                                                    <strong>100,000+ Exports</strong>
+                                                    <span>CSV exports by users for their data analysis.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="work-item-bento" class="work__item work__item--prominent">
+                        <a href="#" class="work__item-link" data-project-id="project-template-bento">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/bento-header.png" alt="Bento Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Bento';">
+                                <h6 class="work__item-title-on-image">Bento: The Do Less To-Do List</h6>
+                            </div>
+                            <div class="work__item-content">
+                                <div class="work__item-details">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Overview</h4>
+                                        <p class="work__item-overview">A conceptual to-do list application based on the
+                                            Bento methodology, designed for focus and mindful productivity.</p>
+                                    </div>
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Role & Skills</h4>
+                                        <p class="work__item-overview">This was a personal concept project to explore
+                                            minimalist UI design and productivity philosophies. I was responsible for
+                                            the
+                                            concept, branding, and UI/UX design mockups.</p>
+                                        <div class="work__item-tags">
+                                            <span class="tag">Concept</span>
+                                            <span class="tag">UI/UX Design</span>
+                                            <span class="tag">Branding</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work__item-highlights">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Outcomes & Impact</h4>
+                                        <div class="work__item-impact">
+                                            <div class="impact-metric">
+                                                <i class="fab fa-dribbble"></i>
+                                                <div>
+                                                    <strong>Featured on Dribbble</strong>
+                                                    <span>Received positive feedback from the design community.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-lightbulb"></i>
+                                                <div>
+                                                    <strong>Exploration of Minimalism</strong>
+                                                    <span>Informed my approach to future design projects.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="work-item-horizon" class="work__item work__item--prominent">
+                        <a href="#" class="work__item-link" data-project-id="project-template-horizon">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/horizon.png" alt="iotec Horizon Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Horizon';">
+                                <h6 class="work__item-title-on-image">iotec Horizon</h6>
+                            </div>
+                            <div class="work__item-content">
+                                <div class="work__item-details">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Overview</h4>
+                                        <p class="work__item-overview">A self-service campaign management and reporting
+                                            tool
+                                            for a cutting-edge AdTech platform, empowering clients to manage their own
+                                            digital advertising campaigns.</p>
+                                    </div>
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Role & Skills</h4>
+                                        <p class="work__item-overview">As the lead UX Designer and Product Architect, I
+                                            was
+                                            responsible for the entire product design lifecycle, from user research and
+                                            wireframing to high-fidelity prototypes and front-end development support.
+                                        </p>
+                                        <div class="work__item-tags">
+                                            <span class="tag">AdTech</span>
+                                            <span class="tag">UX/UI</span>
+                                            <span class="tag">Product Design</span>
+                                            <span class="tag">React</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work__item-highlights">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Outcomes & Impact</h4>
+                                        <div class="work__item-impact">
+                                            <div class="impact-metric">
+                                                <i class="fas fa-rocket"></i>
+                                                <div>
+                                                    <strong>80% Faster Campaign Setup</strong>
+                                                    <span>Reduced time for clients to launch new campaigns.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-users"></i>
+                                                <div>
+                                                    <strong>Scaled to 200+ Clients</strong>
+                                                    <span>Enabled business to scale without increasing support
+                                                        staff.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <div>
+                                                    <strong>Increased Client Spend</strong>
+                                                    <span>Average client spend increased by 25% due to ease of
+                                                        use.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="work-item-investigate" class="work__item work__item--prominent">
+                        <a href="#" class="work__item-link" data-project-id="project-template-investigate">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/investigate.png" alt="Investigate Invertebrates Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Investigate';">
+                                <h6 class="work__item-title-on-image">Investigate Invertebrates</h6>
+                            </div>
+                            <div class="work__item-content">
+                                <div class="work__item-details">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Overview</h4>
+                                        <p class="work__item-overview">A companion iOS app for the Paignton Zoo exhibit,
+                                            designed to educate and engage visitors, particularly younger audiences,
+                                            with
+                                            interactive content.</p>
+                                    </div>
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Role & Skills</h4>
+                                        <p class="work__item-overview">As the sole iOS developer, I built the app
+                                            natively
+                                            using Swift and worked closely with the zoo's education team to create
+                                            engaging
+                                            content and features.</p>
+                                        <div class="work__item-tags">
+                                            <span class="tag">iOS</span>
+                                            <span class="tag">Swift</span>
+                                            <span class="tag">Education</span>
+                                            <span class="tag">Client Work</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work__item-highlights">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Outcomes & Impact</h4>
+                                        <div class="work__item-impact">
+                                            <div class="impact-metric">
+                                                <i class="fas fa-child"></i>
+                                                <div>
+                                                    <strong>Increased Visitor Engagement</strong>
+                                                    <span>Zoo reported a 40% increase in exhibit interaction
+                                                        time.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-download"></i>
+                                                <div>
+                                                    <strong>10,000+ Downloads</strong>
+                                                    <span>During the exhibit's run time.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="work-item-learning-analytics" class="work__item work__item--prominent">
+                        <a href="#" class="work__item-link" data-project-id="project-template-learning-analytics">
+                            <div class="work__item-image-wrapper">
+                                <img src="https://placehold.co/600x400/2d3748/ffffff?text=Learning+Analytics"
+                                    alt="Learning Analytics Project Thumbnail">
+                                <h6 class="work__item-title-on-image">Learning Analytics</h6>
+                            </div>
+                            <div class="work__item-content">
+                                <div class="work__item-details">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Overview</h4>
+                                        <p class="work__item-overview">A project focused on visualizing learning data to
+                                            provide actionable insights for students and educators, helping to identify
+                                            at-risk students and improve learning outcomes.</p>
+                                    </div>
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Role & Skills</h4>
+                                        <p class="work__item-overview">I led the data visualization aspect of this
+                                            project,
+                                            using D3.js to create interactive dashboards and reports. This involved data
+                                            analysis, UX design for data-heavy interfaces, and front-end development.
+                                        </p>
+                                        <div class="work__item-tags">
+                                            <span class="tag">Data Visualization</span>
+                                            <span class="tag">D3.js</span>
+                                            <span class="tag">Education</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work__item-highlights">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Outcomes & Impact</h4>
+                                        <div class="work__item-impact">
+                                            <div class="impact-metric">
+                                                <i class="fas fa-chart-line"></i>
+                                                <div>
+                                                    <strong>Improved Student Success</strong>
+                                                    <span>Contributed to a 15% improvement in pass rates for pilot
+                                                        courses.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-chalkboard-teacher"></i>
+                                                <div>
+                                                    <strong>Empowered Educators</strong>
+                                                    <span>Provided staff with tools to proactively support
+                                                        students.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="work-item-local-gov" class="work__item work__item--prominent">
+                        <a href="#" class="work__item-link" data-project-id="project-template-local-gov">
+                            <div class="work__item-image-wrapper">
+                                <img src="https://placehold.co/600x400/2d3748/ffffff?text=Local+Gov"
+                                    alt="A Local Government Health & Social Care Project Thumbnail">
+                                <h6 class="work__item-title-on-image">A Local Government Health & Social Care Project
+                                </h6>
+                            </div>
+                            <div class="work__item-content">
+                                <div class="work__item-details">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Overview</h4>
+                                        <p class="work__item-overview">A consultancy project to improve data processes
+                                            and
+                                            systems for a local government's health and social care services, ensuring
+                                            data
+                                            accuracy and improving service delivery.</p>
+                                    </div>
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Role & Skills</h4>
+                                        <p class="work__item-overview">As a consultant, I analyzed existing workflows,
+                                            identified bottlenecks, and designed a new data architecture. This involved
+                                            process mapping, system analysis, and stakeholder workshops.</p>
+                                        <div class="work__item-tags">
+                                            <span class="tag">Consultancy</span>
+                                            <span class="tag">Government</span>
+                                            <span class="tag">Process Improvement</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="work__item-highlights">
+                                    <div class="work__item-section">
+                                        <h4 class="work__item-section-title">Outcomes & Impact</h4>
+                                        <div class="work__item-impact">
+                                            <div class="impact-metric">
+                                                <i class="fas fa-cogs"></i>
+                                                <div>
+                                                    <strong>Process Efficiency Gains</strong>
+                                                    <span>Reduced data processing time by 50% and improved data
+                                                        accuracy.</span>
+                                                </div>
+                                            </div>
+                                            <div class="impact-metric">
+                                                <i class="fas fa-file-invoice-dollar"></i>
+                                                <div>
+                                                    <strong>Cost Savings</strong>
+                                                    <span>Identified savings of over £100k annually through improved
+                                                        processes.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
             </div>
-            <a href="#work" class="arrow-holder">
-                <div class="arrow bounce">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 18L12 6M12 18L17 13M12 18L7 13" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+        </section>
+        <section id="other-work" class="section section--grey">
+            <div class="container">
+                <div class="work__header">
+                    <h3>Other Projects</h3>
+                    <h5>A collection of other projects, concepts, and experiments.</h5>
                 </div>
-            </a>
-        </div>
-    </header>
+                <div class="work__grid">
 
-    <section id="about" class="section section--grey">
-        <div class="container">
-            <div class="about__grid">
-                <div class="about__category">
-                    <h4><i class="fas fa-briefcase"></i> Experience</h4>
-                    <ol class="about__list">
-                        <li class="about__item">
-                            <h6>Digital Education Product Manager <small>@</small> <a href="https://plymouth.ac.uk"
-                                    class="link">Academic Development, Plymouth University</a></h6>
-                            <p class="about__description">Building a first class student success platform for the
-                                Faculty of Medicine and Dentistry.</p>
-                            <p class="about__date"><time datetime="2019">2019</time> → Present</p>
-                            <div class="about__item-projects">
-                                <h6 class="projects__title">Related Projects</h6>
-                                <div class="projects__tags">
-                                    <a href="#work-item-pulse" class="project-tag">PULSE</a>
-                                    <a href="" class="project-tag">On-Clinic Assessment</a>
-                                    <a href="#" class="project-tag">Digital Assistant</a>
-                                    <a href="#work-item-learning-analytics" class="project-tag">Learning Analytics</a>
-                                </div>
+                    <div id="other-work-item-wave" class="work__item">
+                        <a href="#" class="work__item-link" data-project-id="project-template-wave">
+                            <div class="work__item-image-wrapper">
+                                <img src="https://placehold.co/600x400/2d3748/ffffff?text=Wave"
+                                    alt="Wave Digital Assistant Project Thumbnail">
                             </div>
-                        </li>
-                        <li class="about__item">
-                            <h6>Product Architect; Senior UX Designer & Engineer <small>@</small> <a
-                                    href="https://iotecglobal.com" class="link">iotec
-                                    Global</a></h6>
-                            <p class="about__description">Leading UX and product design, building campaign management
-                                and reporting tools for a cutting edge AdTech platform.</p>
-                            <p class="about__date"><time datetime="2016">2016</time> → <time datetime="2018">2018</time>
-                            </p>
-                            <div class="about__item-projects">
-                                <h6 class="projects__title">Related Projects</h6>
-                                <div class="projects__tags">
-                                    <a href="#work-item-horizon" class="project-tag">iotec Horizon</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="about__item">
-                            <h6>iOS Developer <small>@</small> <a href="#" class="link">Multiple Clients</a></h6>
-                            <p class="about__description">Worked with clients like Paignton Zoo building educational iOS
-                                applications.</p>
-                            <p class="about__date"><time datetime="2010">2010</time> → <time
-                                    datetime="2025">Present</time>
-                            </p>
-                            <div class="about__item-projects">
-                                <h6 class="projects__title">Related Projects</h6>
-                                <div class="projects__tags">
-                                    <a href="#work-item-investigate" class="project-tag">Investigate Invertebrates</a>
-                                    <a href="#other-work-item-stories" class="project-tag">Stories</a>
-                                    <a href="#other-work-item-trifecta" class="project-tag">Trifecta Workout</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ol>
-
-                    <h4 style="margin-top: var(--space-l);"><i class="fas fa-hands-helping"></i> Advisory & Volunteering
-                    </h4>
-                    <ol class="about__list">
-                        <li class="about__item">
-                            <h6>Assessment Alliance Security Group <small>@</small> <a href="https://plymouth.ac.uk"
-                                    class="link">Medical Schools Council</a></h6>
-                            <p class="about__description">The Assessment Alliance is a partnership to improve
-                                undergraduate assessment practice. This partnership consists of all undergraduate
-                                members of the Medical Schools Council. Its aim is to help ensure the confidence of the
-                                public, employers, and the regulator in the quality of medical school graduates.
-
-                            <p class="about__description">The Security Group is established to ensure the integrity,
-                                confidentiality, and
-                                fairness
-                                of assessments across member medical schools.</p>
-                            </p>
-                            <p class="about__date"><time datetime="2025">2025</time> → Present</p>
-                        </li>
-                        <li class="about__item">
-                            <h6>Education <small>@</small> <a href="#" class="link">Wild Planet Trust ↗</a></h6>
-                            <p class="about__date"><time datetime="2004">2004</time> → 2023</p>
-                        </li>
-                        <li class="about__item">
-                            <h6>Mayor's Youth Council Representative <small>@</small> <a href="#" class="link">Town
-                                    Council</a></h6>
-                            <p class="about__date"><time datetime="2006">2006</time> → 2009</p>
-                        </li>
-                    </ol>
-                </div>
-                <div class="about__category">
-                    <h4><i class="fas fa-university"></i> Education</h4>
-                    <ol class="about__list">
-                        <li class="about__item">
-                            <h6>MSc Business & Management <small>@</small> <a href="https://plymouth.ac.uk"
-                                    class="link">Plymouth University, Graduate School of Management</a></h6>
-                            <p class="about__description"><em>Masters with Distinction</em> — Dean's List of Academic
-                                Excellence</p>
-                            <p class="about__date"><time datetime="2014">2014</time> → <time datetime="2016">2016</time>
-                            </p>
-                        </li>
-                        <li class="about__item">
-                            <h6>BSc (Hons) Computer Science <small>@</small> <a href="https://plymouth.ac.uk"
-                                    class="link">Plymouth University, School of Computing & Mathematics</a></h6>
-                            <p class="about__description"><em>First-Class Honours</em> — 3x Dean's List of Academic
-                                Excellence</p>
-                            <p class="about__date"><time datetime="2011">2011</time> → <time datetime="2014">2014</time>
-                            </p>
-                        </li>
-                    </ol>
-
-                    <h4 style="margin-top: var(--space-l);"><i class="fas fa-microphone"></i> Speaking</h4>
-                    <ol class="about__list">
-                        <li class="about__item speaking__item">
-                            <div class="speaking__title">
-                                <h6>Annual European Conference on Assessment in Medical Education | EBMA (European
-                                    Board of Medical Assessors)
-                                    - The Future of Assessment in Medical Education: Opportunities and Threats</h6>
-                                <p class="about__date"><time datetime="2024">2024</time></p>
-                            </div>
-                            <div class="speaking__topic">
-                                <i class="fas fa-quote-left"></i>
-                                <p class="about__description">Symposium — Adaptive Testing: Current and Future
-                                    Perspectives.</p>
-                            </div>
-                            <div class="speaking__topic">
-                                <i class="fas fa-quote-left"></i>
-                                <p class="about__description">Implementation of Content Adaptive
-                                    Progress Tests at Peninsula Medical School in Plymouth.</p>
-                            </div>
-                        </li>
-                        <li class="about__item speaking__item">
-                            <div class="speaking__title">
-                                <h6>Salesforce UK/EMEA Education User Group</h6>
-                                <p class="about__date"><time datetime="2024">2024</time></p>
-                            </div>
-                            <div class="speaking__topic">
-                                <i class="fas fa-quote-left"></i>
-                                <p class="about__description">Building a Student Success Platform for Medicine &
-                                    Dentistry.</p>
-                            </div>
-                        </li>
-                        <li class="about__item speaking__item">
-                            <div class="speaking__title">
-                                <h6>Peninsula Medical School Personalised Assessment Conference</h6>
-                                <p class="about__date"><time datetime="2022">2022</time></p>
-                            </div>
-                            <div class="speaking__topic">
-                                <i class="fas fa-quote-left"></i>
-                                <p class="about__description">Visualising Adaptive Progress Testing in Personalised
-                                    Assessment and Considering Opportunities for Predictive Analysis.</p>
-                            </div>
-                        </li>
-                        <li class="about__item speaking__item">
-                            <div class="speaking__title">
-                                <h6>Learning Without Frontiers Conference, London</h6>
-                                <p class="about__date"><time datetime="2012">2012</time></p>
-                            </div>
-                            <div class="speaking__topic">
-                                <i class="fas fa-quote-left"></i>
-                                <p class="about__description">Xbox Marks the Spot.</p>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="work" class="section">
-        <div class="container">
-            <div class="work__header">
-                <h3>Selected Work</h3>
-                <h5>A selection of recent work and side projects.</h5>
-            </div>
-            <div class="work__grid work__grid--prominent">
-
-
-                <div id="work-item-pulse" class="work__item work__item--prominent">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="https://placehold.co/600x400/2d3748/ffffff?text=PULSE"
-                                alt="PULSE Project Thumbnail">
-                            <h6 class="work__item-title-on-image">PULSE</h6>
-                        </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview</h4>
-                                    <p class="work__item-overview">A comprehensive student success platform for the
-                                        Faculty of Medicine and Dentistry at Plymouth University, encompassing a wide
-                                        range of modules to support the entire student journey.</p>
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">As the Product Manager and Architect, I led the
-                                        design and development from concept to launch. My role involved stakeholder
-                                        engagement, requirements gathering, UX/UI design, and managing the agile
-                                        development process.
-                                    </p>
+                            <div class="work__item-body">
+                                <div class="work__item-header">
+                                    <h6>Wave Digital Assistant</h6>
                                     <div class="work__item-tags">
-                                        <span class="tag">Product Management</span>
-                                        <span class="tag">UX/UI Design</span>
-                                        <span class="tag">Salesforce</span>
-                                        <span class="tag">Agile</span>
+                                        <span class="tag">AI</span>
+                                        <span class="tag">Chatbot</span>
+                                        <span class="tag">Mobile</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">
-                                        <div class="impact-metric">
-                                            <i class="fas fa-users"></i>
-                                            <div>
-                                                <strong>1,200+ Students</strong>
-                                                <span>Actively using the platform daily.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-chart-pie"></i>
-                                            <div>
-                                                <strong>95% Adoption Rate</strong>
-                                                <span>Across the entire student cohort within the first year.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-award"></i>
-                                            <div>
-                                                <strong>Internal Award for Innovation</strong>
-                                                <span>Recognized for transforming the student experience.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-cogs"></i>
-                                            <div>
-                                                <strong>Streamlined Operations</strong>
-                                                <span>Reduced administrative overhead by 30%.</span>
-                                            </div>
+                                <p class="work__item-overview">AI chatbot for staff digital education queries in Moodle
+                                    &
+                                    student careers advice in the university app.</p>
+                                <div class="work__item-divider"></div>
+                                <div class="work__item-impact">
+                                    <div class="impact-metric">
+                                        <i class="fas fa-comments"></i>
+                                        <div>
+                                            <strong>Support</strong>
+                                            <span>Live chat with five real agents.</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <div id="work-item-bearforms" class="work__item work__item--prominent">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/BearForms.png" alt="BearForms Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=BearForms';">
-                            <h6 class="work__item-title-on-image">BearForms</h6>
-                        </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview</h4>
-                                    <p class="work__item-overview">A simple, offline, no-fuss data capture form app for
-                                        iPhone, iPad, and Android. Design your form. Capture your responses. Export your
-                                        data. Done.</p>
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">I designed, developed, and launched this
-                                        multi-platform app from scratch. This involved UI/UX design, native development
-                                        for iOS and Android using React Native, and App Store deployment.</p>
-                                    <div class="work__item-tags">
-                                        <span class="tag">React Native</span>
-                                        <span class="tag">iOS & Android</span>
-                                        <span class="tag">UI/UX Design</span>
-                                        <span class="tag">Side Project</span>
-                                    </div>
-                                </div>
+                    <div id="other-work-item-soke" class="work__item">
+                        <a href="#" class="work__item-link" data-project-id="project-template-soke">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/soke.png" alt="Soke Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Soke';">
                             </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">
-                                        <div class="impact-metric">
-                                            <i class="fas fa-download"></i>
-                                            <div>
-                                                <strong>5,000+ Downloads</strong>
-                                                <span>On the App Store and Google Play.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-star"></i>
-                                            <div>
-                                                <strong>4.8 Star Rating</strong>
-                                                <span>Average user rating.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-file-csv"></i>
-                                            <div>
-                                                <strong>100,000+ Exports</strong>
-                                                <span>CSV exports by users for their data analysis.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div id="work-item-bento" class="work__item work__item--prominent">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/bento-header.png" alt="Bento Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Bento';">
-                            <h6 class="work__item-title-on-image">Bento: The Do Less To-Do List</h6>
-                        </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview</h4>
-                                    <p class="work__item-overview">A conceptual to-do list application based on the
-                                        Bento methodology, designed for focus and mindful productivity.</p>
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">This was a personal concept project to explore
-                                        minimalist UI design and productivity philosophies. I was responsible for the
-                                        concept, branding, and UI/UX design mockups.</p>
+                            <div class="work__item-body">
+                                <div class="work__item-header">
+                                    <h6>Soke</h6>
                                     <div class="work__item-tags">
-                                        <span class="tag">Concept</span>
-                                        <span class="tag">UI/UX Design</span>
                                         <span class="tag">Branding</span>
                                     </div>
                                 </div>
+                                <p class="work__item-overview">Branding and UI concept for a creative agency focused on
+                                    clarity and impact.</p>
                             </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">
-                                        <div class="impact-metric">
-                                            <i class="fab fa-dribbble"></i>
-                                            <div>
-                                                <strong>Featured on Dribbble</strong>
-                                                <span>Received positive feedback from the design community.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-lightbulb"></i>
-                                            <div>
-                                                <strong>Exploration of Minimalism</strong>
-                                                <span>Informed my approach to future design projects.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <div id="work-item-horizon" class="work__item work__item--prominent">
-                    <a href="horizon/horizon.html" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/horizon.png" alt="iotec Horizon Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Horizon';">
-                            <h6 class="work__item-title-on-image">iotec Horizon</h6>
-                        </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview</h4>
-                                    <p class="work__item-overview">A self-service campaign management and reporting tool
-                                        for a cutting-edge AdTech platform, empowering clients to manage their own
-                                        digital advertising campaigns.</p>
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">As the lead UX Designer and Product Architect, I was
-                                        responsible for the entire product design lifecycle, from user research and
-                                        wireframing to high-fidelity prototypes and front-end development support.</p>
-                                    <div class="work__item-tags">
-                                        <span class="tag">AdTech</span>
-                                        <span class="tag">UX/UI</span>
-                                        <span class="tag">Product Design</span>
-                                        <span class="tag">React</span>
-                                    </div>
-                                </div>
+                    <div id="other-work-item-trifecta" class="work__item">
+                        <a href="#" class="work__item-link" data-project-id="project-template-trifecta">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/trifecta.png" alt="Trifecta Workout Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Trifecta';">
                             </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">
-                                        <div class="impact-metric">
-                                            <i class="fas fa-rocket"></i>
-                                            <div>
-                                                <strong>80% Faster Campaign Setup</strong>
-                                                <span>Reduced time for clients to launch new campaigns.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-users"></i>
-                                            <div>
-                                                <strong>Scaled to 200+ Clients</strong>
-                                                <span>Enabled business to scale without increasing support staff.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-dollar-sign"></i>
-                                            <div>
-                                                <strong>Increased Client Spend</strong>
-                                                <span>Average client spend increased by 25% due to ease of use.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div id="work-item-investigate" class="work__item work__item--prominent">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/investigate.png" alt="Investigate Invertebrates Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Investigate';">
-                            <h6 class="work__item-title-on-image">Investigate Invertebrates</h6>
-                        </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview</h4>
-                                    <p class="work__item-overview">A companion iOS app for the Paignton Zoo exhibit,
-                                        designed to educate and engage visitors, particularly younger audiences, with
-                                        interactive content.</p>
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">As the sole iOS developer, I built the app natively
-                                        using Swift and worked closely with the zoo's education team to create engaging
-                                        content and features.</p>
+                            <div class="work__item-body">
+                                <div class="work__item-header">
+                                    <h6>Trifecta Workout</h6>
                                     <div class="work__item-tags">
                                         <span class="tag">iOS</span>
-                                        <span class="tag">Swift</span>
-                                        <span class="tag">Education</span>
-                                        <span class="tag">Client Work</span>
+                                        <span class="tag">Health</span>
                                     </div>
                                 </div>
+                                <p class="work__item-overview">A beautiful and simply designed personal trainer app for
+                                    iPhone, focusing on core workout principles.</p>
                             </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">
-                                        <div class="impact-metric">
-                                            <i class="fas fa-child"></i>
-                                            <div>
-                                                <strong>Increased Visitor Engagement</strong>
-                                                <span>Zoo reported a 40% increase in exhibit interaction time.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-download"></i>
-                                            <div>
-                                                <strong>10,000+ Downloads</strong>
-                                                <span>During the exhibit's run time.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <div id="work-item-learning-analytics" class="work__item work__item--prominent">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="https://placehold.co/600x400/2d3748/ffffff?text=Learning+Analytics"
-                                alt="Learning Analytics Project Thumbnail">
-                            <h6 class="work__item-title-on-image">Learning Analytics</h6>
-                        </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview</h4>
-                                    <p class="work__item-overview">A project focused on visualizing learning data to
-                                        provide actionable insights for students and educators, helping to identify
-                                        at-risk students and improve learning outcomes.</p>
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">I led the data visualization aspect of this project,
-                                        using D3.js to create interactive dashboards and reports. This involved data
-                                        analysis, UX design for data-heavy interfaces, and front-end development.</p>
+                    <div id="other-work-item-stories" class="work__item">
+                        <a href="#" class="work__item-link" data-project-id="project-template-stories">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/stories.png" alt="Stories Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Stories';">
+                            </div>
+                            <div class="work__item-body">
+                                <div class="work__item-header">
+                                    <h6>Stories</h6>
                                     <div class="work__item-tags">
-                                        <span class="tag">Data Visualization</span>
-                                        <span class="tag">D3.js</span>
-                                        <span class="tag">Education</span>
+                                        <span class="tag">iOS</span>
+                                        <span class="tag">Side Project</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">
-                                        <div class="impact-metric">
-                                            <i class="fas fa-chart-line"></i>
-                                            <div>
-                                                <strong>Improved Student Success</strong>
-                                                <span>Contributed to a 15% improvement in pass rates for pilot
-                                                    courses.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-chalkboard-teacher"></i>
-                                            <div>
-                                                <strong>Empowered Educators</strong>
-                                                <span>Provided staff with tools to proactively support students.</span>
-                                            </div>
+                                <p class="work__item-overview">Sit back, relax, and catch up. A curated content
+                                    aggregator
+                                    for your favorite topics.</p>
+                                <div class="work__item-divider"></div>
+                                <div class="work__item-impact">
+                                    <div class="impact-metric">
+                                        <i class="fas fa-book-open"></i>
+                                        <div>
+                                            <strong>Content</strong>
+                                            <span>TBA.</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <div id="work-item-local-gov" class="work__item work__item--prominent">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="https://placehold.co/600x400/2d3748/ffffff?text=Local+Gov"
-                                alt="A Local Government Health & Social Care Project Thumbnail">
-                            <h6 class="work__item-title-on-image">A Local Government Health & Social Care Project</h6>
-                        </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview</h4>
-                                    <p class="work__item-overview">A consultancy project to improve data processes and
-                                        systems for a local government's health and social care services, ensuring data
-                                        accuracy and improving service delivery.</p>
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">As a consultant, I analyzed existing workflows,
-                                        identified bottlenecks, and designed a new data architecture. This involved
-                                        process mapping, system analysis, and stakeholder workshops.</p>
+                    <div id="other-work-item-get-gear" class="work__item">
+                        <a href="#" class="work__item-link" data-project-id="project-template-get-gear">
+                            <div class="work__item-image-wrapper">
+                                <img src="assets/img/get-gear.png" alt="Get Gear Project Thumbnail"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Get+Gear';">
+                            </div>
+                            <div class="work__item-body">
+                                <div class="work__item-header">
+                                    <h6>Get Gear</h6>
                                     <div class="work__item-tags">
-                                        <span class="tag">Consultancy</span>
-                                        <span class="tag">Government</span>
-                                        <span class="tag">Process Improvement</span>
+                                        <span class="tag">Concept</span>
                                     </div>
                                 </div>
+                                <p class="work__item-overview">A mobile and location-based marketplace concept for
+                                    easily
+                                    buying and selling gear.</p>
                             </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">
-                                        <div class="impact-metric">
-                                            <i class="fas fa-cogs"></i>
-                                            <div>
-                                                <strong>Process Efficiency Gains</strong>
-                                                <span>Reduced data processing time by 50% and improved data
-                                                    accuracy.</span>
-                                            </div>
-                                        </div>
-                                        <div class="impact-metric">
-                                            <i class="fas fa-file-invoice-dollar"></i>
-                                            <div>
-                                                <strong>Cost Savings</strong>
-                                                <span>Identified savings of over £100k annually through improved
-                                                    processes.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-
-            </div>
-        </div>
-    </section>
-    <section id="other-work" class="section section--grey">
-        <div class="container">
-            <div class="work__header">
-                <h3>Other Projects</h3>
-                <h5>A collection of other projects, concepts, and experiments.</h5>
-            </div>
-            <div class="work__grid">
-
-                <div id="other-work-item-wave" class="work__item">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="https://placehold.co/600x400/2d3748/ffffff?text=Wave"
-                                alt="Wave Digital Assistant Project Thumbnail">
-                        </div>
-                        <div class="work__item-body">
-                            <div class="work__item-header">
-                                <h6>Wave Digital Assistant</h6>
-                                <div class="work__item-tags">
-                                    <span class="tag">AI</span>
-                                    <span class="tag">Chatbot</span>
-                                    <span class="tag">Mobile</span>
-                                </div>
-                            </div>
-                            <p class="work__item-overview">AI chatbot for staff digital education queries in Moodle &
-                                student careers advice in the university app.</p>
-                            <div class="work__item-divider"></div>
-                            <div class="work__item-impact">
-                                <div class="impact-metric">
-                                    <i class="fas fa-comments"></i>
-                                    <div>
-                                        <strong>Support</strong>
-                                        <span>Live chat with five real agents.</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div id="other-work-item-soke" class="work__item">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/soke.png" alt="Soke Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Soke';">
-                        </div>
-                        <div class="work__item-body">
-                            <div class="work__item-header">
-                                <h6>Soke</h6>
-                                <div class="work__item-tags">
-                                    <span class="tag">Branding</span>
-                                </div>
-                            </div>
-                            <p class="work__item-overview">Branding and UI concept for a creative agency focused on
-                                clarity and impact.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div id="other-work-item-trifecta" class="work__item">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/trifecta.png" alt="Trifecta Workout Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Trifecta';">
-                        </div>
-                        <div class="work__item-body">
-                            <div class="work__item-header">
-                                <h6>Trifecta Workout</h6>
-                                <div class="work__item-tags">
-                                    <span class="tag">iOS</span>
-                                    <span class="tag">Health</span>
-                                </div>
-                            </div>
-                            <p class="work__item-overview">A beautiful and simply designed personal trainer app for
-                                iPhone, focusing on core workout principles.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div id="other-work-item-stories" class="work__item">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/stories.png" alt="Stories Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Stories';">
-                        </div>
-                        <div class="work__item-body">
-                            <div class="work__item-header">
-                                <h6>Stories</h6>
-                                <div class="work__item-tags">
-                                    <span class="tag">iOS</span>
-                                    <span class="tag">Side Project</span>
-                                </div>
-                            </div>
-                            <p class="work__item-overview">Sit back, relax, and catch up. A curated content aggregator
-                                for your favorite topics.</p>
-                            <div class="work__item-divider"></div>
-                            <div class="work__item-impact">
-                                <div class="impact-metric">
-                                    <i class="fas fa-book-open"></i>
-                                    <div>
-                                        <strong>Content</strong>
-                                        <span>TBA.</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div id="other-work-item-get-gear" class="work__item">
-                    <a href="#" class="work__item-link">
-                        <div class="work__item-image-wrapper">
-                            <img src="assets/img/get-gear.png" alt="Get Gear Project Thumbnail"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Get+Gear';">
-                        </div>
-                        <div class="work__item-body">
-                            <div class="work__item-header">
-                                <h6>Get Gear</h6>
-                                <div class="work__item-tags">
-                                    <span class="tag">Concept</span>
-                                </div>
-                            </div>
-                            <p class="work__item-overview">A mobile and location-based marketplace concept for easily
-                                buying and selling gear.</p>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container contact-container">
-            <h3>Get in Touch</h3>
-            <p>I'm always open to discussing product design work or partnership opportunities. If you have a project in
-                mind, please get in touch.</p>
-            <a href="mailto:robin.w.bailey@gmail.com" class="btn">Email Me</a>
-        </div>
-    </section>
-
-    <footer class="section footer">
-        <div class="footer-wave">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="footer-wave__fill"></path>
-            </svg>
-        </div>
-        <div class="container footer__container">
-            <div class="footer__top">
-                <div class="footer__about">
-                    <h4 class="footer__logo">Robin Bailey</h4>
-                    <p class="footer__tagline">Creativity & Clarity</p>
-                </div>
-                <div class="footer__links">
-                    <a href="https://twitter.com/RobinBailey" class="footer__link" target="_blank"
-                        rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/robinwbailey/" class="footer__link" target="_blank"
-                        rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://dribbble.com/robinbailey" class="footer__link" target="_blank"
-                        rel="noopener noreferrer" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
                 </div>
             </div>
-            <div class="footer__bottom">
-                <div class="footer__copyright">
-                    <p>&copy; <span id="year"></span> Robin Bailey. All rights reserved.</p>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container contact-container">
+                <h3>Get in Touch</h3>
+                <p>I'm always open to discussing product design work or partnership opportunities. If you have a project
+                    in
+                    mind, please get in touch.</p>
+                <a href="mailto:robin.w.bailey@gmail.com" class="btn">Email Me</a>
+            </div>
+        </section>
+
+        <footer class="section footer">
+            <div class="footer-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="footer-wave__fill"></path>
+                </svg>
+            </div>
+            <div class="container footer__container">
+                <div class="footer__top">
+                    <div class="footer__about">
+                        <h4 class="footer__logo">Robin Bailey</h4>
+                        <p class="footer__tagline">Creativity & Clarity</p>
+                    </div>
+                    <div class="footer__links">
+                        <a href="https://twitter.com/RobinBailey" class="footer__link" target="_blank"
+                            rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/robinwbailey/" class="footer__link" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://dribbble.com/robinbailey" class="footer__link" target="_blank"
+                            rel="noopener noreferrer" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
                 </div>
-                <div class="footer__meta">
-                    <p class="footer__location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Saltash, England
-                        <span id="local-time" class="footer__time"></span>
-                    </p>
-                    <a href="#top" class="footer__back-to-top">
-                        Back to Top <i class="fas fa-arrow-up"></i>
-                    </a>
+                <div class="footer__bottom">
+                    <div class="footer__copyright">
+                        <p>&copy; <span id="year"></span> Robin Bailey. All rights reserved.</p>
+                    </div>
+                    <div class="footer__meta">
+                        <p class="footer__location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Saltash, England
+                            <span id="local-time" class="footer__time"></span>
+                        </p>
+                        <a href="#top" class="footer__back-to-top">
+                            Back to Top <i class="fas fa-arrow-up"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </main>
+
+    <!-- Container for dynamically loaded project content -->
+    <div id="project-detail-container" style="display: none;"></div>
+
+    <!-- Hidden templates for project pages -->
+    <div id="project-templates" style="display: none;">
+        <!-- Horizon Project Template -->
+        <template id="project-template-horizon">
+            <nav class="project-nav">
+                <div class="container">
+                    <a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a>
+                </div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container">
+                    <img src="horizon/overview.png"
+                        onerror="this.onerror=null;this.src='https://placehold.co/1200x600/2d3748/ffffff?text=Horizon+Overview';"
+                        alt="A screenshot of the iotec Horizon Platform dashboard" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>iotec Global Horizon Platform</h1>
+                        <h2>Concept, UI/UX Design, Technical Architecture, & Engineering</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">Led the design and contributed significant engineering to
+                                    a new primary
+                                    platform interface for both internal teams and an international self-serve audience.
+                                    The project spanned
+                                    from initial concept to final deployment.</p>
+                                <p class="about__description">My responsibilities included requirements gathering,
+                                    market research,
+                                    developing a corporate design language, creating mockups and prototypes, and leading
+                                    design workshops. I
+                                    also spearheaded the underlying technical shift to a RESTful web architecture and
+                                    implemented an automated
+                                    user acceptance test framework.</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <h6>My Role</h6>
+                                <p class="about__description">Product Architect; Senior UX Designer & Engineer</p>
+                                <h6>Core Technologies</h6>
+                                <p class="about__description">Django, Python, REST, HTML, CSS, JavaScript, PostgreSQL
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Visuals & Screenshots</h3>
+                    </div>
+                    <div class="project-gallery__grid">
+                        <div class="project-gallery__item">
+                            <img src="horizon/Wireframes.png"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Wireframes';"
+                                alt="Horizon platform screenshot showing campaign details">
+                        </div>
+                        <div class="project-gallery__item">
+                            <img src="horizon/Ad+Sets.png"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/2d3748/ffffff?text=Ad+Sets';"
+                                alt="Horizon platform screenshot showing analytics">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <!-- Generic Placeholder Template Generator (to be used by JS, or manually create one for each) -->
+        <!-- For this example, I'll create one for PULSE to show the pattern -->
+        <template id="project-template-pulse">
+            <nav class="project-nav">
+                <div class="container">
+                    <a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a>
+                </div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container">
+                    <img src="https://placehold.co/1200x600/2d3748/ffffff?text=PULSE"
+                        alt="PULSE project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>PULSE</h1>
+                        <h2>Student Success Platform</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the PULSE student success platform are
+                                    coming soon. Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <!-- Add other placeholder templates similarly -->
+        <template id="project-template-bearforms">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=BearForms"
+                        alt="BearForms project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>BearForms</h1>
+                        <h2>Offline Data Capture App</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about BearForms are coming soon. Please check
+                                    back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-bento">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Bento"
+                        alt="Bento project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Bento: The Do Less To-Do List</h1>
+                        <h2>A Conceptual To-Do App</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Bento concept are coming soon.
+                                    Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-investigate">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Investigate"
+                        alt="Investigate Invertebrates project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Investigate Invertebrates</h1>
+                        <h2>Paignton Zoo Companion App</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Investigate Invertebrates app are
+                                    coming soon. Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-learning-analytics">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Learning+Analytics"
+                        alt="Learning Analytics project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Learning Analytics</h1>
+                        <h2>Data Visualization for Education</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Learning Analytics project are
+                                    coming soon. Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-local-gov">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Local+Gov"
+                        alt="Local Government project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>A Local Government Health & Social Care Project</h1>
+                        <h2>Consultancy & Process Improvement</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about this consultancy project are coming
+                                    soon. Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-wave">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Wave"
+                        alt="Wave project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Wave Digital Assistant</h1>
+                        <h2>AI Chatbot</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Wave Digital Assistant are coming
+                                    soon. Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-soke">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Soke"
+                        alt="Soke project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Soke</h1>
+                        <h2>Branding Concept</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Soke branding concept are coming
+                                    soon. Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-trifecta">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Trifecta"
+                        alt="Trifecta project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Trifecta Workout</h1>
+                        <h2>iOS Fitness App</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Trifecta Workout app are coming
+                                    soon. Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-stories">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Stories"
+                        alt="Stories project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Stories</h1>
+                        <h2>Content Aggregator App</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Stories app are coming soon. Please
+                                    check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="project-template-get-gear">
+            <nav class="project-nav">
+                <div class="container"><a href="#" class="link back-to-portfolio">&larr; Back to Portfolio</a></div>
+            </nav>
+            <header class="section header project-header">
+                <div class="container"><img src="https://placehold.co/1200x600/2d3748/ffffff?text=Get+Gear"
+                        alt="Get Gear project placeholder image" class="project-hero-image">
+                    <div class="header__headings">
+                        <h1>Get Gear</h1>
+                        <h2>Marketplace Concept</h2>
+                    </div>
+                    <div class="dash"></div>
+                </div>
+            </header>
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="about__grid">
+                        <div class="about__category">
+                            <h4><i class="fas fa-binoculars"></i> Project Overview</h4>
+                            <div class="about__item">
+                                <p class="about__description">More details about the Get Gear concept are coming soon.
+                                    Please check back later!</p>
+                            </div>
+                        </div>
+                        <div class="about__category">
+                            <h4><i class="fas fa-cogs"></i> Role & Technologies</h4>
+                            <div class="about__item">
+                                <p class="about__description">Details about the role and technologies used will be
+                                    available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="work__header">
+                        <h3>Outcomes & Impact</h3>
+                    </div>
+                    <div class="about__item">
+                        <p class="about__description">Details about the outcomes and impact of this project will be
+                            available soon.</p>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+    </div>
+
 
     <script>
         class ThemePicker {
@@ -919,7 +1559,6 @@
                     });
                 });
 
-                // Close panel when clicking outside
                 document.addEventListener('click', (e) => {
                     if (!e.target.closest('.theme-picker')) {
                         this.closePanel();
@@ -954,10 +1593,8 @@
             }
         }
 
-        // Set the current year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Function to update local time
         function updateLocalTime() {
             const timeElement = document.getElementById('local-time');
             if (timeElement) {
@@ -972,14 +1609,11 @@
             }
         }
 
-
-        // Initialize everything when the page loads
         document.addEventListener('DOMContentLoaded', () => {
             new ThemePicker();
             updateLocalTime();
-            setInterval(updateLocalTime, 60000); // Update every minute
+            setInterval(updateLocalTime, 60000);
 
-            // Top Nav Scrollspy & Behavior
             const sections = document.querySelectorAll('header[id], section[id]');
             const navLinks = document.querySelectorAll('.top-nav .nav-link');
             const nav = document.querySelector('.top-nav');
@@ -989,7 +1623,6 @@
                 const scrollY = window.scrollY;
                 const direction = scrollY > lastScrollY ? "down" : "up";
 
-                // Hide/show nav on scroll for mobile
                 if (window.innerWidth <= 768) {
                     if (scrollY > 100 && direction === "down") {
                         nav.style.bottom = '-100px';
@@ -999,7 +1632,6 @@
                 }
                 lastScrollY = scrollY < 0 ? 0 : scrollY;
 
-                // Active link logic
                 let currentSectionId = '';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
@@ -1012,7 +1644,6 @@
                     link.classList.remove('active');
                     const linkHref = link.getAttribute('href').substring(1);
 
-                    // Highlight 'work' nav link for both 'work' and 'other-work' sections
                     if (linkHref === 'work' && (currentSectionId === 'work' || currentSectionId === 'other-work')) {
                         link.classList.add('active');
                     } else if (linkHref === currentSectionId) {
@@ -1022,6 +1653,96 @@
             };
 
             window.addEventListener('scroll', onScroll);
+
+            // --- Project Page Loading Logic with History API ---
+            const mainContent = document.getElementById('main-content');
+            const projectDetailContainer = document.getElementById('project-detail-container');
+            const projectLinks = document.querySelectorAll('.work__item-link');
+            let lastClickedWorkItem = null; // To remember where to scroll back to
+
+            function showProject(projectId) {
+                const template = document.getElementById(projectId);
+                if (!template) {
+                    console.warn('Project template not found:', projectId);
+                    // If template doesn't exist, go back to the main page view
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                    hideProject();
+                    return;
+                }
+
+                const content = template.content.cloneNode(true);
+                projectDetailContainer.innerHTML = '';
+                projectDetailContainer.appendChild(content);
+
+                mainContent.style.display = 'none';
+                projectDetailContainer.style.display = 'block';
+                window.scrollTo(0, 0);
+
+                // The back button inside the project page
+                const backButton = projectDetailContainer.querySelector('.back-to-portfolio');
+                if (backButton) {
+                    backButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        history.back(); // This will trigger a popstate event
+                    });
+                }
+            }
+
+            function hideProject() {
+                projectDetailContainer.style.display = 'none';
+                mainContent.style.display = 'block';
+                projectDetailContainer.innerHTML = '';
+
+                // Scroll back to the last clicked item if it exists
+                if (lastClickedWorkItem) {
+                    setTimeout(() => {
+                        lastClickedWorkItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                }
+            }
+
+            // 1. Handle clicks on project links
+            projectLinks.forEach(link => {
+                const projectId = link.dataset.projectId;
+                if (projectId) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        lastClickedWorkItem = link.closest('.work__item'); // Store the card that was clicked
+                        const projectUrl = `#${projectId}`;
+                        // Add a new state to the history
+                        history.pushState({ projectId: projectId }, '', projectUrl);
+                        showProject(projectId);
+                    });
+                }
+            });
+
+            // 2. Handle browser back/forward buttons
+            window.addEventListener('popstate', (e) => {
+                // e.state is the state object we pushed
+                if (e.state && e.state.projectId) {
+                    showProject(e.state.projectId);
+                } else {
+                    // If state is null, it's the initial page
+                    hideProject();
+                }
+            });
+
+            // 3. Handle initial page load (e.g., from a bookmark or refresh)
+            function checkUrlOnLoad() {
+                const projectId = window.location.hash.substring(1);
+                if (projectId) {
+                    // Find the corresponding link to set the 'lastClickedWorkItem' for scroll-back behavior
+                    const link = document.querySelector(`.work__item-link[data-project-id="${projectId}"]`);
+                    if (link) {
+                        lastClickedWorkItem = link.closest('.work__item');
+                    }
+                    // Replace the current history state so the back button works correctly from a direct link
+                    history.replaceState({ projectId: projectId }, '', `#${projectId}`);
+                    showProject(projectId);
+                }
+            }
+
+            checkUrlOnLoad(); // Run this when the DOM is ready
         });
     </script>
 
