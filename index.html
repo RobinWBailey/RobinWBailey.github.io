@@ -197,8 +197,9 @@
                         focused technical product solutions with clarity.</p>
                     <p>Currently at <a href="https://plymouth.ac.uk" class="link">Plymouth University ↗</a> building the
                         next generation education experience for students in
-                        the <span class="tooltip-trigger" data-tooltip="Some stats about what I do in FoH">Faculty of
-                            Health</span> and all students across the wider Digital Campus. Previously working in the
+                        the Faculty
+                        of
+                        Health and all students across the wider Digital Campus. Previously working in the
                         AdTech space
                         on Engineering, UX, and Product Design at <a href="https://wearesilverbullet.com/"
                             class="link">iotec Global ↗</a>.</p>
@@ -260,7 +261,9 @@
                                 <h6>Digital Education Product Manager <small>@</small> <a href="https://plymouth.ac.uk"
                                         class="link">Academic Development, Plymouth University</a></h6>
                                 <p class="about__description">Building a first class student success platform for the
-                                    Faculty of Medicine and Dentistry.</p>
+                                    Faculty of Medicine and Dentistry. Member of <span class="tooltip-trigger"
+                                        data-tooltip="<div style='text-align: left;'><strong>Faculty of Health Committees:</strong><ul style='margin-top: 0.5rem; padding-left: 1rem; list-style: disc;'><li>IT & GDPR Committee</li><li>Teaching, Learning, & Quality Committee</li><li>Assessment Working Group</li></ul></div>">
+                                        multiple faculty committees</span>.</p>
                                 <p class="about__date"><time datetime="2019">2019</time> → Present</p>
                                 <div class="about__item-projects">
                                     <h6 class="projects__title">Related Projects</h6>
@@ -588,6 +591,67 @@
             new ThemePicker();
             updateLocalTime();
             setInterval(updateLocalTime, 60000);
+
+            // --- HTML Tooltip Logic (New) ---
+            const tooltipElement = document.createElement('div');
+            tooltipElement.className = 'tooltip';
+            document.body.appendChild(tooltipElement);
+
+            document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+                let hideTimeout;
+
+                const show = () => {
+                    clearTimeout(hideTimeout);
+                    const tooltipContent = trigger.getAttribute('data-tooltip');
+                    if (!tooltipContent) return;
+
+                    tooltipElement.innerHTML = tooltipContent;
+
+                    const triggerRect = trigger.getBoundingClientRect();
+
+                    // Temporarily make it visible but off-screen to calculate size correctly
+                    tooltipElement.style.visibility = 'hidden';
+                    tooltipElement.style.top = '-9999px';
+                    tooltipElement.style.left = '-9999px';
+                    tooltipElement.classList.add('visible');
+
+                    const tooltipRect = tooltipElement.getBoundingClientRect();
+
+                    let top = triggerRect.top - tooltipRect.height - 10; // 10px gap from trigger
+                    let left = triggerRect.left + (triggerRect.width / 2) - (tooltipRect.width / 2);
+
+                    // Adjust position if it goes off-screen
+                    if (left < 5) left = 5;
+                    if ((left + tooltipRect.width) > window.innerWidth) {
+                        left = window.innerWidth - tooltipRect.width - 5;
+                    }
+                    if (top < 5) {
+                        top = triggerRect.bottom + 10;
+                        // Note: The arrow direction will be incorrect if the tooltip is forced below.
+                        // This can be enhanced with more logic to flip the arrow.
+                    }
+
+                    tooltipElement.style.top = `${top + window.scrollY}px`;
+                    tooltipElement.style.left = `${left + window.scrollX}px`;
+                    tooltipElement.style.visibility = 'visible'; // Make it visible at the correct position
+                };
+
+                const hide = () => {
+                    // Use a timeout to allow the user to move their mouse over the tooltip
+                    hideTimeout = setTimeout(() => {
+                        tooltipElement.classList.remove('visible');
+                    }, 100);
+                };
+
+                // Add event listeners to the trigger element
+                trigger.addEventListener('mouseenter', show);
+                trigger.addEventListener('mouseleave', hide);
+
+                // Add listeners to the tooltip itself to keep it open when the mouse is over it
+                tooltipElement.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+                tooltipElement.addEventListener('mouseleave', hide);
+            });
+
 
             // --- Dynamic Content Generation ---
             const selectedWorkGrid = document.getElementById('selected-work-grid');

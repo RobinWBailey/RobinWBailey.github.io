@@ -1508,7 +1508,7 @@ ul {
   animation: pulse 2s infinite;
 }
 
-/* --- Tooltip Component (Updated with Angle and Smoother Bounce) --- */
+/* --- Tooltip Component (JS-Powered for HTML Content) --- */
 .tooltip-trigger {
   position: relative;
   cursor: help;
@@ -1518,63 +1518,50 @@ ul {
 
 .tooltip-trigger:hover {
   border-bottom-color: var(--color-link);
+  text-decoration: none;
 }
 
-.tooltip-trigger::after {
-  content: attr(data-tooltip);
+.tooltip {
   position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-bottom: 10px;
   background-color: var(--color-link);
   color: white;
   padding: 0.75rem 1rem;
-  border-radius: 12px; /* Slightly more rounded to match the image */
+  border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   font-size: 0.9rem;
-  font-weight: 500; /* A bit bolder */
+  font-weight: 500;
   line-height: 1.4;
   width: max-content;
-  max-width: 280px;
-  white-space: normal;
-  z-index: 10;
-}
-
-.tooltip-trigger::before {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  /* Keep the pointer centered */
-  transform: translateX(-50%);
-  margin-bottom: 4px;
-  border-width: 6px;
-  border-style: solid;
-  border-color: var(--color-link) transparent transparent transparent;
-  z-index: 11;
-}
-
-.tooltip-trigger::before,
-.tooltip-trigger::after {
+  max-width: 300px;
+  z-index: 10000;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform-origin: bottom center;
-  /* Initial state: smaller, slightly down, and rotated */
-  transform: translate(-50%, 10px) scale(0.7) rotate(-5deg);
-  /* A smoother bounce effect with a gentler cubic-bezier */
+  transform: translateY(10px) scale(0.7) rotate(5deg);
   transition: opacity 0.3s ease,
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0s 0.4s;
+  text-align: left;
 }
 
-.tooltip-trigger:hover::before,
-.tooltip-trigger:hover::after {
+.tooltip.visible {
   opacity: 1;
   visibility: visible;
-  /* Final state: full size, in position, and slightly angled */
-  transform: translate(-50%, 0) scale(1) rotate(-3deg);
+  transform: translateY(0) scale(1) rotate(-3deg);
   transition: opacity 0.3s ease 0.1s,
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+}
+
+/* Tooltip Arrow */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Position arrow at the bottom of the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-link) transparent transparent transparent; /* This creates a downward-pointing arrow */
 }
 
 /* 9. TOP NAVIGATION
