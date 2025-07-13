@@ -1538,7 +1538,7 @@ ul {
   visibility: hidden;
   pointer-events: none;
   transform-origin: bottom center;
-  transform: translateY(10px) scale(0.7) rotate(5deg);
+  transform: translateY(-25px) scale(0.7) rotate(5deg); /* MODIFIED: Start from higher above */
   transition: opacity 0.3s ease,
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0s 0.4s;
   text-align: left;
@@ -1547,7 +1547,7 @@ ul {
 .tooltip.visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0) scale(1) rotate(-3deg);
+  transform: translateY(-15px) scale(1) rotate(-3deg); /* MODIFIED: Settle 10px higher */
   transition: opacity 0.3s ease 0.1s,
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
 }
