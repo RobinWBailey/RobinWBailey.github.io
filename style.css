@@ -305,24 +305,80 @@ ul {
   justify-content: center;
 }
 
+/* --- MODIFIED: Tag System --- */
+
+/* Base .tag class (acts as Skill Tag style) */
 .tag {
-  display: inline-block;
-  background-color: var(--color-background-offset);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: transparent;
   color: var(--color-text-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: var(--font-weight-normal);
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-semibold);
   border: 1px solid var(--color-border);
   transition: all 0.2s ease-in-out;
+  cursor: default;
+  text-decoration: none;
 }
 
 .tag:hover {
-  background-color: var(--color-background);
-  color: var(--color-link);
-  border-color: currentColor;
+  background-color: var(--color-link);
+  color: var(--color-background);
+  border-color: var(--color-link);
   transform: translateY(-2px);
-  cursor: default;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+/* NEW: .tag--feature modifier (for filled Category Tags) */
+.tag--feature {
+  background-color: var(--color-link);
+  color: var(--color-background);
+  border-color: var(--color-link);
+  padding: 0.4rem 0.8rem 0.4rem 0.6rem; /* Adjust padding for icon */
+}
+
+/* In dark mode, use a lighter text for filled tags for better contrast */
+[data-theme="dark"] .tag--feature {
+  color: #121212;
+}
+
+.tag--feature:hover {
+  background-color: var(--color-link);
+  color: var(--color-background);
+  filter: brightness(1.1);
+}
+
+.tag--feature i {
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+
+/* --- NEW: Tag Group Styling --- */
+.tag-group {
+  background-color: rgba(var(--color-text-primary-rgb), 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.tag-group__label {
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+}
+
+.tag-group__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
 }
 
 .dash {
@@ -353,7 +409,7 @@ ul {
 
 .header__links .link:hover {
   color: var(--color-link);
-  border-bottom-color: var(--color-link);
+  border-bottom-color: currentColor;
   text-decoration: none;
   transform: translateY(-2px);
 }
@@ -775,11 +831,6 @@ ul {
 
 .work__item-details .work__item-tags {
   margin-top: 1rem;
-}
-
-.work__item-details .tag {
-  font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
 }
 
 .work__item-impact {

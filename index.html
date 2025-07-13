@@ -670,9 +670,32 @@
                 `).join('');
             }
 
+            // MODIFIED: Function to create SKILL tags in a labeled group
             function createTagsHTML(tagsArray) {
                 if (!tagsArray || tagsArray.length === 0) return '';
-                return tagsArray.map(tag => `<span class="tag">${tag}</span>`).join('');
+                const tagsContent = tagsArray.map(tag => `<span class="tag">${tag}</span>`).join('');
+                return `
+                    <div class="tag-group">
+                        <h5 class="tag-group__label">Skills & Technologies</h5>
+                        <div class="tag-group__tags">
+                            ${tagsContent}
+                        </div>
+                    </div>`;
+            }
+
+            // MODIFIED: Function to create FEATURE tags in a labeled group
+            function createFeatureTagsHTML(tagsArray) {
+                if (!tagsArray || tagsArray.length === 0) return '';
+                const tagsContent = tagsArray.map(tag =>
+                    `<span class="tag tag--feature"><i class="fas fa-bookmark"></i> ${tag}</span>`
+                ).join('');
+                return `
+                    <div class="tag-group">
+                        <h5 class="tag-group__label">Features</h5>
+                        <div class="tag-group__tags">
+                            ${tagsContent}
+                        </div>
+                    </div>`;
             }
 
             portfolioData.selectedWork.forEach(project => {
@@ -693,11 +716,12 @@
                                 <div class="work__item-section">
                                     <h4 class="work__item-section-title">Overview</h4>
                                     <p class="work__item-overview">${project.overview}</p>
+                                    ${createFeatureTagsHTML(project.featureTags)}
                                 </div>
                                 <div class="work__item-section">
                                     <h4 class="work__item-section-title">Role & Skills</h4>
                                     <p class="work__item-overview">${project.roleAndSkills.description}</p>
-                                    <div class="work__item-tags">${createTagsHTML(project.roleAndSkills.tags)}</div>
+                                    ${createTagsHTML(project.roleAndSkills.tags)}
                                 </div>
                             </div>
                             <div class="work__item-highlights">
@@ -724,9 +748,9 @@
                             <div class="work__item-header">
                                 <h6>${project.title}</h6>
                                 ${project.client ? `<p class="work__item-client"><i class="fas fa-building"></i> ${project.client}</p>` : ''}
-                                <div class="work__item-tags">${createTagsHTML(project.tags)}</div>
                             </div>
                             <p class="work__item-overview">${project.overview}</p>
+                            ${createFeatureTagsHTML(project.featureTags)}
                             ${project.impact.length > 0 ? '<div class="work__item-divider"></div>' : ''}
                             <div class="work__item-impact">${createImpactMetricsHTML(project.impact)}</div>
                         </div>
@@ -834,14 +858,13 @@
                                     <div class="about__item">
                                         <h4 class="work__item-section-title"><i class="fas fa-binoculars"></i> Project Overview</h4>
                                         <p class="about__description">${detail.overview}</p>
+                                        ${createFeatureTagsHTML(project.featureTags)}
                                     </div>
                                     <div class="about__item">
                                         <h4 class="work__item-section-title"><i class="fas fa-cogs"></i> Role & Skills</h4>
                                         <h6>${project.roleAndSkills.role}</h6>
                                         <p class="about__description">${project.roleAndSkills.description}</p>
-                                        <div class="work__item-tags" style="margin-top: 1rem;">
-                                            ${createTagsHTML(project.roleAndSkills.tags)}
-                                        </div>
+                                        ${createTagsHTML(project.roleAndSkills.tags)}
                                     </div>
                                 </div>
                                 <div class="project-detail__column">

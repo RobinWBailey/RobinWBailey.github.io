@@ -20,21 +20,12 @@ const portfolioData = {
           "I led the design and development from concept to launch. My role involved stakeholder engagement, requirements gathering, UX/UI design, and managing the agile development process.",
         tags: ["Product Management", "UX/UI Design", "Salesforce", "Agile"],
       },
+      featureTags: ["Education", "Health"],
       impact: [
         {
           icon: "fas fa-users",
           stat: "1,200+ Students",
           description: "Actively using the platform daily.",
-        },
-        {
-          icon: "fas fa-chart-pie",
-          stat: "TBA",
-          description: "TBA",
-        },
-        {
-          icon: "fas fa-award",
-          stat: "TBA",
-          description: "TBA.",
         },
         {
           icon: "fas fa-cogs",
@@ -63,23 +54,14 @@ const portfolioData = {
         role: "Designer, Developer, Founder",
         description:
           "I designed, developed, and launched this multi-platform app from scratch. This involved UI/UX design, native development for iOS and Android using React Native, and App Store deployment.",
-        tags: ["React Native", "iOS & Android", "UI/UX Design", "Side Project"],
+        tags: ["React Native", "iOS & Android", "UI/UX Design"],
       },
+      featureTags: ["Side Project"],
       impact: [
-        {
-          icon: "fas fa-download",
-          stat: "TBA",
-          description: "TBA",
-        },
         {
           icon: "fas fa-star",
           stat: "4.8 Star Rating",
           description: "Average user rating.",
-        },
-        {
-          icon: "fas fa-file-csv",
-          stat: "TBA",
-          description: "TBA",
         },
       ],
       detailPage: {
@@ -98,22 +80,12 @@ const portfolioData = {
       overview:
         "A conceptual to-do list application based on the Bento methodology, designed for focus and mindful productivity.",
       roleAndSkills: {
-        role: "TBA",
-        description: "TBA",
-        tags: ["iOS", "Android", "React Native", "UI/UX Design", "Branding"],
+        role: "Concept Designer",
+        description: "A conceptual exploration of focused productivity.",
+        tags: ["iOS", "Android", "React Native", "UI/UX Design"],
       },
-      impact: [
-        {
-          icon: "fab fa-dribbble",
-          stat: "TBA",
-          description: "TBA",
-        },
-        {
-          icon: "fas fa-lightbulb",
-          stat: "TBA",
-          description: "TBA",
-        },
-      ],
+      featureTags: ["Branding", "Concept"],
+      impact: [],
       detailPage: {
         heroImage: "assets/img/bento-header.png",
         overview:
@@ -134,8 +106,9 @@ const portfolioData = {
         role: "Lead UX Designer & Product Architect",
         description:
           "I led the entire product design lifecycle, from user research and wireframing to high-fidelity prototypes and front-end development support. Core Technologies: Django, Python, REST, HTML, CSS, JavaScript, PostgreSQL.",
-        tags: ["AdTech", "UX/UI", "Product Design"],
+        tags: ["UX/UI", "Product Design", "Django", "Python"],
       },
+      featureTags: ["AdTech"],
       impact: [
         {
           icon: "fas fa-rocket",
@@ -182,18 +155,14 @@ const portfolioData = {
         "A companion iOS app for the Paignton Zoo exhibit, designed to educate and engage visitors, particularly younger audiences, with interactive content.",
       roleAndSkills: {
         role: "Product Designer & iOS Developer",
-        description: "This is a new project. More info coming soon.",
-        tags: ["iOS", "Objective C", "Education", "Client Work"],
+        description: "Designed and developed the app for a client.",
+        tags: ["iOS", "Objective C", "UI/UX Design"],
       },
+      featureTags: ["Education", "Client Work"],
       impact: [
         {
           icon: "fas fa-child",
           stat: "Increased Visitor Engagement",
-          description: "TBA",
-        },
-        {
-          icon: "fas fa-download",
-          stat: "TBA",
           description: "TBA",
         },
       ],
@@ -212,24 +181,15 @@ const portfolioData = {
       client: "Plymouth University",
       image:
         "https://placehold.co/600x400/2d3748/ffffff?text=Learning+Analytics",
-      overview: "This is a new project. More info coming soon.",
+      overview:
+        "A project to visualize student learning data to identify trends and support student success.",
       roleAndSkills: {
         role: "Product Lead",
-        description: "This is a new project. More info coming soon.",
-        tags: ["Data Visualisation", "Education", "Salesforce"],
+        description: "Led the product strategy and data visualization design.",
+        tags: ["Data Visualisation", "Salesforce", "Product Management"],
       },
-      impact: [
-        {
-          icon: "fas fa-chart-line",
-          stat: "TBA",
-          description: "TBA",
-        },
-        {
-          icon: "fas fa-chalkboard-teacher",
-          stat: "TBA",
-          description: "TBA",
-        },
-      ],
+      featureTags: ["Education"],
+      impact: [],
       detailPage: {
         heroImage:
           "https://placehold.co/1200x600/2d3748/ffffff?text=Learning+Analytics",
@@ -244,24 +204,16 @@ const portfolioData = {
       subtitle: "Consultancy & Process Improvement",
       client: "Local Government",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=Local+Gov",
-      overview: "This is a new project. More info coming soon.",
+      overview:
+        "Consultancy project to streamline processes in health and social care.",
       roleAndSkills: {
         role: "Consultant",
-        description: "This is a new project. More info coming soon.",
-        tags: ["Consultancy", "Government"],
+        description:
+          "Analyzed existing workflows and recommended improvements.",
+        tags: ["Process Improvement", "Stakeholder Management"],
       },
-      impact: [
-        {
-          icon: "fas fa-cogs",
-          stat: "TBA",
-          description: "TBA",
-        },
-        {
-          icon: "fas fa-file-invoice-dollar",
-          stat: "TBA",
-          description: "TBA",
-        },
-      ],
+      featureTags: ["Consultancy", "Government", "Health & Social Care"],
+      impact: [],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Local+Gov",
         overview:
@@ -273,60 +225,6 @@ const portfolioData = {
   // Other, smaller projects
   otherProjects: [
     {
-      id: "clinical-experience",
-      title: "Dental On-Clinic Assessment",
-      subtitle: "TBA",
-      client: "Peninsula Dental School",
-      image:
-        "https://placehold.co/600x400/2d3748/ffffff?text=Clinical+Assessment",
-      overview: "TBA",
-      tags: ["TBA"],
-      roleAndSkills: {
-        role: "TBA",
-        description: "TBA",
-        tags: ["TBA"],
-      },
-      impact: [
-        {
-          icon: "fas fa-comments",
-          stat: "TBA",
-          description: "TBA",
-        },
-      ],
-      detailPage: {
-        heroImage:
-          "https://placehold.co/600x400/2d3748/ffffff?text=Clinical+Assessment",
-        overview: "TBA",
-        gallery: [],
-      },
-    },
-    {
-      id: "capt-and-topic",
-      title: "CAPT & Personased Topic Mapping",
-      subtitle: "TBA",
-      client: "Peninsula Medical School",
-      image: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
-      overview: "TBA",
-      tags: ["TBA"],
-      roleAndSkills: {
-        role: "TBA",
-        description: "TBA",
-        tags: ["TBA"],
-      },
-      impact: [
-        {
-          icon: "fas fa-comments",
-          stat: "TBA",
-          description: "TBA",
-        },
-      ],
-      detailPage: {
-        heroImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
-        overview: "TBA",
-        gallery: [],
-      },
-    },
-    {
       id: "wave",
       title: "Wave Digital Assistant",
       subtitle: "AI Chatbot",
@@ -334,18 +232,18 @@ const portfolioData = {
       image: "https://placehold.co/600x400/2d3748/ffffff?text=Wave",
       overview:
         "AI chatbot for staff digital education queries in Moodle & student careers advice in the university app.",
-      tags: ["AI", "Chatbot", "Mobile"],
+      featureTags: ["AI", "Chatbot", "Mobile"],
       roleAndSkills: {
         role: "Product Manager",
         description:
           "Managed the development and implementation of the AI chatbot.",
-        tags: ["AI", "Chatbot", "Mobile"],
+        tags: ["Product Management", "AI"],
       },
       impact: [
         {
           icon: "fas fa-comments",
-          stat: "Support",
-          description: "Live chat with five real agents.",
+          stat: "Live Support",
+          description: "Connects to five real agents.",
         },
       ],
       detailPage: {
@@ -363,7 +261,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Soke",
       overview:
         "Branding and UI concept for a creative agency focused on clarity and impact.",
-      tags: ["Branding"],
+      featureTags: ["Branding", "Concept"],
       roleAndSkills: {
         role: "Brand Designer",
         description: "Developed the brand identity and visual language.",
@@ -386,12 +284,12 @@ const portfolioData = {
       client: "Side Project",
       overview:
         "A beautiful and simply designed personal trainer app for iPhone, focusing on core workout principles.",
-      tags: ["iOS", "Objective C"],
+      featureTags: ["Fitness", "Side Project"],
       roleAndSkills: {
         role: "iOS Developer",
         description:
           "Designed and developed the application for the App Store.",
-        tags: ["iOS", "Swift", "Health"],
+        tags: ["iOS", "Objective C", "Health"],
       },
       impact: [],
       detailPage: {
@@ -410,16 +308,14 @@ const portfolioData = {
       client: "Side Project",
       overview:
         "Sit back, relax, and catch up. A curated content aggregator for your favorite topics.",
-      tags: ["iOS", "Side Project"],
+      featureTags: ["Content Aggregation", "Side Project"],
       roleAndSkills: {
         role: "iOS Developer",
         description:
           "Personal project to explore content aggregation technologies.",
         tags: ["iOS", "Objective C", "API"],
       },
-      impact: [
-        { icon: "fas fa-book-open", stat: "Content", description: "TBA." },
-      ],
+      impact: [],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Stories",
         overview:
@@ -435,12 +331,12 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Get+Gear",
       overview:
         "A mobile and location-based marketplace concept for easily buying and selling gear.",
-      tags: ["iOS", "Objective C"],
+      featureTags: ["Marketplace", "Concept"],
       roleAndSkills: {
         role: "UI/UX Designer",
         description:
           "Conceptualized and designed the user interface and experience.",
-        tags: ["Concept", "UI/UX", "Mobile"],
+        tags: ["Concept", "UI/UX", "Mobile", "iOS", "Objective C"],
       },
       impact: [],
       detailPage: {
