@@ -677,15 +677,39 @@
                 return tagsArray.map(tag => `<span class="tag">${tag}</span>`).join('');
             }
 
-            // MODIFIED: Function to create FEATURE tags (filled)
+            // NEW: Helper function to get the correct icon for a feature tag
+            function getIconForFeatureTag(tag) {
+                const iconMap = {
+                    'Education': 'fas fa-graduation-cap',
+                    'Health': 'fas fa-heartbeat',
+                    'Side Project': 'fas fa-wrench',
+                    'Branding': 'fas fa-palette',
+                    'Concept': 'fas fa-lightbulb',
+                    'AdTech': 'fas fa-bullhorn',
+                    'Client Work': 'fas fa-handshake',
+                    'Consultancy': 'fas fa-users',
+                    'Government': 'fas fa-landmark',
+                    'Health & Social Care': 'fas fa-clinic-medical',
+                    'AI': 'fas fa-robot',
+                    'Chatbot': 'fas fa-comments',
+                    'Mobile': 'fas fa-mobile-alt',
+                    'Fitness': 'fas fa-dumbbell',
+                    'Content Aggregation': 'fas fa-newspaper',
+                    'Marketplace': 'fas fa-store'
+                };
+                return iconMap[tag] || 'fas fa-tag'; // Return a default icon if no match
+            }
+
+            // MODIFIED: Function to create FEATURE tags (filled) with relevant icons
             function createFeatureTagsHTML(tagsArray) {
                 if (!tagsArray || tagsArray.length === 0) return '';
-                // Adds .tag--feature class for the filled "category" style and an icon
-                const tagsHTML = tagsArray.map(tag =>
-                    `<span class="tag tag--feature"><i class="fas fa-bookmark"></i> ${tag}</span>`
-                ).join('');
+                const tagsHTML = tagsArray.map(tag => {
+                    const iconClass = getIconForFeatureTag(tag);
+                    return `<span class="tag tag--feature"><i class="${iconClass}"></i> ${tag}</span>`;
+                }).join('');
                 return `<div class="work__item-feature-tags">${tagsHTML}</div>`;
             }
+
 
             portfolioData.selectedWork.forEach(project => {
                 const projectEl = document.createElement('div');
