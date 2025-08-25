@@ -231,7 +231,7 @@ ol {
 /* --- Header --- */
 .header {
   text-align: left;
-  padding-top: 6rem;
+  padding-top: 8rem;
   padding-bottom: 6rem;
 }
 
@@ -261,9 +261,8 @@ ol {
 .header-new-layout__details {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
   align-items: start;
-  max-width: 800px;
 }
 
 .header-new-layout__title {
@@ -304,11 +303,6 @@ ol {
   color: var(--header-link-arrow-hover);
 }
 
-/* Remove hover effect from experience links */
-.header-new-layout__list a.experience-link:hover {
-  color: var(--header-desc);
-}
-
 .experience-link__company {
   color: var(--header-name);
 }
@@ -329,11 +323,14 @@ ol {
 }
 
 .experience-link {
-  display: flex !important;
+  display: flex;
   align-items: center;
   flex-wrap: nowrap; /* Changed from wrap */
   gap: 0.5rem;
   cursor: default; /* Remove pointer on hover */
+  color: var(--header-desc);
+  font-weight: 600;
+  font-size: 1.0625rem; /* 17px */
 }
 .experience-link__title {
   flex-grow: 1;
@@ -374,6 +371,64 @@ ol {
 
 .header__availability + .header-new-layout__list--links {
   padding-left: 1.25rem;
+}
+
+/* --- CV/Resume Card --- */
+.cv-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1.5rem; /* Space below the links */
+  border: 1px solid var(--header-tag-border);
+  border-radius: 12px;
+  background-color: var(--color-background);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: var(--header-desc);
+  margin-left: 1.25rem; /* Align with links */
+  width: fit-content;
+}
+
+.cv-card:hover {
+  border-color: var(--color-link);
+  background-color: var(--color-background-offset);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px var(--shadow-color);
+  text-decoration: none;
+}
+
+.cv-card__icon {
+  font-size: 1.25rem;
+  color: var(--header-name);
+  transition: color 0.3s ease;
+}
+
+.cv-card:hover .cv-card__icon {
+  color: var(--color-link);
+}
+
+.cv-card__text {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cv-card__title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.cv-card__arrow {
+  font-size: 1.25rem;
+  color: var(--header-link-arrow);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cv-card:hover .cv-card__arrow {
+  color: var(--color-link);
+  transform: translateX(4px);
 }
 
 /* --- Expertise Horizontal Scroll --- */
