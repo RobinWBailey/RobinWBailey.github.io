@@ -22,6 +22,7 @@
   --shadow-color: rgba(var(--color-link-rgb), 0.15);
   --success: #10b981;
   --success-glow: rgba(16, 185, 129, 0.7);
+  --color-arrow-icon: #e5e7eb;
 
   /* Skill Card Colors */
   --skill-green: #34c759;
@@ -76,6 +77,7 @@
     --color-border: rgba(243, 244, 246, 0.2);
     --color-dash: #868d97;
     --shadow-color: rgba(0, 0, 0, 0.2);
+    --color-arrow-icon: #4b5563;
 
     /* New Header Specific Colors (Dark) */
     --header-name: rgba(255, 255, 255, 0.3);
@@ -494,7 +496,7 @@ ol {
   gap: 1rem;
 }
 
-.expertise-card i {
+.expertise-card__content i {
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
@@ -522,32 +524,57 @@ ol {
 }
 
 /* Color styles */
-.expertise-card[data-color="green"] i {
+.expertise-card[data-color="green"] .expertise-card__content i {
   color: var(--skill-green);
 }
-.expertise-card[data-color="red"] i {
+.expertise-card[data-color="red"] .expertise-card__content i {
   color: var(--skill-red);
 }
-.expertise-card[data-color="blue"] i {
+.expertise-card[data-color="blue"] .expertise-card__content i {
   color: var(--skill-blue);
 }
-.expertise-card[data-color="orange"] i {
+.expertise-card[data-color="orange"] .expertise-card__content i {
   color: var(--skill-orange);
 }
-.expertise-card[data-color="teal"] i {
+.expertise-card[data-color="teal"] .expertise-card__content i {
   color: var(--skill-teal);
 }
-.expertise-card[data-color="purple"] i {
+.expertise-card[data-color="purple"] .expertise-card__content i {
   color: var(--skill-purple);
 }
-.expertise-card[data-color="lightblue"] i {
+.expertise-card[data-color="lightblue"] .expertise-card__content i {
   color: var(--skill-lightblue);
 }
-.expertise-card[data-color="grey"] i {
+.expertise-card[data-color="grey"] .expertise-card__content i {
   color: var(--skill-grey);
 }
-.expertise-card[data-color="yellow"] i {
+.expertise-card[data-color="yellow"] .expertise-card__content i {
   color: var(--skill-yellow);
+}
+
+/* --- Card Arrow Icon --- */
+.card-arrow-icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 1rem;
+  color: var(--color-arrow-icon);
+  opacity: 1; /* Faintly visible by default */
+  transform: translate(0, 0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 5;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+  font-style: normal;
+}
+
+.card-arrow-icon::before {
+  content: "↗";
+}
+
+.expertise-card:hover .card-arrow-icon {
+  opacity: 0; /* Disappears on hover */
+  transform: translate(5px, -5px);
 }
 
 /* --- About & Project Detail --- */
