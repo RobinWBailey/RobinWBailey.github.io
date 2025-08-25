@@ -562,6 +562,7 @@ ol {
   letter-spacing: -0.02em;
   margin: 0;
   max-width: 65ch;
+  overflow-wrap: break-word;
 }
 
 .about__title .about__subtitle {
@@ -576,6 +577,12 @@ ol {
 }
 .project-detail__grid {
   align-items: start;
+}
+
+/* This is the new key to prevent the scrolling list from expanding its parent's width */
+.about__category {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .work__item-section-title {
@@ -594,8 +601,8 @@ ol {
   overflow-x: auto;
   gap: 1.5rem;
   scrollbar-width: none; /* For Firefox */
-  padding: 1rem var(--container-margin);
-  margin: 0 calc(-1 * var(--container-margin));
+  padding: 1rem var(--container-padding);
+  margin: 0 calc(-1 * var(--container-padding));
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1570,5 +1577,16 @@ ol {
   .top-nav .nav-link {
     padding: 0.75rem;
     font-size: 1.1rem;
+  }
+}
+
+/* Fix for About Title Wrapping on Mobile */
+@media (max-width: 480px) {
+  .about__title {
+    font-size: 1.5rem;
+  }
+  .about__title .about__subtitle {
+    display: block;
+    margin-top: 0.25em;
   }
 }
