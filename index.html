@@ -33,129 +33,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&family=Inter:wght@400;600&family=Lato:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&family=Inter:wght@400;500;600;700&family=Lato:wght@700&display=swap"
         rel="stylesheet">
-
-    <style>
-        /* Assuming style.css is in the same directory */
-        .work__item {
-            scroll-margin-top: 12rem;
-        }
-
-        #project-detail-container {
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        /* Added Lato font for uppercase headings */
-        :root {
-            --font-family-heading: 'Lato', sans-serif;
-        }
-
-        .expertise__title,
-        .about__category h4,
-        .projects__title,
-        .work__item-section-title,
-        .work__header h3 {
-            font-family: var(--font-family-heading);
-        }
-
-        /* Tag consistency update */
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--color-background);
-            color: var(--color-text-secondary);
-            padding: 0.4rem 1rem;
-            /* Adjusted padding */
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: var(--font-weight-semibold);
-            border: 1px solid var(--color-border);
-            transition: all 0.2s ease-in-out;
-            text-decoration: none;
-        }
-
-        .tag:hover {
-            background-color: var(--color-link);
-            color: var(--color-background);
-            border-color: var(--color-link);
-            transform: translateY(-2px);
-            text-decoration: none;
-            box-shadow: 0 4px 10px var(--shadow-color);
-        }
-
-        /* Remove top border from footer */
-        .footer__top {
-            border-bottom: none;
-        }
-
-        /* Add gap between tags */
-        .expertise__tags,
-        .projects__tags,
-        .work__item-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        /* Profile glow opacity variables */
-        :root {
-            --glow-opacity-1: 0.45;
-            --glow-opacity-2: 0.65;
-            --glow-opacity-3: 0.55;
-            --glow-opacity-4: 0.75;
-        }
-
-        [data-theme="dark"] {
-            /* Reset glow opacity for dark theme to be less intense */
-            --glow-opacity-1: 0.3;
-            --glow-opacity-2: 0.5;
-            --glow-opacity-3: 0.4;
-            --glow-opacity-4: 0.6;
-        }
-
-        @keyframes profile-glow {
-            0% {
-                box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), var(--glow-opacity-1));
-                border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
-            }
-
-            25% {
-                box-shadow: -10px -8px 20px 2px rgba(var(--color-link-rgb), var(--glow-opacity-2));
-                border-radius: 65% 35% 40% 60% / 55% 60% 40% 45%;
-            }
-
-            50% {
-                box-shadow: 0px 10px 28px 5px rgba(var(--color-link-rgb), var(--glow-opacity-3));
-                border-radius: 45% 55% 60% 40% / 35% 50% 50% 65%;
-            }
-
-            75% {
-                box-shadow: 10px 8px 22px 3px rgba(var(--color-link-rgb), var(--glow-opacity-4));
-                border-radius: 35% 65% 60% 40% / 55% 40% 60% 45%;
-            }
-
-            100% {
-                box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), var(--glow-opacity-1));
-                border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
-            }
-        }
-
-        .header__profile::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 20%;
-            animation: profile-glow 10s ease-in-out infinite;
-            z-index: -1;
-        }
-    </style>
 </head>
 
-<body id="top">
+<body id="top" data-theme="blue">
 
     <!-- Main Content Wrapper -->
     <main id="main-content">
@@ -168,86 +50,91 @@
             </ul>
         </nav>
 
-        <div class="theme-picker">
-            <button class="theme-picker__toggle" aria-label="Toggle theme picker">
-                🎨
-            </button>
-            <div class="theme-picker__panel">
-                <div class="theme-picker__title">Choose Theme</div>
-                <div class="theme-picker__grid">
-                    <div class="theme-picker__option" data-theme="blue" title="Blue"></div>
-                    <div class="theme-picker__option" data-theme="purple" title="Purple"></div>
-                    <div class="theme-picker__option" data-theme="green" title="Green"></div>
-                    <div class="theme-picker__option active" data-theme="orange" title="Orange"></div>
-                    <div class="theme-picker__option" data-theme="pink" title="Pink"></div>
-                    <div class="theme-picker__option" data-theme="dark" title="Dark"></div>
-                </div>
-            </div>
-        </div>
-
         <header id="home" class="section header">
             <div class="container">
-                <div class="header__profile"></div>
-                <div class="header__headings">
-                    <h1>Robin Bailey</h1>
-                    <h2>Product Manager, Designer, & Engineer</h2>
-                </div>
-                <div class="header__description">
-                    <p>I help take complex business challenges & work with you to design, architect, & implement user
-                        focused technical product solutions with clarity.</p>
-                    <p>Currently at <a href="https://plymouth.ac.uk" class="link">Plymouth University ↗</a> building the
-                        next generation education experience for students in
-                        the Faculty
-                        of
-                        Health and all students across the wider Digital Campus. Previously working in the
-                        AdTech space
-                        on Engineering, UX, and Product Design at <a href="https://wearesilverbullet.com/"
-                            class="link">iotec Global ↗</a>.</p>
-                    <p class="tagline">Creativity & Clarity</p>
-                </div>
-                <div class="dash"></div>
-                <div class="current-status">
-                    <span class="status-dot"></span>
-                    <span>Available for consultancy or opportunities</span>
-                </div>
 
-                <div class="expertise">
-                    <div class="expertise__group">
-                        <h5 class="expertise__title">Sector Expertise</h5>
-                        <div class="expertise__tags">
-                            <span class="tag">Education</span>
-                            <span class="tag">Health</span>
-                            <span class="tag">Government</span>
-                            <span class="tag">AdTech</span>
-                            <span class="tag">Environmental</span>
+                <!-- New Header Content -->
+                <div class="header-new-layout">
+                    <div class="header-new-layout__intro">
+                        <h1 class="header-new-layout__name">Robin Bailey</h1>
+                        <h1 class="header-new-layout__description">
+                            Product Manager, Designer, and Engineer with a passion for turning complex challenges into
+                            user-focused technical solutions.
+                        </h1>
+                    </div>
+
+                    <div class="header-new-layout__details">
+                        <div class="header-new-layout__column">
+                            <h5 class="header-new-layout__title">Experience</h5>
+                            <ul class="header-new-layout__list header-new-layout__list--experience">
+                                <li>
+                                    <a href="#about" class="experience-link">
+                                        <span class="experience-link__title">Digital Education Product Manager, <span
+                                                class="experience-link__company">Plymouth University</span></span>
+                                        <span class="experience-link__tag">Current</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#about" class="experience-link">
+                                        <span class="experience-link__title">Product Architect, <span
+                                                class="experience-link__company">iotec Global</span></span>
+                                        <span class="experience-link__year">2016—2018</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#about" class="experience-link">
+                                        <span class="experience-link__title">iOS Developer, <span
+                                                class="experience-link__company">Multiple Clients</span></span>
+                                        <span class="experience-link__year">2010—Present</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-new-layout__column header-new-layout__expertise-columns">
+                            <div class="header-new-layout__expertise-group">
+                                <h5 class="header-new-layout__title">Sector</h5>
+                                <ul class="header-new-layout__list expertise__tags">
+                                    <li><a href="#" class="tag">Education</a></li>
+                                    <li><a href="#" class="tag">Health</a></li>
+                                    <li><a href="#" class="tag">Government</a></li>
+                                    <li><a href="#" class="tag">AdTech</a></li>
+                                    <li><a href="#" class="tag">Environmental</a></li>
+                                </ul>
+                            </div>
+                            <div class="header-new-layout__expertise-group">
+                                <h5 class="header-new-layout__title">Practical</h5>
+                                <ul class="header-new-layout__list expertise__tags">
+                                    <li><a href="#" class="tag">Product & UX Design</a></li>
+                                    <li><a href="#" class="tag">Salesforce</a></li>
+                                    <li><a href="#" class="tag">Mobile Apps</a></li>
+                                    <li><a href="#" class="tag">React Native</a></li>
+                                    <li><a href="#" class="tag">Agile</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="expertise__group">
-                        <h5 class="expertise__title">Practical Expertise</h5>
-                        <div class="expertise__tags">
-                            <span class="tag">Product & UX Design</span>
-                            <span class="tag">Salesforce</span>
-                            <span class="tag">Mobile Apps</span>
-                            <span class="tag">React Native</span>
-                            <span class="tag">Agile</span>
+
+                    <div class="header-new-layout__footer">
+                        <div class="header-new-layout__card">
+                            <div class="header__profile"></div>
+                            <div class="header-new-layout__card-content">
+                                <div class="header__availability">
+                                    <p>Available for consultancy or new opportunities.</p>
+                                </div>
+                                <ul class="header-new-layout__list header-new-layout__list--links">
+                                    <li><a href="https://twitter.com/RobinBailey" target="_blank"
+                                            rel="noopener noreferrer">Twitter</a></li>
+                                    <li><a href="https://www.linkedin.com/in/robinwbailey/" target="_blank"
+                                            rel="noopener noreferrer">LinkedIn</a></li>
+                                    <li><a href="mailto:robin.w.bailey@gmail.com">Email</a></li>
+                                </ul>
+                                <p class="header-new-layout__tagline">Creativity & Clarity</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="header__links">
-                    <a href="https://twitter.com/RobinBailey" class="link" target="_blank" rel="noopener noreferrer"><i
-                            class="fab fa-twitter"></i> Twitter</a>
-                    <a href="https://www.linkedin.com/in/robinwbailey/" class="link" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="mailto:robin.w.bailey@gmail.com" class="link"><i class="fas fa-envelope"></i> Email</a>
-                </div>
-                <a href="#work" class="arrow-holder">
-                    <div class="arrow bounce">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 18L12 6M12 18L17 13M12 18L7 13" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </a>
+                <!-- End of New Header Content -->
+
             </div>
         </header>
 
@@ -512,65 +399,6 @@
 
     <script src="portfolio-data.js"></script>
     <script>
-        class ThemePicker {
-            constructor() {
-                this.currentTheme = localStorage.getItem('theme') || 'orange';
-                this.toggle = document.querySelector('.theme-picker__toggle');
-                this.panel = document.querySelector('.theme-picker__panel');
-                this.options = document.querySelectorAll('.theme-picker__option');
-
-                this.init();
-            }
-
-            init() {
-                this.applyTheme(this.currentTheme);
-                this.bindEvents();
-            }
-
-            bindEvents() {
-                this.toggle.addEventListener('click', () => this.togglePanel());
-
-                this.options.forEach(option => {
-                    option.addEventListener('click', () => {
-                        const theme = option.dataset.theme;
-                        this.selectTheme(theme);
-                    });
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('.theme-picker')) {
-                        this.closePanel();
-                    }
-                });
-            }
-
-            togglePanel() {
-                this.panel.classList.toggle('active');
-            }
-
-            closePanel() {
-                this.panel.classList.remove('active');
-            }
-
-            selectTheme(theme) {
-                this.currentTheme = theme;
-                this.applyTheme(theme);
-                this.updateActiveOption(theme);
-                this.closePanel();
-                localStorage.setItem('theme', theme);
-            }
-
-            applyTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-
-            updateActiveOption(theme) {
-                this.options.forEach(option => {
-                    option.classList.toggle('active', option.dataset.theme === theme);
-                });
-            }
-        }
-
         document.getElementById('year').textContent = new Date().getFullYear();
 
         function updateLocalTime() {
@@ -588,7 +416,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            new ThemePicker();
             updateLocalTime();
             setInterval(updateLocalTime, 60000);
 
