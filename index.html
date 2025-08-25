@@ -29,133 +29,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         xintegrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400&family=Inter:wght@400;600&family=Lato:wght@700&display=swap"
-        rel="stylesheet">
-
-    <style>
-        /* Assuming style.css is in the same directory */
-        .work__item {
-            scroll-margin-top: 12rem;
-        }
-
-        #project-detail-container {
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        /* Added Lato font for uppercase headings */
-        :root {
-            --font-family-heading: 'Lato', sans-serif;
-        }
-
-        .expertise__title,
-        .about__category h4,
-        .projects__title,
-        .work__item-section-title,
-        .work__header h3 {
-            font-family: var(--font-family-heading);
-        }
-
-        /* Tag consistency update */
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--color-background);
-            color: var(--color-text-secondary);
-            padding: 0.4rem 1rem;
-            /* Adjusted padding */
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: var(--font-weight-semibold);
-            border: 1px solid var(--color-border);
-            transition: all 0.2s ease-in-out;
-            text-decoration: none;
-        }
-
-        .tag:hover {
-            background-color: var(--color-link);
-            color: var(--color-background);
-            border-color: var(--color-link);
-            transform: translateY(-2px);
-            text-decoration: none;
-            box-shadow: 0 4px 10px var(--shadow-color);
-        }
-
-        /* Remove top border from footer */
-        .footer__top {
-            border-bottom: none;
-        }
-
-        /* Add gap between tags */
-        .expertise__tags,
-        .projects__tags,
-        .work__item-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        /* Profile glow opacity variables */
-        :root {
-            --glow-opacity-1: 0.45;
-            --glow-opacity-2: 0.65;
-            --glow-opacity-3: 0.55;
-            --glow-opacity-4: 0.75;
-        }
-
-        [data-theme="dark"] {
-            /* Reset glow opacity for dark theme to be less intense */
-            --glow-opacity-1: 0.3;
-            --glow-opacity-2: 0.5;
-            --glow-opacity-3: 0.4;
-            --glow-opacity-4: 0.6;
-        }
-
-        @keyframes profile-glow {
-            0% {
-                box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), var(--glow-opacity-1));
-                border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
-            }
-
-            25% {
-                box-shadow: -10px -8px 20px 2px rgba(var(--color-link-rgb), var(--glow-opacity-2));
-                border-radius: 65% 35% 40% 60% / 55% 60% 40% 45%;
-            }
-
-            50% {
-                box-shadow: 0px 10px 28px 5px rgba(var(--color-link-rgb), var(--glow-opacity-3));
-                border-radius: 45% 55% 60% 40% / 35% 50% 50% 65%;
-            }
-
-            75% {
-                box-shadow: 10px 8px 22px 3px rgba(var(--color-link-rgb), var(--glow-opacity-4));
-                border-radius: 35% 65% 60% 40% / 55% 40% 60% 45%;
-            }
-
-            100% {
-                box-shadow: 5px -5px 25px 0px rgba(var(--color-link-rgb), var(--glow-opacity-1));
-                border-radius: 45% 55% 60% 40% / 65% 50% 50% 35%;
-            }
-        }
-
-        .header__profile::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 20%;
-            animation: profile-glow 10s ease-in-out infinite;
-            z-index: -1;
-        }
-    </style>
 </head>
 
-<body id="top">
+<body id="top" data-theme="blue">
 
     <!-- Main Content Wrapper -->
     <main id="main-content">
@@ -168,86 +44,182 @@
             </ul>
         </nav>
 
-        <div class="theme-picker">
-            <button class="theme-picker__toggle" aria-label="Toggle theme picker">
-                🎨
-            </button>
-            <div class="theme-picker__panel">
-                <div class="theme-picker__title">Choose Theme</div>
-                <div class="theme-picker__grid">
-                    <div class="theme-picker__option" data-theme="blue" title="Blue"></div>
-                    <div class="theme-picker__option" data-theme="purple" title="Purple"></div>
-                    <div class="theme-picker__option" data-theme="green" title="Green"></div>
-                    <div class="theme-picker__option active" data-theme="orange" title="Orange"></div>
-                    <div class="theme-picker__option" data-theme="pink" title="Pink"></div>
-                    <div class="theme-picker__option" data-theme="dark" title="Dark"></div>
-                </div>
-            </div>
-        </div>
-
         <header id="home" class="section header">
             <div class="container">
-                <div class="header__profile"></div>
-                <div class="header__headings">
-                    <h1>Robin Bailey</h1>
-                    <h2>Product Manager, Designer, & Engineer</h2>
-                </div>
-                <div class="header__description">
-                    <p>I help take complex business challenges & work with you to design, architect, & implement user
-                        focused technical product solutions with clarity.</p>
-                    <p>Currently at <a href="https://plymouth.ac.uk" class="link">Plymouth University ↗</a> building the
-                        next generation education experience for students in
-                        the Faculty
-                        of
-                        Health and all students across the wider Digital Campus. Previously working in the
-                        AdTech space
-                        on Engineering, UX, and Product Design at <a href="https://wearesilverbullet.com/"
-                            class="link">iotec Global ↗</a>.</p>
-                    <p class="tagline">Creativity & Clarity</p>
-                </div>
-                <div class="dash"></div>
-                <div class="current-status">
-                    <span class="status-dot"></span>
-                    <span>Available for consultancy or opportunities</span>
-                </div>
 
-                <div class="expertise">
-                    <div class="expertise__group">
-                        <h5 class="expertise__title">Sector Expertise</h5>
-                        <div class="expertise__tags">
-                            <span class="tag">Education</span>
-                            <span class="tag">Health</span>
-                            <span class="tag">Government</span>
-                            <span class="tag">AdTech</span>
-                            <span class="tag">Environmental</span>
+                <!-- New Header Content -->
+                <div class="header-new-layout">
+                    <div class="header-new-layout__intro">
+                        <h1 class="header-new-layout__name">Robin Bailey</h1>
+                        <h1 class="header-new-layout__description">
+                            Product Manager, Designer, and Engineer. I help turn complex business challenges into clear,
+                            user-focused product solutions — working with you to design, architect, and implement
+                            technical systems that deliver real impact.
+                        </h1>
+                    </div>
+
+                    <div class="header-new-layout__details">
+                        <div class="header-new-layout__column">
+                            <h5 class="header-new-layout__title">Experience</h5>
+                            <ul class="header-new-layout__list header-new-layout__list--experience">
+                                <li>
+                                    <div class="experience-link">
+                                        <span class="experience-link__title">Digital Education Product Manager<br><span
+                                                class="experience-link__company">Plymouth University</span></span>
+                                        <span class="experience-link__tag">Current</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="experience-link">
+                                        <span class="experience-link__title">Product Architect<br><span
+                                                class="experience-link__company">iotec Global</span></span>
+                                        <span class="experience-link__year">2016—2018</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="experience-link">
+                                        <span class="experience-link__title">Freelance Product Design &
+                                            Development
+                                            <br><span class="experience-link__company">Clients inc: Wild Planet
+                                                Trust, ToolFinder, Local Gov, Apollo Health Innovations</span></span>
+                                        <span class="experience-link__year">2010—Present</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-new-layout__column">
+                            <h5 class="header-new-layout__title header__availability">Available for opportunities
+                            </h5>
+                            <ul class="header-new-layout__list header-new-layout__list--links">
+                                <li><a href="https://twitter.com/RobinBailey" target="_blank"
+                                        rel="noopener noreferrer">Twitter</a></li>
+                                <li><a href="https://www.linkedin.com/in/robinwbailey/" target="_blank"
+                                        rel="noopener noreferrer">LinkedIn</a></li>
+                                <li><a href="mailto:robin.w.bailey@gmail.com">Email</a></li>
+                            </ul>
+                            <a href="#" class="cv-card">
+                                <div class="cv-card__icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="cv-card__text">
+                                    <span class="cv-card__title">View Full CV/Resume</span>
+                                    <span class="cv-card__arrow">→</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="expertise__group">
-                        <h5 class="expertise__title">Practical Expertise</h5>
-                        <div class="expertise__tags">
-                            <span class="tag">Product & UX Design</span>
-                            <span class="tag">Salesforce</span>
-                            <span class="tag">Mobile Apps</span>
-                            <span class="tag">React Native</span>
-                            <span class="tag">Agile</span>
+
+                    <div class="header-new-layout__expertise-row">
+                        <div class="header-new-layout__expertise-group">
+                            <h5 class="header-new-layout__title">Sectors</h5>
+                            <div class="expertise-scroll-wrapper">
+                                <ul class="expertise-cards">
+                                    <li class="expertise-card" data-color="green" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-graduation-cap"></i>
+                                                <span class="expertise-card__title">Education</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="red" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-heartbeat"></i>
+                                                <span class="expertise-card__title">Health</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="blue" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-landmark"></i>
+                                                <span class="expertise-card__title">Government</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="orange" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-bullhorn"></i>
+                                                <span class="expertise-card__title">AdTech</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="teal" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-leaf"></i>
+                                                <span class="expertise-card__title">Environmental</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-new-layout__expertise-row">
+                        <div class="header-new-layout__expertise-group">
+                            <h5 class="header-new-layout__title">Practical Expertise</h5>
+                            <div class="expertise-scroll-wrapper">
+                                <ul class="expertise-cards">
+                                    <li class="expertise-card" data-color="purple" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-drafting-compass"></i>
+                                                <span class="expertise-card__title">Product & UX Design</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="lightblue" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fab fa-salesforce"></i>
+                                                <span class="expertise-card__title">Salesforce</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="grey" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-mobile-alt"></i>
+                                                <span class="expertise-card__title">Mobile Apps</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="blue" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fab fa-react"></i>
+                                                <span class="expertise-card__title">React Native</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                    <li class="expertise-card" data-color="yellow" data-description="TBA.">
+                                        <a href="#">
+                                            <div class="expertise-card__content">
+                                                <i class="fas fa-sync-alt"></i>
+                                                <span class="expertise-card__title">Agile</span>
+                                            </div>
+                                            <p class="expertise-card__description"></p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="header__links">
-                    <a href="https://twitter.com/RobinBailey" class="link" target="_blank" rel="noopener noreferrer"><i
-                            class="fab fa-twitter"></i> Twitter</a>
-                    <a href="https://www.linkedin.com/in/robinwbailey/" class="link" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="mailto:robin.w.bailey@gmail.com" class="link"><i class="fas fa-envelope"></i> Email</a>
-                </div>
-                <a href="#work" class="arrow-holder">
-                    <div class="arrow bounce">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 18L12 6M12 18L17 13M12 18L7 13" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </a>
+                <!-- End of New Header Content -->
+
             </div>
         </header>
 
@@ -255,7 +227,37 @@
             <div class="container">
                 <div class="about__grid">
                     <div class="about__category">
-                        <h4><i class="fas fa-briefcase"></i> Experience</h4>
+                        <div class="about__header">
+                            <h3 class="about__title">Academia & education. <span class="about__subtitle">Where and what
+                                    I've
+                                    learnt.</span></h3>
+                        </div>
+                        <ol class="about__list">
+                            <li class="about__item">
+                                <h6>MSc Business & Management <small>@</small> <a href="https://plymouth.ac.uk"
+                                        class="link">Plymouth University, Graduate School of Management</a></h6>
+                                <p class="about__description"><em>Masters with Distinction</em> — Dean's List of
+                                    Academic
+                                    Excellence</p>
+                                <p class="about__date"><time datetime="2014">2014</time> → <time
+                                        datetime="2016">2016</time>
+                                </p>
+                            </li>
+                            <li class="about__item">
+                                <h6>BSc (Hons) Computer Science <small>@</small> <a href="https://plymouth.ac.uk"
+                                        class="link">Plymouth University, School of Computing & Mathematics</a></h6>
+                                <p class="about__description"><em>First-Class Honours</em> — 3x Dean's List of Academic
+                                    Excellence</p>
+                                <p class="about__date"><time datetime="2011">2011</time> → <time
+                                        datetime="2014">2014</time>
+                                </p>
+                            </li>
+                        </ol>
+
+                        <div class="about__header" style="margin-top: var(--space-l);">
+                            <h3 class="about__title">The story so far. <span class="about__subtitle">A timeline of my
+                                    professional experience.</span></h3>
+                        </div>
                         <ol class="about__list">
                             <li class="about__item">
                                 <h6>Digital Education Product Manager <small>@</small> <a href="https://plymouth.ac.uk"
@@ -318,10 +320,12 @@
                                 </div>
                             </li>
                         </ol>
-
-                        <h4 style="margin-top: var(--space-l);"><i class="fas fa-hands-helping"></i> Advisory &
-                            Volunteering
-                        </h4>
+                    </div>
+                    <div class="about__category">
+                        <div class="about__header" style="margin-top: var(--space-l);">
+                            <h3 class="about__title">Giving back. <span class="about__subtitle">Advisory and
+                                    volunteering roles.</span></h3>
+                        </div>
                         <ol class="about__list">
                             <li class="about__item">
                                 <h6>Assessment Alliance Security Group <small>@</small> <a href="https://plymouth.ac.uk"
@@ -349,32 +353,11 @@
                                 <p class="about__date"><time datetime="2006">2006</time> → 2009</p>
                             </li>
                         </ol>
-                    </div>
-                    <div class="about__category">
-                        <h4><i class="fas fa-university"></i> Education</h4>
-                        <ol class="about__list">
-                            <li class="about__item">
-                                <h6>MSc Business & Management <small>@</small> <a href="https://plymouth.ac.uk"
-                                        class="link">Plymouth University, Graduate School of Management</a></h6>
-                                <p class="about__description"><em>Masters with Distinction</em> — Dean's List of
-                                    Academic
-                                    Excellence</p>
-                                <p class="about__date"><time datetime="2014">2014</time> → <time
-                                        datetime="2016">2016</time>
-                                </p>
-                            </li>
-                            <li class="about__item">
-                                <h6>BSc (Hons) Computer Science <small>@</small> <a href="https://plymouth.ac.uk"
-                                        class="link">Plymouth University, School of Computing & Mathematics</a></h6>
-                                <p class="about__description"><em>First-Class Honours</em> — 3x Dean's List of Academic
-                                    Excellence</p>
-                                <p class="about__date"><time datetime="2011">2011</time> → <time
-                                        datetime="2014">2014</time>
-                                </p>
-                            </li>
-                        </ol>
 
-                        <h4 style="margin-top: var(--space-l);"><i class="fas fa-microphone"></i> Speaking</h4>
+                        <div class="about__header" style="margin-top: var(--space-l);">
+                            <h3 class="about__title">Sharing knowledge. <span class="about__subtitle">A selection of
+                                    speaking engagements.</span></h3>
+                        </div>
                         <ol class="about__list">
                             <li class="about__item speaking__item">
                                 <div class="speaking__title">
@@ -434,9 +417,9 @@
 
         <section id="work" class="section">
             <div class="container">
-                <div class="work__header">
-                    <h3>Selected Work</h3>
-                    <h5>A selection of recent work and side projects.</h5>
+                <div class="about__header" style="text-align: center; margin-bottom: var(--space-l);">
+                    <h3 class="about__title">Selected Work. <span class="about__subtitle">A selection of recent work and
+                            side projects.</span></h3>
                 </div>
                 <!-- This grid will be populated by JavaScript -->
                 <div class="work__grid work__grid--prominent" id="selected-work-grid"></div>
@@ -445,12 +428,17 @@
 
         <section id="other-work" class="section section--grey">
             <div class="container">
-                <div class="work__header">
-                    <h3>Other Projects</h3>
-                    <h5>A collection of other projects, concepts, and experiments.</h5>
+                <div class="about__header">
+                    <h3 class="about__title">Side quests & experiments. <span class="about__subtitle">A collection of
+                            concepts and other fun things.</span></h3>
                 </div>
-                <!-- This grid will be populated by JavaScript -->
+            </div>
+            <div class="horizontal-scroll-wrapper">
                 <div class="work__grid" id="other-work-grid"></div>
+                <button class="scroll-arrow left hidden" aria-label="Scroll left"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="scroll-arrow right" aria-label="Scroll right"><i
+                        class="fas fa-chevron-right"></i></button>
             </div>
         </section>
 
@@ -512,65 +500,6 @@
 
     <script src="portfolio-data.js"></script>
     <script>
-        class ThemePicker {
-            constructor() {
-                this.currentTheme = localStorage.getItem('theme') || 'orange';
-                this.toggle = document.querySelector('.theme-picker__toggle');
-                this.panel = document.querySelector('.theme-picker__panel');
-                this.options = document.querySelectorAll('.theme-picker__option');
-
-                this.init();
-            }
-
-            init() {
-                this.applyTheme(this.currentTheme);
-                this.bindEvents();
-            }
-
-            bindEvents() {
-                this.toggle.addEventListener('click', () => this.togglePanel());
-
-                this.options.forEach(option => {
-                    option.addEventListener('click', () => {
-                        const theme = option.dataset.theme;
-                        this.selectTheme(theme);
-                    });
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('.theme-picker')) {
-                        this.closePanel();
-                    }
-                });
-            }
-
-            togglePanel() {
-                this.panel.classList.toggle('active');
-            }
-
-            closePanel() {
-                this.panel.classList.remove('active');
-            }
-
-            selectTheme(theme) {
-                this.currentTheme = theme;
-                this.applyTheme(theme);
-                this.updateActiveOption(theme);
-                this.closePanel();
-                localStorage.setItem('theme', theme);
-            }
-
-            applyTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-
-            updateActiveOption(theme) {
-                this.options.forEach(option => {
-                    option.classList.toggle('active', option.dataset.theme === theme);
-                });
-            }
-        }
-
         document.getElementById('year').textContent = new Date().getFullYear();
 
         function updateLocalTime() {
@@ -588,9 +517,17 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            new ThemePicker();
             updateLocalTime();
             setInterval(updateLocalTime, 60000);
+
+            // --- Expertise Card Description Logic ---
+            document.querySelectorAll('.expertise-card').forEach(card => {
+                const description = card.dataset.description;
+                const p = card.querySelector('.expertise-card__description');
+                if (p && description) {
+                    p.textContent = description;
+                }
+            });
 
             // --- HTML Tooltip Logic (New) ---
             const tooltipElement = document.createElement('div');
@@ -627,27 +564,21 @@
                     }
                     if (top < 5) {
                         top = triggerRect.bottom + 10;
-                        // Note: The arrow direction will be incorrect if the tooltip is forced below.
-                        // This can be enhanced with more logic to flip the arrow.
                     }
 
                     tooltipElement.style.top = `${top + window.scrollY}px`;
                     tooltipElement.style.left = `${left + window.scrollX}px`;
-                    tooltipElement.style.visibility = 'visible'; // Make it visible at the correct position
+                    tooltipElement.style.visibility = 'visible';
                 };
 
                 const hide = () => {
-                    // Use a timeout to allow the user to move their mouse over the tooltip
                     hideTimeout = setTimeout(() => {
                         tooltipElement.classList.remove('visible');
                     }, 100);
                 };
 
-                // Add event listeners to the trigger element
                 trigger.addEventListener('mouseenter', show);
                 trigger.addEventListener('mouseleave', hide);
-
-                // Add listeners to the tooltip itself to keep it open when the mouse is over it
                 tooltipElement.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
                 tooltipElement.addEventListener('mouseleave', hide);
             });
@@ -670,37 +601,25 @@
                 `).join('');
             }
 
-            // Function to create SKILL tags (outlined)
             function createTagsHTML(tagsArray) {
                 if (!tagsArray || tagsArray.length === 0) return '';
-                // Uses the base .tag class for the outlined "skill" style
                 return tagsArray.map(tag => `<span class="tag">${tag}</span>`).join('');
             }
 
-            // NEW: Helper function to get the correct icon for a feature tag
             function getIconForFeatureTag(tag) {
                 const iconMap = {
-                    'Education': 'fas fa-graduation-cap',
-                    'Health': 'fas fa-heartbeat',
-                    'Side Project': 'fas fa-wrench',
-                    'Branding': 'fas fa-palette',
-                    'Concept': 'fas fa-lightbulb',
-                    'AdTech': 'fas fa-bullhorn',
-                    'Client Work': 'fas fa-handshake',
-                    'Consultancy': 'fas fa-users',
-                    'Government': 'fas fa-landmark',
-                    'Health & Social Care': 'fas fa-clinic-medical',
-                    'AI': 'fas fa-robot',
-                    'Chatbot': 'fas fa-comments',
-                    'Mobile': 'fas fa-mobile-alt',
-                    'Fitness': 'fas fa-dumbbell',
-                    'Content Aggregation': 'fas fa-newspaper',
-                    'Marketplace': 'fas fa-store'
+                    'Education': 'fas fa-graduation-cap', 'Health': 'fas fa-heartbeat',
+                    'Side Project': 'fas fa-wrench', 'Branding': 'fas fa-palette',
+                    'Concept': 'fas fa-lightbulb', 'AdTech': 'fas fa-bullhorn',
+                    'Client Work': 'fas fa-handshake', 'Consultancy': 'fas fa-users',
+                    'Government': 'fas fa-landmark', 'Health & Social Care': 'fas fa-clinic-medical',
+                    'AI': 'fas fa-robot', 'Chatbot': 'fas fa-comments',
+                    'Mobile': 'fas fa-mobile-alt', 'Fitness': 'fas fa-dumbbell',
+                    'Content Aggregation': 'fas fa-newspaper', 'Marketplace': 'fas fa-store'
                 };
-                return iconMap[tag] || 'fas fa-tag'; // Return a default icon if no match
+                return iconMap[tag] || 'fas fa-tag';
             }
 
-            // MODIFIED: Function to create FEATURE tags (filled) with relevant icons
             function createFeatureTagsHTML(tagsArray) {
                 if (!tagsArray || tagsArray.length === 0) return '';
                 const tagsHTML = tagsArray.map(tag => {
@@ -771,6 +690,38 @@
                 otherWorkGrid.appendChild(projectEl);
             });
 
+            // --- Horizontal Scroll Logic ---
+            const otherWorkWrapper = document.querySelector('.horizontal-scroll-wrapper');
+            if (otherWorkWrapper) {
+                const grid = otherWorkWrapper.querySelector('#other-work-grid');
+                const leftBtn = otherWorkWrapper.querySelector('.scroll-arrow.left');
+                const rightBtn = otherWorkWrapper.querySelector('.scroll-arrow.right');
+
+                const updateScrollButtons = () => {
+                    const { scrollLeft, scrollWidth, clientWidth } = grid;
+                    leftBtn.classList.toggle('hidden', scrollLeft <= 0);
+                    rightBtn.classList.toggle('hidden', scrollLeft >= scrollWidth - clientWidth - 1);
+                    otherWorkWrapper.classList.toggle('at-end', scrollLeft >= scrollWidth - clientWidth - 1);
+                };
+
+                grid.addEventListener('scroll', updateScrollButtons);
+
+                leftBtn.addEventListener('click', () => {
+                    const scrollAmount = grid.clientWidth * 0.8; // Scroll by 80% of visible width
+                    grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                rightBtn.addEventListener('click', () => {
+                    const scrollAmount = grid.clientWidth * 0.8;
+                    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                // Initial check
+                updateScrollButtons();
+                // Check again after a short delay to account for image loading
+                setTimeout(updateScrollButtons, 500);
+            }
+
 
             // --- Navigation, Scroll, and Page Loading Logic ---
             const mainContent = document.getElementById('main-content');
@@ -782,9 +733,8 @@
             let lastClickedWorkItem = null;
 
             const onScroll = () => {
-                if (mainContent.style.display === 'none') {
-                    return;
-                }
+                if (mainContent.style.display === 'none') return;
+
                 const scrollY = window.scrollY;
                 const direction = scrollY > lastScrollY ? "down" : "up";
 
@@ -818,7 +768,6 @@
 
             window.addEventListener('scroll', onScroll);
 
-            // Add click listener to main nav links to reset state
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     lastClickedWorkItem = null;
