@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         xintegrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
 </head>
 
 <body id="top" data-theme="blue">
@@ -331,8 +330,13 @@
                     <h3>Other Projects</h3>
                     <h5>A collection of other projects, concepts, and experiments.</h5>
                 </div>
-                <!-- This grid will be populated by JavaScript -->
+            </div>
+            <div class="horizontal-scroll-wrapper">
                 <div class="work__grid" id="other-work-grid"></div>
+                <button class="scroll-arrow left hidden" aria-label="Scroll left"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="scroll-arrow right" aria-label="Scroll right"><i
+                        class="fas fa-chevron-right"></i></button>
             </div>
         </section>
 
@@ -449,27 +453,21 @@
                     }
                     if (top < 5) {
                         top = triggerRect.bottom + 10;
-                        // Note: The arrow direction will be incorrect if the tooltip is forced below.
-                        // This can be enhanced with more logic to flip the arrow.
                     }
 
                     tooltipElement.style.top = `${top + window.scrollY}px`;
                     tooltipElement.style.left = `${left + window.scrollX}px`;
-                    tooltipElement.style.visibility = 'visible'; // Make it visible at the correct position
+                    tooltipElement.style.visibility = 'visible';
                 };
 
                 const hide = () => {
-                    // Use a timeout to allow the user to move their mouse over the tooltip
                     hideTimeout = setTimeout(() => {
                         tooltipElement.classList.remove('visible');
                     }, 100);
                 };
 
-                // Add event listeners to the trigger element
                 trigger.addEventListener('mouseenter', show);
                 trigger.addEventListener('mouseleave', hide);
-
-                // Add listeners to the tooltip itself to keep it open when the mouse is over it
                 tooltipElement.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
                 tooltipElement.addEventListener('mouseleave', hide);
             });
@@ -492,37 +490,25 @@
                 `).join('');
             }
 
-            // Function to create SKILL tags (outlined)
             function createTagsHTML(tagsArray) {
                 if (!tagsArray || tagsArray.length === 0) return '';
-                // Uses the base .tag class for the outlined "skill" style
                 return tagsArray.map(tag => `<span class="tag">${tag}</span>`).join('');
             }
 
-            // NEW: Helper function to get the correct icon for a feature tag
             function getIconForFeatureTag(tag) {
                 const iconMap = {
-                    'Education': 'fas fa-graduation-cap',
-                    'Health': 'fas fa-heartbeat',
-                    'Side Project': 'fas fa-wrench',
-                    'Branding': 'fas fa-palette',
-                    'Concept': 'fas fa-lightbulb',
-                    'AdTech': 'fas fa-bullhorn',
-                    'Client Work': 'fas fa-handshake',
-                    'Consultancy': 'fas fa-users',
-                    'Government': 'fas fa-landmark',
-                    'Health & Social Care': 'fas fa-clinic-medical',
-                    'AI': 'fas fa-robot',
-                    'Chatbot': 'fas fa-comments',
-                    'Mobile': 'fas fa-mobile-alt',
-                    'Fitness': 'fas fa-dumbbell',
-                    'Content Aggregation': 'fas fa-newspaper',
-                    'Marketplace': 'fas fa-store'
+                    'Education': 'fas fa-graduation-cap', 'Health': 'fas fa-heartbeat',
+                    'Side Project': 'fas fa-wrench', 'Branding': 'fas fa-palette',
+                    'Concept': 'fas fa-lightbulb', 'AdTech': 'fas fa-bullhorn',
+                    'Client Work': 'fas fa-handshake', 'Consultancy': 'fas fa-users',
+                    'Government': 'fas fa-landmark', 'Health & Social Care': 'fas fa-clinic-medical',
+                    'AI': 'fas fa-robot', 'Chatbot': 'fas fa-comments',
+                    'Mobile': 'fas fa-mobile-alt', 'Fitness': 'fas fa-dumbbell',
+                    'Content Aggregation': 'fas fa-newspaper', 'Marketplace': 'fas fa-store'
                 };
-                return iconMap[tag] || 'fas fa-tag'; // Return a default icon if no match
+                return iconMap[tag] || 'fas fa-tag';
             }
 
-            // MODIFIED: Function to create FEATURE tags (filled) with relevant icons
             function createFeatureTagsHTML(tagsArray) {
                 if (!tagsArray || tagsArray.length === 0) return '';
                 const tagsHTML = tagsArray.map(tag => {
@@ -593,6 +579,38 @@
                 otherWorkGrid.appendChild(projectEl);
             });
 
+            // --- Horizontal Scroll Logic ---
+            const otherWorkWrapper = document.querySelector('.horizontal-scroll-wrapper');
+            if (otherWorkWrapper) {
+                const grid = otherWorkWrapper.querySelector('#other-work-grid');
+                const leftBtn = otherWorkWrapper.querySelector('.scroll-arrow.left');
+                const rightBtn = otherWorkWrapper.querySelector('.scroll-arrow.right');
+
+                const updateScrollButtons = () => {
+                    const { scrollLeft, scrollWidth, clientWidth } = grid;
+                    leftBtn.classList.toggle('hidden', scrollLeft <= 0);
+                    rightBtn.classList.toggle('hidden', scrollLeft >= scrollWidth - clientWidth - 1);
+                    otherWorkWrapper.classList.toggle('at-end', scrollLeft >= scrollWidth - clientWidth - 1);
+                };
+
+                grid.addEventListener('scroll', updateScrollButtons);
+
+                leftBtn.addEventListener('click', () => {
+                    const scrollAmount = grid.clientWidth * 0.8; // Scroll by 80% of visible width
+                    grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                rightBtn.addEventListener('click', () => {
+                    const scrollAmount = grid.clientWidth * 0.8;
+                    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                // Initial check
+                updateScrollButtons();
+                // Check again after a short delay to account for image loading
+                setTimeout(updateScrollButtons, 500);
+            }
+
 
             // --- Navigation, Scroll, and Page Loading Logic ---
             const mainContent = document.getElementById('main-content');
@@ -604,9 +622,8 @@
             let lastClickedWorkItem = null;
 
             const onScroll = () => {
-                if (mainContent.style.display === 'none') {
-                    return;
-                }
+                if (mainContent.style.display === 'none') return;
+
                 const scrollY = window.scrollY;
                 const direction = scrollY > lastScrollY ? "down" : "up";
 
@@ -640,7 +657,6 @@
 
             window.addEventListener('scroll', onScroll);
 
-            // Add click listener to main nav links to reset state
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     lastClickedWorkItem = null;

@@ -11,6 +11,7 @@
   /* Colors - Light Mode */
   --color-background: #ffffff;
   --color-background-offset: #f4f4f5;
+  --color-background-rgb: 255, 255, 255;
   --color-text-primary: #2d3748;
   --color-text-secondary: #545a63;
   --color-text-subtle: #858d98;
@@ -42,6 +43,12 @@
   --space-s: 1rem;
   --space-m: 2rem;
   --space-l: 4rem;
+  --container-padding: var(--space-s);
+  --container-max-width: 80rem;
+  --container-margin: max(
+    var(--container-padding),
+    (100vw - var(--container-max-width)) / 2
+  );
 }
 
 /* Dark Mode Color Overrides */
@@ -49,6 +56,7 @@
   :root {
     --color-background: #26282b;
     --color-background-offset: #303235;
+    --color-background-rgb: 38, 40, 43;
     --color-text-primary: #f3f4f6;
     --color-text-secondary: #a3abb7;
     --color-text-subtle: #858d98;
@@ -191,14 +199,14 @@ ol {
 -------------------------------------------------- */
 .container {
   width: 100%;
-  max-width: 80rem; /* 1280px */
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--space-s);
+  padding: 0 var(--container-padding);
 }
 
 .section {
-  padding: var(--space-l) env(safe-area-inset-right) var(--space-l)
-    env(safe-area-inset-left);
+  padding-top: var(--space-l);
+  padding-bottom: var(--space-l);
   animation: fadeInUp 0.6s ease-out;
 }
 
@@ -596,6 +604,89 @@ ol {
   gap: var(--space-l);
 }
 
+/* --- Other Projects Horizontal Scroll --- */
+.horizontal-scroll-wrapper {
+  position: relative;
+}
+
+.horizontal-scroll-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  background: linear-gradient(
+    to left,
+    var(--color-background-offset),
+    transparent
+  );
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.horizontal-scroll-wrapper.at-end::after {
+  opacity: 0;
+}
+
+#other-work .work__grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: var(--container-margin);
+  padding-right: var(--container-margin);
+}
+
+#other-work .work__grid::-webkit-scrollbar {
+  display: none;
+}
+
+#other-work .work__item {
+  flex: 0 0 400px;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(var(--color-background-rgb), 0.8);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.scroll-arrow:hover {
+  background-color: var(--color-background);
+  color: var(--color-link);
+  transform: translateY(-50%) scale(1.1);
+}
+.scroll-arrow.left {
+  left: calc(var(--container-margin) - 22px);
+}
+.scroll-arrow.right {
+  right: calc(var(--container-margin) - 22px);
+}
+.scroll-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.8);
+}
+
 .work__item {
   background-color: var(--color-background);
   border-radius: 16px;
@@ -936,7 +1027,7 @@ ol {
   fill: currentColor;
 }
 .footer__container {
-  padding: var(--space-m) 0;
+  padding: var(--space-m) var(--space-s);
 }
 .footer__top {
   display: flex;
@@ -1189,20 +1280,21 @@ ol {
 -------------------------------------------------- */
 @media (min-width: 48em) {
   /* 768px */
-  .container {
-    padding: 0 var(--space-m);
+  :root {
+    --container-padding: var(--space-m);
   }
   .about__grid {
     grid-template-columns: 1fr 1fr;
   }
-  .work__grid:not(.work__grid--prominent) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .work__item-body {
-    padding: 1.5rem;
-  }
   .project-gallery__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scroll-arrow.left {
+    left: calc(var(--container-margin) - 22px);
+  }
+  .scroll-arrow.right {
+    right: calc(var(--container-margin) - 22px);
   }
 }
 
@@ -1251,9 +1343,6 @@ ol {
 
 @media (min-width: 62em) {
   /* 992px */
-  .work__grid:not(.work__grid--prominent) {
-    grid-template-columns: repeat(3, 1fr);
-  }
   .project-detail__grid {
     grid-template-columns: 2fr 1fr;
   }
