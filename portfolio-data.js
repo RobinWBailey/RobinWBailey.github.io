@@ -123,7 +123,7 @@ const portfolioData = {
     },
     {
       id: "bearforms",
-      year: "2022",
+      year: "2025",
       displayTags: ["side project", "development", "design"],
       title: "BearForms",
       subtitle: "Offline Data Capture App",
@@ -209,7 +209,7 @@ const portfolioData = {
     },
     {
       id: "investigate",
-      year: "2019",
+      year: "2014",
       displayTags: ["freelance", "development", "design"],
       title: "Investigate Invertebrates",
       subtitle: "Paignton Zoo Companion App",
@@ -254,7 +254,7 @@ const portfolioData = {
     },
     {
       id: "learning-analytics",
-      year: "2020",
+      year: "2025",
       displayTags: ["product", "data vis"],
       title: "Learning Analytics",
       subtitle: "Data Visualization for Education",
@@ -264,7 +264,7 @@ const portfolioData = {
       overview:
         "A project to visualize student learning data to identify trends and support student success.",
       roleAndSkills: {
-        role: "Product Lead",
+        role: "Product & Technical Lead",
         description: "Led the product strategy and data visualization design.",
         tags: ["Data Visualisation", "Salesforce", "Product Management"],
       },
