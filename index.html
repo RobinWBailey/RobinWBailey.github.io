@@ -31,7 +31,7 @@
         xintegrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
-<body id="top" data-theme="blue">
+<body id="top">
 
     <!-- Main Content Wrapper -->
     <main id="main-content">
@@ -427,31 +427,19 @@
 
         <section id="work" class="section">
             <div class="container">
-                <div class="about__header" style="text-align: left; margin-bottom: var(--space-l);">
-                    <h3 class="about__title">Selected Work.</h3>
+                <div class="work-header-controls">
+                    <h3 class="about__title work-filter-title">
+                        <a href="#" class="work-filter-link active" data-filter="selected">Selected works</a>
+                        <span class="work-filter-separator">/</span>
+                        <a href="#" class="work-filter-link" data-filter="all">Show all works</a>
+                    </h3>
                 </div>
                 <!-- This div will be populated by JavaScript with the new table-like view -->
                 <div class="work-table" id="selected-work-grid"></div>
             </div>
         </section>
 
-        <section id="other-work" class="section section--grey">
-            <div class="container">
-                <div class="about__header">
-                    <h3 class="about__title">Side quests & experiments. <span class="about__subtitle">A collection of
-                            concepts and other fun things.</span></h3>
-                </div>
-            </div>
-            <div class="horizontal-scroll-wrapper">
-                <div class="work__grid" id="other-work-grid"></div>
-                <button class="scroll-arrow left hidden" aria-label="Scroll left"><i
-                        class="fas fa-chevron-left"></i></button>
-                <button class="scroll-arrow right" aria-label="Scroll right"><i
-                        class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
+        <section id="contact" class="section section--grey">
             <div class="container contact-container">
                 <h3>Get in Touch</h3>
                 <p>I'm always open to discussing product design work or partnership opportunities. If you have a project
@@ -593,7 +581,8 @@
 
             // --- Dynamic Content Generation ---
             const selectedWorkGrid = document.getElementById('selected-work-grid');
-            const otherWorkGrid = document.getElementById('other-work-grid');
+            const workFilterLinks = document.querySelectorAll('.work-filter-link');
+
 
             function createImpactMetricsHTML(impactArray) {
                 if (!impactArray || impactArray.length === 0) return '';
@@ -636,79 +625,68 @@
                 return `<div class="work__item-feature-tags">${tagsHTML}</div>`;
             }
 
-            // NEW: Render Selected Work as a Table
-            portfolioData.selectedWork.forEach(project => {
-                const projectEl = document.createElement('div');
-                projectEl.className = 'work-table-row project-link';
-                projectEl.dataset.projectId = project.id;
+            // NEW: Unified Render function for Work Table
+            function renderWorkTable(showAll = false) {
+                selectedWorkGrid.innerHTML = ''; // Clear existing content
 
-                const tagsHTML = project.displayTags.map(tag => `<span class="work-table-tag">${tag}</span>`).join('');
-                const galleryHTML = project.detailPage.gallery.slice(0, 6).map(img =>
-                    `<img src="${img.src}" alt="${img.alt}" onerror="this.onerror=null;this.src='${img.fallback}';">`
-                ).join('');
+                const createRow = (project, isSideProject = false) => {
+                    const projectEl = document.createElement('div');
+                    projectEl.className = 'work-table-row project-link';
+                    if (isSideProject) {
+                        projectEl.classList.add('work-table-row--side-project');
+                    }
+                    projectEl.dataset.projectId = project.id;
 
-                projectEl.innerHTML = `
-                    <div class="work-table-cell work-table-cell--year">${project.year}</div>
-                    <a href="#${project.id}" class="work-table-cell work-table-cell--title">${project.title}</a>
-                    <div class="work-table-cell work-table-cell--tags">${tagsHTML}</div>
-                    <div class="work-table-cell work-table-cell--gallery">${galleryHTML}</div>
-                `;
-                selectedWorkGrid.appendChild(projectEl);
-            });
+                    const displayTags = project.displayTags || project.featureTags.slice(0, 3).map(t => t.toLowerCase().replace(/\s+/g, '-'));
 
+                    const tagsHTML = displayTags.map(tag => `<span class="work-table-tag">${tag}</span>`).join('');
 
-            portfolioData.otherProjects.forEach(project => {
-                const projectEl = document.createElement('div');
-                projectEl.id = `other-work-item-${project.id}`;
-                projectEl.className = 'work__item';
-                projectEl.innerHTML = `
-                     <a href="#${project.id}" class="work__item-link project-link" data-project-id="${project.id}">
-                        <div class="work__item-image-wrapper">
-                            <img src="${project.image}" alt="${project.title} Project Thumbnail" onerror="this.onerror=null;this.src='${project.fallbackImage || ''}';">
+                    const gallery = project.detailPage?.gallery || [];
+                    const galleryHTML = gallery.slice(0, 6).map(img =>
+                        `<img src="${img.src}" alt="${img.alt}" onerror="this.onerror=null;this.src='${img.fallback}';">`
+                    ).join('');
+
+                    const clientHTML = project.client ? `<div class="work-table-cell--client"><i class="fas fa-building"></i> ${project.client}</div>` : '';
+
+                    projectEl.innerHTML = `
+                        <div class="work-table-cell work-table-cell--year">${project.year || ''}</div>
+                        <div class="work-table-cell work-table-cell--title-container">
+                             <a href="#${project.id}" class="work-table-cell--title">${project.title}</a>
+                             ${clientHTML}
                         </div>
-                        <div class="work__item-body">
-                            <div class="work__item-header">
-                                <h6>${project.title}</h6>
-                                ${project.client ? `<p class="work__item-client"><i class="fas fa-building"></i> ${project.client}</p>` : ''}
-                            </div>
-                            <p class="work__item-overview">${project.overview}</p>
-                            ${createFeatureTagsHTML(project.featureTags)}
-                            ${project.impact.length > 0 ? '<div class="work__item-divider"></div>' : ''}
-                            <div class="work__item-impact">${createImpactMetricsHTML(project.impact)}</div>
-                        </div>
-                    </a>`;
-                otherWorkGrid.appendChild(projectEl);
-            });
-
-            // --- Horizontal Scroll Logic ---
-            const otherWorkWrapper = document.querySelector('.horizontal-scroll-wrapper');
-            if (otherWorkWrapper) {
-                const grid = otherWorkWrapper.querySelector('#other-work-grid');
-                const leftBtn = otherWorkWrapper.querySelector('.scroll-arrow.left');
-                const rightBtn = otherWorkWrapper.querySelector('.scroll-arrow.right');
-
-                const updateScrollButtons = () => {
-                    const { scrollLeft, scrollWidth, clientWidth } = grid;
-                    leftBtn.classList.toggle('hidden', scrollLeft <= 0);
-                    rightBtn.classList.toggle('hidden', scrollLeft >= scrollWidth - clientWidth - 1);
-                    otherWorkWrapper.classList.toggle('at-end', scrollLeft >= scrollWidth - clientWidth - 1);
+                        <div class="work-table-cell work-table-cell--tags">${tagsHTML}</div>
+                        <div class="work-table-cell work-table-cell--gallery">${galleryHTML}</div>
+                    `;
+                    selectedWorkGrid.appendChild(projectEl);
                 };
 
-                grid.addEventListener('scroll', updateScrollButtons);
+                // Render selected work first
+                portfolioData.selectedWork.forEach(project => createRow(project, false));
 
-                leftBtn.addEventListener('click', () => {
-                    const scrollAmount = grid.clientWidth * 0.8;
-                    grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-
-                rightBtn.addEventListener('click', () => {
-                    const scrollAmount = grid.clientWidth * 0.8;
-                    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
-
-                updateScrollButtons();
-                setTimeout(updateScrollButtons, 500);
+                // If showAll is true, render other projects
+                if (showAll) {
+                    portfolioData.otherProjects.forEach(project => createRow(project, true));
+                }
             }
+
+            // Initial render
+            renderWorkTable(document.querySelector('.work-filter-link.active').dataset.filter === 'all');
+
+            // Add event listener for the filter links
+            workFilterLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Don't re-render if already active
+                    if (link.classList.contains('active')) return;
+
+                    workFilterLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    const filter = link.dataset.filter;
+                    renderWorkTable(filter === 'all');
+                });
+            });
 
 
             // --- Navigation, Scroll, and Page Loading Logic ---
@@ -746,9 +724,7 @@
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     const linkHref = link.getAttribute('href').substring(1);
-                    if (linkHref === 'work' && (currentSectionId === 'work' || currentSectionId === 'other-work')) {
-                        link.classList.add('active');
-                    } else if (linkHref === currentSectionId) {
+                    if (linkHref === currentSectionId) {
                         link.classList.add('active');
                     }
                 });
