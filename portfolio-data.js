@@ -4,13 +4,13 @@
 // It acts as a single source of truth, so you only need to edit project details in this one place.
 
 const portfolioData = {
-  // Prominent, selected work
-  selectedWork: [
+  projects: [
     {
       id: "pulse",
+      isSelected: true,
       year: "2023",
       displayTags: ["product", "design", "salesforce"],
-      title: "PULSE",
+      title: "PULSE Student Success Platform",
       subtitle: "Student Success Platform",
       client: "Plymouth University, School of Medicine and Dentistry",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=PULSE",
@@ -71,6 +71,7 @@ const portfolioData = {
     },
     {
       id: "horizon",
+      isSelected: true,
       year: "2018",
       displayTags: ["ux", "product", "development"],
       title: "iotec Horizon",
@@ -123,6 +124,7 @@ const portfolioData = {
     },
     {
       id: "bearforms",
+      isSelected: true,
       year: "2025",
       displayTags: ["side project", "development", "design"],
       title: "BearForms",
@@ -168,12 +170,14 @@ const portfolioData = {
     },
     {
       id: "bento",
+      isSelected: true,
       year: "2021",
       displayTags: ["concept", "design"],
       title: "Bento: The Do Less To-Do List",
       subtitle: "A Conceptual To-Do App",
       image: "assets/img/bento-header.png",
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Bento",
+      client: "ToolFinder",
       overview:
         "A conceptual to-do list application based on the Bento methodology, designed for focus and mindful productivity.",
       roleAndSkills: {
@@ -209,6 +213,7 @@ const portfolioData = {
     },
     {
       id: "investigate",
+      isSelected: true,
       year: "2014",
       displayTags: ["freelance", "development", "design"],
       title: "Investigate Invertebrates",
@@ -254,6 +259,7 @@ const portfolioData = {
     },
     {
       id: "learning-analytics",
+      isSelected: true,
       year: "2025",
       displayTags: ["product", "data vis"],
       title: "Learning Analytics",
@@ -290,11 +296,10 @@ const portfolioData = {
         ],
       },
     },
-  ],
-  // Other, smaller projects
-  otherProjects: [
     {
       id: "wave",
+      isSelected: false,
+      year: "2023",
       title: "Wave Digital Assistant",
       subtitle: "AI Chatbot",
       client: "Plymouth University",
@@ -325,6 +330,7 @@ const portfolioData = {
     },
     {
       id: "soke",
+      isSelected: false,
       title: "Soke",
       subtitle: "Branding Concept",
       image: "assets/img/soke.png",
@@ -348,6 +354,8 @@ const portfolioData = {
     },
     {
       id: "trifecta",
+      isSelected: false,
+      year: "2019",
       title: "Trifecta Workout",
       subtitle: "iOS Fitness App",
       image: "assets/img/trifecta.png",
@@ -373,6 +381,7 @@ const portfolioData = {
     },
     {
       id: "stories",
+      isSelected: false,
       title: "Stories",
       subtitle: "Content Aggregator App",
       image: "assets/img/stories.png",
@@ -398,6 +407,7 @@ const portfolioData = {
     },
     {
       id: "get-gear",
+      isSelected: false,
       title: "Get Gear",
       subtitle: "Marketplace Concept",
       image: "assets/img/get-gear.png",
@@ -417,6 +427,54 @@ const portfolioData = {
         fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Get Gear concept are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "capt",
+      isSelected: true,
+      year: "2023",
+      title: "Content Adaptive Progress Testing & Topic Mapping",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Peninsula Medical School",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "capt",
+      isSelected: true,
+      year: "2023",
+      title: "Dental On-Clinic Experience Assessment",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Peninsula Dental School & Peninsula Dental Social Enterprise",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
         gallery: [],
       },
     },

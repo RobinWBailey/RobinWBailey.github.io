@@ -560,7 +560,7 @@ ol {
 }
 
 .card-arrow-icon::before {
-  content: "↗";
+  content: " ↗";
 }
 
 .expertise-card:hover .card-arrow-icon {
@@ -815,8 +815,10 @@ ol {
   padding: 1.5rem 1rem;
   border-bottom: 1px solid var(--color-border);
   grid-template-columns: 60px minmax(0, 2fr) 220px minmax(0, 2fr);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-left-color 0.3s ease;
   cursor: pointer;
+  border-left: 3px solid transparent;
+  padding-left: calc(1rem - 3px);
 }
 .work-table-row:hover {
   background-color: var(--color-background-offset);
@@ -881,24 +883,9 @@ ol {
   border: 1px solid var(--color-border);
 }
 
-/* Style for side projects */
-.work-table-row--side-project {
-  background-color: rgba(var(--color-link-rgb), 0.02);
-}
-
-.work-table-row--side-project .work-table-cell--title::before {
-  content: "🧪";
-  margin-right: 0.75rem;
-  display: inline-block;
-  filter: grayscale(1);
-  opacity: 0.6;
-  transition: all 0.3s ease;
-}
-
-.work-table-row--side-project:hover .work-table-cell--title::before {
-  filter: grayscale(0);
-  opacity: 1;
-  transform: scale(1.1) rotate(-10deg);
+/* Style for marking other work in "all" view */
+.work-table:has(.work-table-row--side-project) .work-table-row--side-project {
+  border-left-color: var(--color-border);
 }
 
 /* --- Project Detail Page --- */

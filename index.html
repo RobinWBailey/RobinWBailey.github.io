@@ -29,6 +29,39 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         xintegrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+        .work-table-row {
+            /* Start hidden for animation */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .work-table-row.fade-out {
+            animation: fadeOut 0.3s ease-in forwards !important;
+            /* Use important to override fadeIn */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -609,26 +642,33 @@ edge machine learning AdTech platform.">
 
             // NEW: Unified Render function for Work Table
             function renderWorkTable(showAll = false) {
-                if (!selectedWorkGrid) return; // Prevent error if element doesn't exist
-                selectedWorkGrid.innerHTML = ''; // Clear existing content
+                if (!selectedWorkGrid) return;
+                selectedWorkGrid.innerHTML = '';
 
-                const createRow = (project, isSideProject = false) => {
+                const baseProjects = showAll
+                    ? [...portfolioData.projects]
+                    : portfolioData.projects.filter(p => p.isSelected);
+
+                const projectsToRender = baseProjects.sort((a, b) => parseInt(b.year || 0) - parseInt(a.year || 0));
+
+                projectsToRender.forEach((project, index) => {
                     const projectEl = document.createElement('div');
                     projectEl.className = 'work-table-row project-link';
-                    if (isSideProject) {
+
+                    if (!project.isSelected && showAll) {
                         projectEl.classList.add('work-table-row--side-project');
                     }
                     projectEl.dataset.projectId = project.id;
 
-                    const displayTags = project.displayTags || project.featureTags.slice(0, 3).map(t => t.toLowerCase().replace(/\s+/g, '-'));
+                    // Staggered animation delay
+                    projectEl.style.animationDelay = `${index * 50}ms`;
 
+                    const displayTags = project.displayTags || (project.featureTags ? project.featureTags.slice(0, 3).map(t => t.toLowerCase().replace(/\s+/g, '-')) : []);
                     const tagsHTML = displayTags.map(tag => `<span class="work-table-tag">${tag}</span>`).join('');
-
                     const gallery = project.detailPage?.gallery || [];
                     const galleryHTML = gallery.slice(0, 6).map(img =>
                         `<img src="${img.src}" alt="${img.alt}" onerror="this.onerror=null;this.src='${img.fallback}';">`
                     ).join('');
-
                     const clientHTML = project.client ? `<div class="work-table-cell--client"><i class="fas fa-building"></i> ${project.client}</div>` : '';
 
                     projectEl.innerHTML = `
@@ -641,15 +681,7 @@ edge machine learning AdTech platform.">
                         <div class="work-table-cell work-table-cell--gallery">${galleryHTML}</div>
                     `;
                     selectedWorkGrid.appendChild(projectEl);
-                };
-
-                // Render selected work first
-                portfolioData.selectedWork.forEach(project => createRow(project, false));
-
-                // If showAll is true, render other projects
-                if (showAll) {
-                    portfolioData.otherProjects.forEach(project => createRow(project, true));
-                }
+                });
             }
 
             if (selectedWorkGrid) {
@@ -661,14 +693,23 @@ edge machine learning AdTech platform.">
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
 
-                        // Don't re-render if already active
                         if (link.classList.contains('active')) return;
 
                         workFilterLinks.forEach(l => l.classList.remove('active'));
                         link.classList.add('active');
 
                         const filter = link.dataset.filter;
-                        renderWorkTable(filter === 'all');
+
+                        // Animate out existing items
+                        const existingRows = selectedWorkGrid.querySelectorAll('.work-table-row');
+                        existingRows.forEach(row => {
+                            row.classList.add('fade-out');
+                        });
+
+                        // Wait for animation to finish, then render new items
+                        setTimeout(() => {
+                            renderWorkTable(filter === 'all');
+                        }, 300); // Should match fadeOut animation duration
                     });
                 });
             }
@@ -724,8 +765,7 @@ edge machine learning AdTech platform.">
             });
 
             function findProjectData(projectId) {
-                const allProjects = [...portfolioData.selectedWork, ...portfolioData.otherProjects];
-                return allProjects.find(p => p.id === projectId);
+                return portfolioData.projects.find(p => p.id === projectId);
             }
 
             function showProject(projectId) {
