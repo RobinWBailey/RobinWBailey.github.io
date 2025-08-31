@@ -9,7 +9,7 @@ const portfolioData = {
       id: "pulse",
       isSelected: true,
       year: "2023",
-      displayTags: ["product", "design", "salesforce"],
+      displayTags: ["product", "design", "salesforce", "education", "web"],
       title: "PULSE Student Success Platform",
       subtitle: "Student Success Platform",
       client: "Plymouth University, School of Medicine and Dentistry",
@@ -73,7 +73,14 @@ const portfolioData = {
       id: "horizon",
       isSelected: true,
       year: "2018",
-      displayTags: ["ux", "product", "development"],
+      displayTags: [
+        "ux",
+        "product",
+        "development",
+        "python",
+        "django",
+        "RESTful API",
+      ],
       title: "iotec Horizon",
       subtitle: "AdTech Campaign Management Platform",
       client: "iotec Global",
@@ -126,7 +133,14 @@ const portfolioData = {
       id: "bearforms",
       isSelected: true,
       year: "2025",
-      displayTags: ["side project", "development", "design"],
+      displayTags: [
+        "side project",
+        "iOS",
+        "android",
+        "react native",
+        "expo",
+        "design",
+      ],
       title: "BearForms",
       subtitle: "Offline Data Capture App",
       image: "assets/img/BearForms.png",
@@ -172,7 +186,7 @@ const portfolioData = {
       id: "bento",
       isSelected: true,
       year: "2021",
-      displayTags: ["concept", "design"],
+      displayTags: ["concept", "design", "react native", "iOS", "android"],
       title: "Bento: The Do Less To-Do List",
       subtitle: "A Conceptual To-Do App",
       image: "assets/img/bento-header.png",
@@ -215,7 +229,7 @@ const portfolioData = {
       id: "investigate",
       isSelected: true,
       year: "2014",
-      displayTags: ["freelance", "development", "design"],
+      displayTags: ["iOS", "objective c", "development", "design"],
       title: "Investigate Invertebrates",
       subtitle: "Paignton Zoo Companion App",
       client: "Wild Planet Trust",
@@ -261,7 +275,7 @@ const portfolioData = {
       id: "learning-analytics",
       isSelected: true,
       year: "2025",
-      displayTags: ["product", "data vis"],
+      displayTags: ["product", "data vis", "salesforce"],
       title: "Learning Analytics",
       subtitle: "Data Visualization for Education",
       client: "Plymouth University",
@@ -337,7 +351,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Soke",
       overview:
         "Branding and UI concept for a creative agency focused on clarity and impact.",
-      featureTags: ["Branding", "Concept"],
+      featureTags: ["Branding", "Concept", "Physical"],
       roleAndSkills: {
         role: "Brand Designer",
         description: "Developed the brand identity and visual language.",
@@ -363,7 +377,7 @@ const portfolioData = {
       client: "Side Project",
       overview:
         "A beautiful and simply designed personal trainer app for iPhone, focusing on core workout principles.",
-      featureTags: ["Fitness", "Side Project"],
+      featureTags: ["Mobile", "Side Project", "iOS", "Swift"],
       roleAndSkills: {
         role: "iOS Developer",
         description:
@@ -389,7 +403,7 @@ const portfolioData = {
       client: "Side Project",
       overview:
         "Sit back, relax, and catch up. A curated content aggregator for your favorite topics.",
-      featureTags: ["Content Aggregation", "Side Project"],
+      featureTags: ["Mobile", "iOS", "Swift", "Side Project"],
       roleAndSkills: {
         role: "iOS Developer",
         description:
@@ -414,7 +428,13 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Get+Gear",
       overview:
         "A mobile and location-based marketplace concept for easily buying and selling gear.",
-      featureTags: ["Marketplace", "Concept"],
+      featureTags: [
+        "Marketplace",
+        "Concept",
+        "RESTful API",
+        "Objective C",
+        "iOS",
+      ],
       roleAndSkills: {
         role: "UI/UX Designer",
         description:
@@ -444,7 +464,7 @@ const portfolioData = {
       roleAndSkills: {
         role: "TBA",
         description: "TBA.",
-        tags: [],
+        tags: ["Salesforce"],
       },
       impact: [],
       detailPage: {
@@ -464,7 +484,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
       client: "Peninsula Dental School & Peninsula Dental Social Enterprise",
       overview: "TBA.",
-      featureTags: [],
+      featureTags: ["Salesforce"],
       roleAndSkills: {
         role: "TBA",
         description: "TBA.",
@@ -488,7 +508,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
       client: "Plymouth Univeristy",
       overview: "TBA.",
-      featureTags: [],
+      featureTags: ["Web"],
       roleAndSkills: {
         role: "TBA",
         description: "TBA.",
@@ -512,7 +532,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
       client: "TBA",
       overview: "TBA.",
-      featureTags: [],
+      featureTags: ["Health", "RESTful API", "iOS", "Android", "react native"],
       roleAndSkills: {
         role: "TBA",
         description: "TBA.",
@@ -536,7 +556,7 @@ const portfolioData = {
       fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
       client: "Plymouth University",
       overview: "TBA.",
-      featureTags: [],
+      featureTags: ["Salesforce"],
       roleAndSkills: {
         role: "TBA",
         description: "TBA.",
