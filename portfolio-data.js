@@ -4,11 +4,13 @@
 // It acts as a single source of truth, so you only need to edit project details in this one place.
 
 const portfolioData = {
-  // Prominent, selected work
-  selectedWork: [
+  projects: [
     {
       id: "pulse",
-      title: "PULSE",
+      isSelected: true,
+      year: "2023",
+      displayTags: ["product", "design", "salesforce"],
+      title: "PULSE Student Success Platform",
       subtitle: "Student Success Platform",
       client: "Plymouth University, School of Medicine and Dentistry",
       image: "https://placehold.co/600x400/2d3748/ffffff?text=PULSE",
@@ -35,66 +37,43 @@ const portfolioData = {
       ],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=PULSE",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the PULSE student success platform are coming soon. Please check back later!",
-        gallery: [], // Add image paths here for the detail page gallery
-      },
-    },
-    {
-      id: "bearforms",
-      title: "BearForms",
-      subtitle: "Offline Data Capture App",
-      image: "assets/img/BearForms.png",
-      fallbackImage:
-        "https://placehold.co/600x400/2d3748/ffffff?text=BearForms",
-      client: "Side Project",
-      overview:
-        "A simple, offline, no-fuss data capture form app for iPhone, iPad, and Android. Design your form. Capture your responses. Export your data. Done.",
-      roleAndSkills: {
-        role: "Designer, Developer, Founder",
-        description:
-          "I designed, developed, and launched this multi-platform app from scratch. This involved UI/UX design, native development for iOS and Android using React Native, and App Store deployment.",
-        tags: ["React Native", "iOS & Android", "UI/UX Design"],
-      },
-      featureTags: ["Side Project"],
-      impact: [
-        {
-          icon: "fas fa-star",
-          stat: "4.8 Star Rating",
-          description: "Average user rating.",
-        },
-      ],
-      detailPage: {
-        heroImage: "assets/img/BearForms.png",
-        overview:
-          "More details about BearForms are coming soon. Please check back later!",
-        gallery: [],
-      },
-    },
-    {
-      id: "bento",
-      title: "Bento: The Do Less To-Do List",
-      subtitle: "A Conceptual To-Do App",
-      image: "assets/img/bento-header.png",
-      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Bento",
-      overview:
-        "A conceptual to-do list application based on the Bento methodology, designed for focus and mindful productivity.",
-      roleAndSkills: {
-        role: "Concept Designer",
-        description: "A conceptual exploration of focused productivity.",
-        tags: ["iOS", "Android", "React Native", "UI/UX Design"],
-      },
-      featureTags: ["Branding", "Concept"],
-      impact: [],
-      detailPage: {
-        heroImage: "assets/img/bento-header.png",
-        overview:
-          "More details about the Bento concept are coming soon. Please check back later!",
-        gallery: [],
+        gallery: [
+          {
+            src: "https://placehold.co/600x400/2d3748/ffffff?text=Pulse+1",
+            fallback: "https://placehold.co/600x400",
+            alt: "Pulse Screenshot 1",
+          },
+          {
+            src: "https://placehold.co/600x400/34495e/ffffff?text=Pulse+2",
+            fallback: "https://placehold.co/600x400",
+            alt: "Pulse Screenshot 2",
+          },
+          {
+            src: "https://placehold.co/600x400/2c3e50/ffffff?text=Pulse+3",
+            fallback: "https://placehold.co/600x400",
+            alt: "Pulse Screenshot 3",
+          },
+          {
+            src: "https://placehold.co/600x400/95a5a6/ffffff?text=Pulse+4",
+            fallback: "https://placehold.co/600x400",
+            alt: "Pulse Screenshot 4",
+          },
+          {
+            src: "https://placehold.co/600x400/7f8c8d/ffffff?text=Pulse+5",
+            fallback: "https://placehold.co/600x400",
+            alt: "Pulse Screenshot 5",
+          },
+        ],
       },
     },
     {
       id: "horizon",
+      isSelected: true,
+      year: "2018",
+      displayTags: ["ux", "product", "development"],
       title: "iotec Horizon",
       subtitle: "AdTech Campaign Management Platform",
       client: "iotec Global",
@@ -144,7 +123,99 @@ const portfolioData = {
       },
     },
     {
+      id: "bearforms",
+      isSelected: true,
+      year: "2025",
+      displayTags: ["side project", "development", "design"],
+      title: "BearForms",
+      subtitle: "Offline Data Capture App",
+      image: "assets/img/BearForms.png",
+      fallbackImage:
+        "https://placehold.co/600x400/2d3748/ffffff?text=BearForms",
+      client: "Side Project",
+      overview:
+        "A simple, offline, no-fuss data capture form app for iPhone, iPad, and Android. Design your form. Capture your responses. Export your data. Done.",
+      roleAndSkills: {
+        role: "Designer, Developer, Founder",
+        description:
+          "I designed, developed, and launched this multi-platform app from scratch. This involved UI/UX design, native development for iOS and Android using React Native, and App Store deployment.",
+        tags: ["React Native", "iOS & Android", "UI/UX Design"],
+      },
+      featureTags: ["Side Project"],
+      impact: [
+        {
+          icon: "fas fa-star",
+          stat: "4.8 Star Rating",
+          description: "Average user rating.",
+        },
+      ],
+      detailPage: {
+        heroImage: "assets/img/BearForms.png",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview:
+          "More details about BearForms are coming soon. Please check back later!",
+        gallery: [
+          {
+            src: "https://placehold.co/600x400/e74c3c/ffffff?text=BearForms+1",
+            fallback: "https://placehold.co/600x400",
+            alt: "BearForms Screenshot 1",
+          },
+          {
+            src: "https://placehold.co/600x400/c0392b/ffffff?text=BearForms+2",
+            fallback: "https://placehold.co/600x400",
+            alt: "BearForms Screenshot 2",
+          },
+        ],
+      },
+    },
+    {
+      id: "bento",
+      isSelected: true,
+      year: "2021",
+      displayTags: ["concept", "design"],
+      title: "Bento: The Do Less To-Do List",
+      subtitle: "A Conceptual To-Do App",
+      image: "assets/img/bento-header.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=Bento",
+      client: "ToolFinder",
+      overview:
+        "A conceptual to-do list application based on the Bento methodology, designed for focus and mindful productivity.",
+      roleAndSkills: {
+        role: "Concept Designer",
+        description: "A conceptual exploration of focused productivity.",
+        tags: ["iOS", "Android", "React Native", "UI/UX Design"],
+      },
+      featureTags: ["Branding", "Concept"],
+      impact: [],
+      detailPage: {
+        heroImage: "assets/img/bento-header.png",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview:
+          "More details about the Bento concept are coming soon. Please check back later!",
+        gallery: [
+          {
+            src: "https://placehold.co/600x400/1abc9c/ffffff?text=Bento+1",
+            fallback: "https://placehold.co/600x400",
+            alt: "Bento Screenshot 1",
+          },
+          {
+            src: "https://placehold.co/600x400/16a085/ffffff?text=Bento+2",
+            fallback: "https://placehold.co/600x400",
+            alt: "Bento Screenshot 2",
+          },
+          {
+            src: "https://placehold.co/600x400/2ecc71/ffffff?text=Bento+3",
+            fallback: "https://placehold.co/600x400",
+            alt: "Bento Screenshot 3",
+          },
+        ],
+      },
+    },
+    {
       id: "investigate",
+      isSelected: true,
+      year: "2014",
+      displayTags: ["freelance", "development", "design"],
       title: "Investigate Invertebrates",
       subtitle: "Paignton Zoo Companion App",
       client: "Wild Planet Trust",
@@ -169,13 +240,28 @@ const portfolioData = {
       detailPage: {
         heroImage:
           "https://placehold.co/1200x600/2d3748/ffffff?text=Investigate",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Investigate Invertebrates app are coming soon. Please check back later!",
-        gallery: [],
+        gallery: [
+          {
+            src: "https://placehold.co/600x400/f1c40f/ffffff?text=Zoo+1",
+            fallback: "https://placehold.co/600x400",
+            alt: "Zoo Screenshot 1",
+          },
+          {
+            src: "https://placehold.co/600x400/f39c12/ffffff?text=Zoo+2",
+            fallback: "https://placehold.co/600x400",
+            alt: "Zoo Screenshot 2",
+          },
+        ],
       },
     },
     {
       id: "learning-analytics",
+      isSelected: true,
+      year: "2025",
+      displayTags: ["product", "data vis"],
       title: "Learning Analytics",
       subtitle: "Data Visualization for Education",
       client: "Plymouth University",
@@ -184,7 +270,7 @@ const portfolioData = {
       overview:
         "A project to visualize student learning data to identify trends and support student success.",
       roleAndSkills: {
-        role: "Product Lead",
+        role: "Product & Technical Lead",
         description: "Led the product strategy and data visualization design.",
         tags: ["Data Visualisation", "Salesforce", "Product Management"],
       },
@@ -193,39 +279,27 @@ const portfolioData = {
       detailPage: {
         heroImage:
           "https://placehold.co/1200x600/2d3748/ffffff?text=Learning+Analytics",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Learning Analytics project are coming soon. Please check back later!",
-        gallery: [],
+        gallery: [
+          {
+            src: "https://placehold.co/600x400/8e44ad/ffffff?text=Chart+1",
+            fallback: "https://placehold.co/600x400",
+            alt: "Chart Screenshot 1",
+          },
+          {
+            src: "https://placehold.co/600x400/9b59b6/ffffff?text=Chart+2",
+            fallback: "https://placehold.co/600x400",
+            alt: "Chart Screenshot 2",
+          },
+        ],
       },
     },
-    {
-      id: "local-gov",
-      title: "A Health & Social Care Project",
-      subtitle: "Consultancy & Process Improvement",
-      client: "Local Government",
-      image: "https://placehold.co/600x400/2d3748/ffffff?text=Local+Gov",
-      overview:
-        "Consultancy project to streamline processes in health and social care.",
-      roleAndSkills: {
-        role: "Consultant",
-        description:
-          "Analyzed existing workflows and recommended improvements.",
-        tags: ["Process Improvement", "Stakeholder Management"],
-      },
-      featureTags: ["Consultancy", "Government", "Health & Social Care"],
-      impact: [],
-      detailPage: {
-        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Local+Gov",
-        overview:
-          "More details about this consultancy project are coming soon. Please check back later!",
-        gallery: [],
-      },
-    },
-  ],
-  // Other, smaller projects
-  otherProjects: [
     {
       id: "wave",
+      isSelected: false,
+      year: "2023",
       title: "Wave Digital Assistant",
       subtitle: "AI Chatbot",
       client: "Plymouth University",
@@ -248,6 +322,7 @@ const portfolioData = {
       ],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Wave",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Wave Digital Assistant are coming soon. Please check back later!",
         gallery: [],
@@ -255,6 +330,7 @@ const portfolioData = {
     },
     {
       id: "soke",
+      isSelected: false,
       title: "Soke",
       subtitle: "Branding Concept",
       image: "assets/img/soke.png",
@@ -270,6 +346,7 @@ const portfolioData = {
       impact: [],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Soke",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Soke branding concept are coming soon. Please check back later!",
         gallery: [],
@@ -277,6 +354,8 @@ const portfolioData = {
     },
     {
       id: "trifecta",
+      isSelected: false,
+      year: "2019",
       title: "Trifecta Workout",
       subtitle: "iOS Fitness App",
       image: "assets/img/trifecta.png",
@@ -294,6 +373,7 @@ const portfolioData = {
       impact: [],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Trifecta",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Trifecta Workout app are coming soon. Please check back later!",
         gallery: [],
@@ -301,6 +381,7 @@ const portfolioData = {
     },
     {
       id: "stories",
+      isSelected: false,
       title: "Stories",
       subtitle: "Content Aggregator App",
       image: "assets/img/stories.png",
@@ -318,6 +399,7 @@ const portfolioData = {
       impact: [],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Stories",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Stories app are coming soon. Please check back later!",
         gallery: [],
@@ -325,6 +407,7 @@ const portfolioData = {
     },
     {
       id: "get-gear",
+      isSelected: false,
       title: "Get Gear",
       subtitle: "Marketplace Concept",
       image: "assets/img/get-gear.png",
@@ -341,8 +424,201 @@ const portfolioData = {
       impact: [],
       detailPage: {
         heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=Get+Gear",
+        fallbackHeroImage: "https://placehold.co/1200x600",
         overview:
           "More details about the Get Gear concept are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "capt",
+      isSelected: true,
+      year: "2023",
+      title: "Content Adaptive Progress Testing & Topic Mapping",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Peninsula Medical School",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "clinical-experience",
+      isSelected: true,
+      year: "2023",
+      title: "Dental On-Clinic Experience Assessment",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Peninsula Dental School & Peninsula Dental Social Enterprise",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "short-courses",
+      isSelected: false,
+      year: "2020",
+      title: "Short Courses Platform",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Plymouth Univeristy",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "lt",
+      isSelected: false,
+      year: "TBA",
+      title: "A Local Government Project TBA",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "TBA",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "sse",
+      isSelected: false,
+      year: "2025",
+      title: "Student Support & Case Management",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Plymouth University",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "da",
+      isSelected: false,
+      year: "2023",
+      title: "Dynamic Assessments & Connect Integrations",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Plymouth University",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "bm",
+      isSelected: false,
+      year: "2023",
+      title: "Academic Benchmarking",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Plymouth University",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
+        gallery: [],
+      },
+    },
+    {
+      id: "competencey",
+      isSelected: false,
+      year: "TBA",
+      title: "Competency Based Assessment",
+      subtitle: "TBA",
+      image: "assets/img/CAPT.png",
+      fallbackImage: "https://placehold.co/600x400/2d3748/ffffff?text=CAPT",
+      client: "Plymouth University",
+      overview: "TBA.",
+      featureTags: [],
+      roleAndSkills: {
+        role: "TBA",
+        description: "TBA.",
+        tags: [],
+      },
+      impact: [],
+      detailPage: {
+        heroImage: "https://placehold.co/1200x600/2d3748/ffffff?text=CAPT",
+        fallbackHeroImage: "https://placehold.co/1200x600",
+        overview: "More details are coming soon. Please check back later!",
         gallery: [],
       },
     },

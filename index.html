@@ -29,9 +29,42 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         xintegrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+        .work-table-row {
+            /* Start hidden for animation */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .work-table-row.fade-out {
+            animation: fadeOut 0.3s ease-in forwards !important;
+            /* Use important to override fadeIn */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+    </style>
 </head>
 
-<body id="top" data-theme="blue">
+<body id="top">
 
     <!-- Main Content Wrapper -->
     <main id="main-content">
@@ -97,7 +130,7 @@
                                         rel="noopener noreferrer">LinkedIn</a></li>
                                 <li><a href="mailto:robin.w.bailey@gmail.com">Email</a></li>
                             </ul>
-                            <a href="#" class="cv-card">
+                            <!-- <a href="#" class="cv-card">
                                 <div class="cv-card__icon">
                                     <i class="fas fa-file-alt"></i>
                                 </div>
@@ -105,7 +138,7 @@
                                     <span class="cv-card__title">View Full CV/Resume</span>
                                     <span class="cv-card__arrow">→</span>
                                 </div>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
 
@@ -144,7 +177,9 @@
                                             <p class="expertise-card__description"></p>
                                         </div>
                                     </li>
-                                    <li class="expertise-card" data-color="orange" data-description="TBA.">
+                                    <li class="expertise-card" data-color="orange" data-description="Led UX and product design building
+campaign management and reporting tools for a cutting
+edge machine learning AdTech platform.">
                                         <div>
                                             <i class="card-arrow-icon"></i>
                                             <div class="expertise-card__content">
@@ -193,7 +228,8 @@
                                             <p class="expertise-card__description"></p>
                                         </div>
                                     </li>
-                                    <li class="expertise-card" data-color="grey" data-description="TBA.">
+                                    <li class="expertise-card" data-color="grey"
+                                        data-description="Launched multiple mobile applications which have gone on to be featured by Apple on the App Store Homepage.">
                                         <div>
                                             <i class="card-arrow-icon"></i>
                                             <div class="expertise-card__content">
@@ -427,82 +463,48 @@
 
         <section id="work" class="section">
             <div class="container">
-                <div class="about__header" style="text-align: center; margin-bottom: var(--space-l);">
-                    <h3 class="about__title">Selected Work. <span class="about__subtitle">A selection of recent work and
-                            side projects.</span></h3>
+                <div class="work-header-controls">
+                    <h3 class="about__title work-filter-title">
+                        <a href="#" class="work-filter-link active" data-filter="selected">Selected works</a>
+                        <span class="work-filter-separator">/</span>
+                        <a href="#" class="work-filter-link" data-filter="all">Show all works</a>
+                    </h3>
                 </div>
-                <!-- This grid will be populated by JavaScript -->
-                <div class="work__grid work__grid--prominent" id="selected-work-grid"></div>
+                <!-- This div will be populated by JavaScript with the new table-like view -->
+                <div class="work-table" id="selected-work-grid"></div>
             </div>
         </section>
 
-        <section id="other-work" class="section section--grey">
-            <div class="container">
-                <div class="about__header">
-                    <h3 class="about__title">Side quests & experiments. <span class="about__subtitle">A collection of
-                            concepts and other fun things.</span></h3>
-                </div>
-            </div>
-            <div class="horizontal-scroll-wrapper">
-                <div class="work__grid" id="other-work-grid"></div>
-                <button class="scroll-arrow left hidden" aria-label="Scroll left"><i
-                        class="fas fa-chevron-left"></i></button>
-                <button class="scroll-arrow right" aria-label="Scroll right"><i
-                        class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container contact-container">
-                <h3>Get in Touch</h3>
-                <p>I'm always open to discussing product design work or partnership opportunities. If you have a project
-                    in
-                    mind, please get in touch.</p>
-                <a href="mailto:robin.w.bailey@gmail.com" class="btn">Email Me</a>
-            </div>
-        </section>
-
-        <footer class="section footer">
-            <div class="footer-wave">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                        class="footer-wave__fill"></path>
-                </svg>
-            </div>
+        <footer id="contact" class="section footer">
             <div class="container footer__container">
-                <div class="footer__top">
-                    <div class="footer__about">
-                        <h4 class="footer__logo">Robin Bailey</h4>
-                        <p class="footer__tagline">Creativity & Clarity</p>
+                <div class="footer__main">
+                    <div class="footer__cta">
+                        <h3 class="footer__cta-title">Get in Touch</h3>
+                        <p class="footer__cta-text">
+                            I'm always open to discussing product design work or partnership opportunities. If you have
+                            a project in mind, please get in touch.
+                        </p>
+                        <a href="mailto:robin.w.bailey@gmail.com" class="btn footer__cta-button">
+                            Email Me
+                        </a>
                     </div>
                     <div class="footer__links">
                         <a href="https://twitter.com/RobinBailey" class="footer__link" target="_blank"
-                            rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            rel="noopener noreferrer">Twitter</a>
                         <a href="https://www.linkedin.com/in/robinwbailey/" class="footer__link" target="_blank"
-                            rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:robin.w.bailey@gmail.com" class="footer__link" aria-label="Email"><i
-                                class="fas fa-envelope"></i></a>
+                            rel="noopener noreferrer">LinkedIn</a>
+                        <a href="mailto:robin.w.bailey@gmail.com" class="footer__link">Email</a>
                     </div>
                 </div>
                 <div class="footer__bottom">
-                    <div class="footer__copyright">
-                        <p>&copy; <span id="year"></span> Robin Bailey. All rights reserved.</p>
-                    </div>
+                    <p class="footer__copyright">&copy; <span id="year"></span> Robin Bailey. All rights reserved.</p>
                     <div class="footer__meta">
-                        <p class="footer__location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Saltash, England
-                            <span id="local-time" class="footer__time"></span>
-                        </p>
-                        <a href="#top" class="footer__back-to-top">
-                            Back to Top <i class="fas fa-arrow-up"></i>
-                        </a>
+                        <p class="footer__tagline">Creativity & Clarity</p>
                     </div>
                 </div>
             </div>
         </footer>
+
     </main>
 
     <!-- Container for dynamically loaded project content -->
@@ -556,7 +558,6 @@
 
                     const triggerRect = trigger.getBoundingClientRect();
 
-                    // Temporarily make it visible but off-screen to calculate size correctly
                     tooltipElement.style.visibility = 'hidden';
                     tooltipElement.style.top = '-9999px';
                     tooltipElement.style.left = '-9999px';
@@ -564,10 +565,9 @@
 
                     const tooltipRect = tooltipElement.getBoundingClientRect();
 
-                    let top = triggerRect.top - tooltipRect.height - 10; // 10px gap from trigger
+                    let top = triggerRect.top - tooltipRect.height - 10;
                     let left = triggerRect.left + (triggerRect.width / 2) - (tooltipRect.width / 2);
 
-                    // Adjust position if it goes off-screen
                     if (left < 5) left = 5;
                     if ((left + tooltipRect.width) > window.innerWidth) {
                         left = window.innerWidth - tooltipRect.width - 5;
@@ -596,7 +596,8 @@
 
             // --- Dynamic Content Generation ---
             const selectedWorkGrid = document.getElementById('selected-work-grid');
-            const otherWorkGrid = document.getElementById('other-work-grid');
+            const workFilterLinks = document.querySelectorAll('.work-filter-link');
+
 
             function createImpactMetricsHTML(impactArray) {
                 if (!impactArray || impactArray.length === 0) return '';
@@ -639,97 +640,78 @@
                 return `<div class="work__item-feature-tags">${tagsHTML}</div>`;
             }
 
+            // NEW: Unified Render function for Work Table
+            function renderWorkTable(showAll = false) {
+                if (!selectedWorkGrid) return;
+                selectedWorkGrid.innerHTML = '';
 
-            portfolioData.selectedWork.forEach(project => {
-                const projectEl = document.createElement('div');
-                projectEl.id = `work-item-${project.id}`;
-                projectEl.className = 'work__item work__item--prominent';
-                projectEl.innerHTML = `
-                    <a href="#${project.id}" class="work__item-link project-link" data-project-id="${project.id}">
-                        <div class="work__item-image-wrapper">
-                            <img src="${project.image}" alt="${project.title} Project Thumbnail" onerror="this.onerror=null;this.src='${project.fallbackImage || ''}';">
-                            <div class="work__item-title-group">
-                                <h6 class="work__item-title-on-image">${project.title}</h6>
-                                ${project.client ? `<p class="work__item-client-on-image"><i class="fas fa-building"></i> ${project.client}</p>` : ''}
-                            </div>
+                const baseProjects = showAll
+                    ? [...portfolioData.projects]
+                    : portfolioData.projects.filter(p => p.isSelected);
+
+                const projectsToRender = baseProjects.sort((a, b) => parseInt(b.year || 0) - parseInt(a.year || 0));
+
+                projectsToRender.forEach((project, index) => {
+                    const projectEl = document.createElement('div');
+                    projectEl.className = 'work-table-row project-link';
+
+                    if (!project.isSelected && showAll) {
+                        projectEl.classList.add('work-table-row--side-project');
+                    }
+                    projectEl.dataset.projectId = project.id;
+
+                    // Staggered animation delay
+                    projectEl.style.animationDelay = `${index * 50}ms`;
+
+                    const displayTags = project.displayTags || (project.featureTags ? project.featureTags.slice(0, 3).map(t => t.toLowerCase().replace(/\s+/g, '-')) : []);
+                    const tagsHTML = displayTags.map(tag => `<span class="work-table-tag">${tag}</span>`).join('');
+                    const gallery = project.detailPage?.gallery || [];
+                    const galleryHTML = gallery.slice(0, 6).map(img =>
+                        `<img src="${img.src}" alt="${img.alt}" onerror="this.onerror=null;this.src='${img.fallback}';">`
+                    ).join('');
+                    const clientHTML = project.client ? `<div class="work-table-cell--client"><i class="fas fa-building"></i> ${project.client}</div>` : '';
+
+                    projectEl.innerHTML = `
+                        <div class="work-table-cell work-table-cell--year">${project.year || ''}</div>
+                        <div class="work-table-cell work-table-cell--title-container">
+                             <a href="#${project.id}" class="work-table-cell--title">${project.title}</a>
+                             ${clientHTML}
                         </div>
-                        <div class="work__item-content">
-                            <div class="work__item-details">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Overview & Features</h4>
-                                    <p class="work__item-overview">${project.overview}</p>
-                                    ${createFeatureTagsHTML(project.featureTags)}
-                                </div>
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Role & Skills</h4>
-                                    <p class="work__item-overview">${project.roleAndSkills.description}</p>
-                                    <div class="work__item-tags">${createTagsHTML(project.roleAndSkills.tags)}</div>
-                                </div>
-                            </div>
-                            <div class="work__item-highlights">
-                                <div class="work__item-section">
-                                    <h4 class="work__item-section-title">Outcomes & Impact</h4>
-                                    <div class="work__item-impact">${createImpactMetricsHTML(project.impact)}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>`;
-                selectedWorkGrid.appendChild(projectEl);
-            });
-
-            portfolioData.otherProjects.forEach(project => {
-                const projectEl = document.createElement('div');
-                projectEl.id = `other-work-item-${project.id}`;
-                projectEl.className = 'work__item';
-                projectEl.innerHTML = `
-                     <a href="#${project.id}" class="work__item-link project-link" data-project-id="${project.id}">
-                        <div class="work__item-image-wrapper">
-                            <img src="${project.image}" alt="${project.title} Project Thumbnail" onerror="this.onerror=null;this.src='${project.fallbackImage || ''}';">
-                        </div>
-                        <div class="work__item-body">
-                            <div class="work__item-header">
-                                <h6>${project.title}</h6>
-                                ${project.client ? `<p class="work__item-client"><i class="fas fa-building"></i> ${project.client}</p>` : ''}
-                            </div>
-                            <p class="work__item-overview">${project.overview}</p>
-                            ${createFeatureTagsHTML(project.featureTags)}
-                            ${project.impact.length > 0 ? '<div class="work__item-divider"></div>' : ''}
-                            <div class="work__item-impact">${createImpactMetricsHTML(project.impact)}</div>
-                        </div>
-                    </a>`;
-                otherWorkGrid.appendChild(projectEl);
-            });
-
-            // --- Horizontal Scroll Logic ---
-            const otherWorkWrapper = document.querySelector('.horizontal-scroll-wrapper');
-            if (otherWorkWrapper) {
-                const grid = otherWorkWrapper.querySelector('#other-work-grid');
-                const leftBtn = otherWorkWrapper.querySelector('.scroll-arrow.left');
-                const rightBtn = otherWorkWrapper.querySelector('.scroll-arrow.right');
-
-                const updateScrollButtons = () => {
-                    const { scrollLeft, scrollWidth, clientWidth } = grid;
-                    leftBtn.classList.toggle('hidden', scrollLeft <= 0);
-                    rightBtn.classList.toggle('hidden', scrollLeft >= scrollWidth - clientWidth - 1);
-                    otherWorkWrapper.classList.toggle('at-end', scrollLeft >= scrollWidth - clientWidth - 1);
-                };
-
-                grid.addEventListener('scroll', updateScrollButtons);
-
-                leftBtn.addEventListener('click', () => {
-                    const scrollAmount = grid.clientWidth * 0.8; // Scroll by 80% of visible width
-                    grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                        <div class="work-table-cell work-table-cell--tags">${tagsHTML}</div>
+                        <div class="work-table-cell work-table-cell--gallery">${galleryHTML}</div>
+                    `;
+                    selectedWorkGrid.appendChild(projectEl);
                 });
+            }
 
-                rightBtn.addEventListener('click', () => {
-                    const scrollAmount = grid.clientWidth * 0.8;
-                    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            if (selectedWorkGrid) {
+                // Initial render
+                renderWorkTable(document.querySelector('.work-filter-link.active').dataset.filter === 'all');
+
+                // Add event listener for the filter links
+                workFilterLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        if (link.classList.contains('active')) return;
+
+                        workFilterLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+
+                        const filter = link.dataset.filter;
+
+                        // Animate out existing items
+                        const existingRows = selectedWorkGrid.querySelectorAll('.work-table-row');
+                        existingRows.forEach(row => {
+                            row.classList.add('fade-out');
+                        });
+
+                        // Wait for animation to finish, then render new items
+                        setTimeout(() => {
+                            renderWorkTable(filter === 'all');
+                        }, 300); // Should match fadeOut animation duration
+                    });
                 });
-
-                // Initial check
-                updateScrollButtons();
-                // Check again after a short delay to account for image loading
-                setTimeout(updateScrollButtons, 500);
             }
 
 
@@ -738,7 +720,7 @@
             const projectDetailContainer = document.getElementById('project-detail-container');
             const nav = document.querySelector('.top-nav');
             const navLinks = nav.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('#main-content > header[id], #main-content > section[id]');
+            const sections = document.querySelectorAll('#main-content > header[id], #main-content > section[id], #main-content > footer[id]');
             let lastScrollY = window.scrollY;
             let lastClickedWorkItem = null;
 
@@ -768,9 +750,7 @@
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     const linkHref = link.getAttribute('href').substring(1);
-                    if (linkHref === 'work' && (currentSectionId === 'work' || currentSectionId === 'other-work')) {
-                        link.classList.add('active');
-                    } else if (linkHref === currentSectionId) {
+                    if (linkHref === currentSectionId) {
                         link.classList.add('active');
                     }
                 });
@@ -785,8 +765,7 @@
             });
 
             function findProjectData(projectId) {
-                const allProjects = [...portfolioData.selectedWork, ...portfolioData.otherProjects];
-                return allProjects.find(p => p.id === projectId);
+                return portfolioData.projects.find(p => p.id === projectId);
             }
 
             function showProject(projectId) {
@@ -820,7 +799,6 @@
                                 <h2>${project.subtitle || ''}</h2>
                                 ${project.client ? `<h3 class="project-header__client"><i class="fas fa-building"></i> ${project.client}</h3>` : ''}
                             </div>
-                            <div class="dash"></div>
                         </div>
                     </header>
                     <section class="section section--grey">
@@ -892,7 +870,7 @@
                 if (link) {
                     e.preventDefault();
                     const projectId = link.dataset.projectId;
-                    lastClickedWorkItem = link.closest('.work__item, .project-tag');
+                    lastClickedWorkItem = link.closest('.work-table-row, .work__item, .project-tag');
                     history.pushState({ projectId: projectId }, '', `#${projectId}`);
                     showProject(projectId);
                 }
@@ -912,7 +890,7 @@
                     setTimeout(() => {
                         const link = document.querySelector(`.project-link[data-project-id="${projectId}"]`);
                         if (link) {
-                            lastClickedWorkItem = link.closest('.work__item, .project-tag');
+                            lastClickedWorkItem = link.closest('.work-table-row, .work__item, .project-tag');
                         }
                         history.replaceState({ projectId: projectId }, '', `#${projectId}`);
                         showProject(projectId);
